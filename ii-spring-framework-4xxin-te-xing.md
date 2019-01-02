@@ -84,6 +84,7 @@ reader.beans {
 * 现在可以在将bean自动装入列表和数组时对其进行排序。 支持@Order注释和Ordered接口。
 
 * @Lazy注释现在可用于注入点以及@Bean定义。
+
 * 为使用基于Java的配置的开发人员引入了@Description批注。
 * 通过@Conditional注释添加了有条件地过滤bean的通用模型。 这类似于@Profile支持，但允许以编程方式开发用户定义的策略。
 * 基于CGLIB的代理类不再需要默认构造函数。 通过objenesis库提供支持，该库在内部重新打包并作为Spring Framework的一部分进行分发。 使用此策略，根本不再为代理实例调用构造函数。
@@ -107,7 +108,7 @@ reader.beans {
 
 有关更多详细信息（包括更全面的介绍），请参阅第26章WebSocket支持部分。
 
-### 3.9 Testing 改进
+### 3.9 Testing 改进
 
 除了在spring-test模块中修剪已弃用的代码之外，Spring Framework 4.0还引入了几个用于单元和集成测试的新功能。
 
@@ -116,8 +117,56 @@ reader.beans {
 * spring-core模块中引入了一个新的SocketUtils类，使您可以在localhost上扫描免费的TCP和UDP服务器端口。 此功能并非特定于测试，但在编写需要使用套接字的集成测试时非常有用，例如启动内存中SMTP服务器，FTP服务器，Servlet容器等的测试。
 * 从Spring 4.0开始，org.springframework.mock.web包中的模拟集现在基于Servlet 3.0 API。 此外，一些Servlet API模拟（例如，MockHttpServletRequest，MockServletContext等）已经更新，具有微小的增强和改进的可配置性。
 
-4 
+## 4 Spring Framework 4.1中的新功能和增强功能
 
-  
+4.1版包含了许多改进，如以下部分所述：
+
+* 第4.1节 “JMS改进”
+* 第4.2节 “Caching改进”
+* 第4.3节 “Web改进”
+* 第4.4节 “WebSocket消息传递改进”
+* 第4.5节 “Testing改进”
+
+### 4.1 JMS改进
+
+Spring 4.1引入了一个更简单的基础结构，通过使用@JmsListener注释bean方法来注册JMS侦听器端点。 XML命名空间已得到增强，可支持这种新样式（jms：annotation-driven），并且还可以使用Java配置（@EnableJms，JmsListenerContainerFactory）完全配置基础结构。 也可以使用JmsListenerConfigurer以编程方式注册侦听器端点。
+
+Spring 4.1还调整了JMS支持，使您可以从4.0中引入的spring-messaging抽象中受益，即：
+
+* 消息侦听器端点可以具有更灵活的签名，并从标准消息传递注释中受益，例如@ Payload，@ Header，@ Headers和@SendTo。 也可以使用标准Message代替javax.jms.Message作为方法参数。
+* 新的JmsMessageOperations接口可用，并允许使用Message抽象的JmsTemplate操作。
+
+最后，Spring 4.1提供了额外的其他改进：
+
+* JmsTemplate中的同步请求 - 回复操作支持
+* 可以根据&lt;jms:listener/&gt;元素指定侦听器优先级
+* 可以使用BackOff实现配置消息侦听器容器的恢复选项
+* 支持JMS 2.0共享使用者
+
+### 4.2 Caching改进
+
+Spring 4.1使用Spring现有的缓存配置和基础架构抽象支持JCache（JSR-107）注释; 使用标准注释不需要进行任何更改。
+
+Spring 4.1改进了自己的缓存抽象：
+
+* 可以使用CacheResolver在运行时解析缓存。 因此，定义要使用的缓存名称的value参数不再是必需的。
+* 更多操作级自定义：缓存解析器，缓存管理器，密钥生成器
+* 新的@CacheConfig类级别注释允许在类级别共享公共设置，而不启用任何高速缓存操作。
+* 使用CacheErrorHandler更好地处理缓存方法
+
+随着新的putIfAbsent方法的添加，Spring 4.1在Cache接口中也发生了重大变化。
+
+### 4.3 Web改进
+
+
+
+### 4.4 WebSocket消息传递改进
+
+
+
+### 4.5 Testing改进
+
+
+
 
 
