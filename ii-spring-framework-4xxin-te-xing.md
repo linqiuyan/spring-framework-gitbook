@@ -215,5 +215,18 @@ Spring 4.1改进了自己的缓存抽象：
 * 现在可以在MockMvcConfigurer的帮助下创建MockMvcBuilder配方。添加此选项是为了便于应用Spring Security设置，但可用于封装任何第三方框架或项目内的常见设置。
 * MockRestServiceServer现在支持AsyncRestTemplate进行客户端测试。
 
+## 5 Spring Framework 4.2中的新功能和增强功能
+
+版本4.2包含许多改进，如以下部分所述：
+
+* 第5.1节“核心容器改进”
+* 第5.2节“数据访问改进”
+* 第5.3节“JMS改进”
+* 第5.4节“Web改进”
+* 第5.5节“WebSocket消息传递改进”
+* 第5.6节“测试改进”
+
+6 
+
 
 
