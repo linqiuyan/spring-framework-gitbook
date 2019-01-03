@@ -5,6 +5,8 @@
 * [II Spring Framework 4.X新特性](ii-spring-framework-4xxin-te-xing.md)
 * [III 核心技术](iii-he-xin-ji-zhu.md)
   * 7 IoC容器
+  * 资源
+  * 
 * [IV 测试](iv-ce-shi.md)
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
