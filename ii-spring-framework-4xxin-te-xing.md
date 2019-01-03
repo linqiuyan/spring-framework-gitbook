@@ -86,6 +86,7 @@ reader.beans {
 * @Lazy注释现在可用于注入点以及@Bean定义。
 
 * 为使用基于Java的配置的开发人员引入了@Description批注。
+
 * 通过@Conditional注释添加了有条件地过滤bean的通用模型。 这类似于@Profile支持，但允许以编程方式开发用户定义的策略。
 * 基于CGLIB的代理类不再需要默认构造函数。 通过objenesis库提供支持，该库在内部重新打包并作为Spring Framework的一部分进行分发。 使用此策略，根本不再为代理实例调用构造函数。
 * 现在，整个框架都有受管理的时区支持，例如： 在LocaleContext上。
@@ -162,11 +163,7 @@ Spring 4.1改进了自己的缓存抽象：
 
 ### 4.4 WebSocket消息传递改进
 
-
-
 ### 4.5 Testing改进
-
-
 
 
 
