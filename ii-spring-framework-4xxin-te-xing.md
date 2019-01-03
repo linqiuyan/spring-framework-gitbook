@@ -228,33 +228,237 @@ Spring 4.1改进了自己的缓存抽象：
 
 ### 5.1  核心容器改进
 
+* 诸如@Bean之类的注释也可以在Java 8默认方法上检测和处理，允许使用默认的@Bean方法从接口编写配置类。
+* 配置类现在可以使用常规组件类声明@Import，允许混合使用导入的配置类和组件类。
+* 即使通过类路径扫描检测到，配置类也可以声明@Order值，以相应的顺序进行处理（例如，按名称覆盖bean）。
+* @Resource注入点支持@Lazy声明，类似于@Autowired，接收所请求目标bean的延迟初始化代理。
+* 应用程序事件基础结构现在提供基于注释的模型以及发布任意事件的能力。
+  * 托管bean中的任何公共方法都可以使用@EventListener进行注释以使用事件。
+  * @TransactionalEventListener提供事务绑定事件支持。
+* Spring Framework 4.2引入了一流的支持，用于声明和查找注释属性的别名。 新的@AliasFor注释可用于在单个注释中声明一对别名属性，或者将自定义组合注释中的一个属性的别名声明为元注释中的属性。
+  * 以下注释已经使用@AliasFor支持进行了改进，以便为其值属性提供有意义的别名：@Cacheable, @CacheEvict, @CachePut, @ComponentScan, @ComponentScan.Filter, @ImportResource, @Scope, @ManagedResource, @Header, @Payload, @SendToUser, @ActiveProfiles, @ContextConfiguration, @Sql, @TestExecutionListeners, @TestPropertySource, @Transactional, @ControllerAdvice, @CookieValue, @CrossOrigin, @MatrixVariable, @RequestHeader, @RequestMapping, @RequestParam, @RequestPart, @ResponseStatus, @SessionAttributes, @ActionMapping, @RenderMapping, @EventListener, @TransactionalEventListener
+  * 例如，spring-test模块中的@ContextConfiguration现在声明如下：
+    ```
+    public @interface ContextConfiguration {
+
+        @AliasFor("locations")
+        String[] value() default {};
+
+        @AliasFor("value")
+        String[] locations() default {};
+
+        // ...
+    }
+    ```
+  * 类似地，覆盖元注释中的属性的组合注释现在可以使用@AliasFor来精确控制注释层次结构中的哪些属性被覆盖。 实际上，现在可以为元注释的value属性声明别名。
+
+  * 例如，现在可以使用自定义属性覆盖开发组合注释，如下所示。
+
+  ```
+  @ContextConfiguration
+  public @interface MyTestConfig {
+
+      @AliasFor(annotation = ContextConfiguration.class, attribute = "value")
+      String[] xmlFiles();
+
+      // ...
+  }
+  ```
+
+  * 详见[spring annotation编程模型](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#annotation-programming-model)
+
+* 对用于查找元注释的Spring搜索算法进行了大量改进。例如，本地声明的组合注释现在比继承注释更受青睐。
+
+* 现在可以在接口和抽象，桥接和接口方法以及类，标准方法，构造函数和字段上发现从元注释覆盖属性的组合注释。
+* 表示注释属性（和AnnotationAttributes实例）的地图可以合成（即，转换）为注释。
+* 基于字段的数据绑定（DirectFieldAccessor）的功能已与当前基于属性的数据绑定（BeanWrapper）对齐。特别是，基于字段的绑定现在支持集合，数组和映射的导航。
+* DefaultConversionService现在为Stream，Charset，Currency和TimeZone提供开箱即用的转换器。这些转换器也可以单独添加到任何任意的ConversionService中。
+* DefaultFormattingConversionService为JSR-354 Money＆Currency中的值类型提供了开箱即用的支持（如果类路径中存在'javax.money'API）：即MonetaryAmount和CurrencyUnit。这包括支持应用@NumberFormat。
+* @NumberFormat现在可以用作元注释。
+* JavaMailSenderImpl有一个新的testConnection（）方法，用于检查与服务器的连接。
+* ScheduledTaskRegistrar公开计划任务。
+* Apache commons-pool2现在支持池AOP CommonsPool2TargetSource。
+* 将StandardScriptFactory引入为基于JSR-223的脚本bean机制，通过XML中的lang：std元素公开。例如支持JavaScript和JRuby。 （注意：JRubyScriptFactory和lang：jruby现在已弃用，支持使用JSR-223。）
+
 ### 5.2  数据访问改进
+
+* 现在通过AspectJ支持javax.transaction.Transactional。
+* SimpleJdbcCallOperations现在支持命名绑定。
+* 完全支持Hibernate ORM 5.0：作为JPA提供程序（自动调整）以及通过其原生API（由新的org.springframework.orm.hibernate5包覆盖）。
+* 现在可以为嵌入式数据库自动分配唯一的名称，&lt;jdbc：embedded-database&gt;支持新的database-name属性。 有关详细信息，请参阅下面的“测试改进”。
 
 ### 5.3  JMS改进
 
+* autoStartup属性可以通过JmsListenerContainerFactory控制。
+* 现在可以为每个侦听器容器配置回复目标的类型。
+* @SendTo注释的值现在可以使用SpEL表达式。
+* 可以使用JmsResponse在运行时计算响应目标
+* @JmsListener现在是一个可重复的注释，用于在同一个方法上声明几个JMS容器（如果你还没有使用Java8，请使用新引入的@JmsListeners）。
+
 ### 5.4  网站改进
+
+* HTTP Streaming和Server-Sent Events支持，请参阅“HTTP Streaming”一节。
+* 内置对CORS的支持，包括全局（MVC Java配置和XML命名空间）和本地（例如@CrossOrigin）配置。 有关详细信息，请参见第27章CORS支持。
+* HTTP缓存更新：
+  * 新的CacheControl构建器; 插入ResponseEntity，WebContentGenerator，ResourceHttpRequestHandler。
+  * 改进了WebRequest中的ETag / Last-Modified支持。
+* 自定义映射注释，使用@RequestMapping作为元注释。
+* AbstractHandlerMethodMapping中的公共方法，用于在运行时注册和取消注册请求映射。
+* AbstractDispatcherServletInitializer中受保护的createDispatcherServlet方法，以进一步自定义要使用的DispatcherServlet实例。
+* HandlerMethod作为@ExceptionHandler方法的方法参数，在@ControllerAdvice组件中特别方便。
+* java.util.concurrent.CompletableFuture作为@Controller方法的返回值类型。
+* HttpHeaders中的字节范围请求支持以及服务静态资源。
+* 在嵌套异常上检测到@ResponseStatus。
+* RestTemplate中的UriTemplateHandler扩展点。
+  * DefaultUriTemplateHandler公开baseUrl属性和路径段编码选项。
+  * 扩展点也可用于插入任何URI模板库。
+* OkHTTP与RestTemplate集成。
+* 自定义baseUrl替代MvcUriComponentsBuilder中的方法。
+* 序列化/反序列化异常消息现在以WARN级别记录。
+* 默认JSON前缀已从“{} &&”更改为更安全的“）\]}'，”one。
+* 新的RequestBodyAdvice扩展点和内置实现，以支持Jackson的@JsonView @RequestBody方法参数。
+* 使用GSON或Jackson 2.6+时，处理程序方法返回类型用于改进List &lt;Foo&gt;等参数化类型的序列化。
+* 将ScriptTemplateView引入为基于JSR-223的脚本Web视图机制，重点关注Nashorn（JDK 8）上的JavaScript视图模板。
 
 ### 5.5  WebSocket消息传递改进
 
+* 公开有关已连接用户和订阅的状态信息：
+  * 新的SimpUserRegistry公开为名为“userRegistry”的bean。
+  * 跨服务器群集共享在线信息（请参阅代理中继配置选项）。
+
+* 跨服务器群集解析用户目标（请参阅代理中继配置选项）。
+* StompSubProtocolErrorHandler扩展点用于自定义和控制客户端的STOMP ERROR帧。
+* 通过@ControllerAdvice组件的全局@MessageExceptionHandler方法。
+* Heart-beats和SpEL表达式'selector'标头，用于使用SimpleBrokerMessageHandler进行订阅。
+* 用于TCP和WebSocket的STOMP客户端;请参见第26.4.15节“STOMP客户端”。
+* @SendTo和@SendToUser可以包含目标变量占位符。
+* Jackson的@JsonView支持@MessageMapping和@SubscribeMapping方法的返回值。
+* ListenableFuture和CompletableFuture作为@MessageMapping和@SubscribeMapping方法的返回值类型。
+* 用于XML有效负载的MarshallingMessageConverter。
+
 ### 5.6  测试改进
+
+* 现在可以使用JUnit规则而不是SpringJUnit4ClassRunner来执行基于JUnit的集成测试。这允许基于Spring的集成测试与JUnit的参数化或第三方运行程序（如MockitoJUnitRunner）等替代运行程序一起运行。
+* * 有关详细信息，请参阅“Spring JUnit 4规则”一节。
+* Spring MVC Test框架现在为HtmlUnit提供一流的支持，包括与Selenium的WebDriver集成，允许基于页面的Web应用程序测试，而无需部署到Servlet容器。
+* * 有关详细信息，请参见第15.6.2节“HtmlUnit集成”。
+* AopTestUtils是一个新的测试实用程序，它允许开发人员获取对隐藏在一个或多个Spring代理后面的底层目标对象的引用。
+* * 有关详细信息，请参见第14.2.1节“常规测试实用程序”。
+* ReflectionTestUtils现在支持设置和获取静态字段，包​​括常量。
+* 现在保留通过@ActiveProfiles声明的bean定义配置文件的原始顺序，以支持Spring Boot的ConfigFileApplicationListener等用例，后者根据活动配置文件的名称加载配置文件。
+* @DirtiesContext支持新的BEFORE\_METHOD，BEFORE\_CLASS和BEFORE\_EACH\_TEST\_METHOD模式，用于在测试之前关闭ApplicationContext  - 例如，如果大型测试套件中的某些恶意（即尚未确定）测试损坏了ApplicationContext的原始配置。
+* @Commit是一个新的注释，可以用作@Rollback的直接替换（false）。
+* @Rollback现在可用于配置类级别的默认回滚语义。
+* * 因此，@ TransactionConfiguration现已弃用，将在后续版本中删除。
+* @Sql现在支持通过新的语句属性执行内联SQL语句。
+* 用于在测试之间缓存ApplicationContexts的ContextCache现在是一个公共API，其默认实现可以替换为自定义缓存需求。
+* DefaultTestContext，DefaultBootstrapContext和DefaultCacheAwareContextLoaderDelegate现在是支持子包中的公共类，允许自定义扩展。
+* TestContextBootstrappers现在负责构建TestContext。
+* 在Spring MVC Test框架中，MvcResult详细信息现在可以在DEBUG级别记录或写入自定义OutputStream或Writer。有关详细信息，请参阅MockMvcResultHandlers中的新log（），print（OutputStream）和print（Writer）方法。
+* JDBC XML命名空间在&lt;jdbc：embedded-database&gt;中支持新的database-name属性，允许开发人员为嵌入式数据库设置唯一的名称 - 例如，通过SpEL表达式或受当前活动bean影响的属性占位符定义简介。
+* 现在可以为嵌入式数据库自动分配一个唯一的名称，从而允许在测试套件中的不同ApplicationContexts中重用常见的测试数据库配置。
+* * 有关详细信息，请参见第19.8.6节“为嵌入式数据库生成唯一名称”。
+* MockHttpServletRequest和MockHttpServletResponse现在通过getDateHeader和setDateHeader方法为日期标题格式提供更好的支持。
 
 ## 6 Spring Framework 4.3中的新功能和增强功能
 
+版本4.3包括许多改进，如以下部分所述：
+
+* 第6.1节“核心容器改进”
+* 第6.2节“数据访问改进”
+* 第6.3节“缓存改进”
+* 第6.4节“JMS改进”
+* 第6.5节“Web改进”
+* 第6.6节“WebSocket消息传递改进”
+* 第6.7节“测试改进”
+* 第6.8节“支持新的库和服务器代”
+
 ### 6.1  核心容器改进
+
+* 核心容器异常提供更丰富的元数据，以便以编程方式进
+* Java 8默认方法被检测为bean属性getter / setters。
+* 在注入主bean的情况下，不会创建惰性候选bean。
+* 如果目标bean只定义了一个构造函数，则不再需要指定@Autowired批注。
+* @Configuration类支持构造函数注入。
+* 用于指定@EventListener条件的任何SpEL表达式现在都可以引用bean（例如@ beanName.method（））。
+* 组合注释现在可以使用数组的组件类型的单个元素覆盖元注释中的数组属性。例如，@ RequestMapping的String \[\] path属性可以用组合注释中的String路径覆盖。
+* @ PersistenceContext / @ PersistenceUnit选择一个主要的EntityManagerFactory bean，如果这样声明的话。
+* @Scheduled和@Schedules现在可以用作元注释来创建具有属性覆盖的自定义组合注释。
+* 任何范围的bean都适当支持@Scheduled。
 
 ### 6.2  数据访问改进
 
+jdbc：initialize-database和jdbc：embedded-database支持可应用于每个脚本的可配置分隔符。
+
 ### 6.3  缓存改进
+
+* Spring 4.3允许对给定键的并发调用进行同步，以便仅计算一次值。 这是一个选择加入功能，应通过@Cacheable上的新同步属性启用。 此功能引入了Cache接口的重大更改，因为添加了get（Object key，Callable &lt;T&gt; valueLoader）方法。
+
+* Spring 4.3还改进了缓存抽象，如下所示：
+  * 缓存相关注释中的SpEL表达式现在可以引用bean（即@ beanName.method（））。
+  * ConcurrentMapCacheManager和ConcurrentMapCache现在支持通过新的storeByValue属性对缓存条目进行序列化。
+  * @Cacheable，@ CacheEvict，@ CachePut和@Caching现在可以用作元注释来创建具有属性覆盖的自定义组合注释。
 
 ### 6.4  JMS改进
 
+* 现在可以在类级别指定@SendTo以共享公共回复目标。
+* @JmsListener和@JmsListeners现在可以用作元注释来创建具有属性覆盖的自定义组合注释。
+
 ### 6.5  网站改进
+
+* 内置支持HTTP HEAD和HTTP OPTIONS。
+* 新的@ GetMapping，@ PostMapping，@ PutMapping，@ DeleMapping和@PatchMapping为@RequestMapping组成了注释。
+
+* 有关详细信息，请参阅Composed @RequestMapping Variants。
+* 新的@RequestScope，@ SessionScope和@ApplicationScope组成了Web范围的注释。
+
+* 有关详细信息，请参阅请求范围，会话范围和应用程序范围
+* 新的@RestControllerAdvice注释与@ControllerAdvice和@ResponseBody语义相结合。
+* @ResponseStatus现在在类级别受支持，并由所有方法继承。
+* 用于访问会话属性的新@SessionAttribute注释（请参阅示例）。
+* 用于访问请求属性的新@RequestAttribute批注（参见示例）。
+* @ModelAttribute允许通过binding = false属性阻止数据绑定（请参阅参考资料）。
+* @PathVariable可以声明为可选（用于@ModelAttribute方法）。
+* 将错误和自定义Throwables一致地暴露给MVC异常处理程序。
+* HTTP消息转换器中一致的字符集处理，包括多部分文本内容的UTF-8默认值。
+* 静态资源处理使用配置的ContentNegotiationManager进行媒体类型确定。
+* RestTemplate和AsyncRestTemplate通过DefaultUriTemplateHandler支持严格的URI变量编码。
+* AsyncRestTemplate支持请求拦截。
 
 ### 6.6  WebSocket消息传递改进
 
+* 现在可以在类级别指定@SendTo和@SendToUser来共享公共目标。
+
 ### 6.7  测试改进
 
+* Spring TestContext Framework中的JUnit支持现在需要JUnit 4.12或更高版本。
+* SpringJUnit4ClassRunner的新SpringRunner别名。
+* 现在可以在接口上声明测试相关的注释 - 例如，用于使用基于Java 8的接口默认方法的测试接口。
+* 如果检测到默认XML文件，Groovy脚本或@Configuration类，则现在可以完全省略@ContextConfiguration的空声明。
+* @Transactional测试方法不再需要公开（例如，在TestNG和JUnit 5中）。
+* @BeforeTransaction和@AfterTransaction方法不再需要公开，现在可以在基于Java 8的接口默认方法上声明。
+* Spring TestContext Framework中的ApplicationContext缓存现在受限于默认最大大小32和最近最少使用的驱逐策略。可以通过设置JVM系统属性或名为spring.test.context.cache.maxSize的Spring属性来配置最大大小。
+* 新的ContextCustomizer API，用于在将bean定义加载到上下文之后但在刷新上下文之前自定义测试ApplicationContext。定制程序可以由第三方在全球注册，但需要实现自定义ContextLoader。
+* @Sql和@SqlGroup现在可以用作元注释来创建具有属性覆盖的自定义组合注释。
+* 现在，ReflectionTestUtils会在设置或获取字段时自动解包代理。
+* 服务器端Spring MVC测试支持对具有多个值的响应头的期望。
+* 服务器端Spring MVC Test解析表单数据请求内容并填充请求参数。
+* 服务器端Spring MVC Test支持调用的处理程序方法的类似于断言的断言。
+* 客户端REST测试支持允许指示期望请求的次数以及是否应忽略期望声明的顺序（请参见第15.6.3节“客户端REST测试”）。
+* 客户端REST测试支持对请求正文中的表单数据的期望。
+
 ### 6.8  支持新library和server generations
+
+* Hibernate ORM 5.2（仍然支持4.2 / 4.3和5.0 / 5.1，现在已经弃用了3.6）
+* Hibernate Validator 5.3（最小值保持为4.3）
+* Jackson2.8（截至4.3春季，最低升至Jackson2.6+）
+* OkHttp 3.x（仍然支持OkHttp 2.x并排）
+* Tomcat 8.5以及9.0里程碑
+* Netty 4.1
+* Undertow 1.4
+* WildFly 10.1
+
+此外，Spring Framework 4.3在spring-core.jar中嵌入了更新的ASM 5.1，CGLIB 3.2.4和Objenesis 2.4。
 
 
 
