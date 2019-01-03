@@ -90,6 +90,7 @@ reader.beans {
 * 通过@Conditional注释添加了有条件地过滤bean的通用模型。 这类似于@Profile支持，但允许以编程方式开发用户定义的策略。
 
 * 基于CGLIB的代理类不再需要默认构造函数。 通过objenesis库提供支持，该库在内部重新打包并作为Spring Framework的一部分进行分发。 使用此策略，根本不再为代理实例调用构造函数。
+
 * 现在，整个框架都有受管理的时区支持，例如： 在LocaleContext上。
 
 ### 3.7 一般网站改进
@@ -182,7 +183,37 @@ Spring 4.1改进了自己的缓存抽象：
 
 ### 4.4 WebSocket消息传递改进
 
+* SockJS（Java）客户端支持。 请参阅同一包中的SockJsClient和类。
+* STOMP客户端订阅和取消订阅时发布的新应用程序上下文事件SessionSubscribeEvent和SessionUnsubscribeEvent。
+* 新的“websocket”范围。 请参见第26.4.16节“WebSocket范围”。
+* @SendToUser只能定位一个会话，不需要经过身份验证的用户。
+* @MessageMapping方法可以使用点“。” 而不是斜杠“/”作为路径分隔符。 见SPR-11660。
+* 收集并记录STOMP / WebSocket监控信息。 请参见第26.4.18节“监控”。
+* 显着优化和改进的日志记录，即使在DEBUG级别，仍应保持可读性和紧凑性。
+* 优化的消息创建，包括支持临时消息可变性和避免自动消息ID和时间戳创建。 请参阅MessageHeaderAccessor的Javadoc。
+* 关闭在建立WebSocket会话后60秒内没有活动的STOMP / WebSocket连接。 见SPR-11884。
+
 ### 4.5 Testing改进
+
+* Groovy脚本现在可用于配置为TestContext框架中的集成测试加载的ApplicationContext。
+  * 有关详细信息，请参阅“使用Groovy脚本进行上下文配置”一节。
+* 现在可以通过新的TestTransaction API以编程方式启动并在事务测试方法中结束测试管理的事务
+  * 有关详细信息，请参阅“程序化事务管理”一节。
+* 现在可以通过基于每个类或每个方法的新@Sql和@SqlConfig注释以声明方式配置SQL脚本执行
+  * 有关详细信息，请参见第15.5.8节“执行SQL脚本”。
+* 可以通过新的@TestPropertySource批注配置自动覆盖系统和应用程序属性源的测试属性源
+  * 有关详细信息，请参阅“使用测试属性源进行上下文配置”一节。
+* 现在可以自动发现默认的TestExecutionListeners。
+  * 有关详细信息，请参阅“自动发现默认TestExecutionListeners”一节。
+* 自定义TestExecutionListeners现在可以自动与默认侦听器合并。
+  * 有关详细信息，请参阅“合并TestExecutionListeners”一节。
+* TestContext框架中的事务测试支持文档已通过更详尽的解释和其他示例进行了改进
+  * 有关详细信息，请参见第15.5.7节“事务管理”。
+* 对MockServletContext，MockHttpServletRequest和其他Servlet API模拟的各种改进。
+* AssertThrows已被重构以支持Throwable而不是Exception。
+* 在Spring MVC Test中，可以使用JSON Assert声明JSON响应，作为使用JSONPath的额外选项，就像使用XMLUnit可以为XML做的那样。
+* 现在可以在MockMvcConfigurer的帮助下创建MockMvcBuilder配方。添加此选项是为了便于应用Spring Security设置，但可用于封装任何第三方框架或项目内的常见设置。
+* MockRestServiceServer现在支持AsyncRestTemplate进行客户端测试。
 
 
 
