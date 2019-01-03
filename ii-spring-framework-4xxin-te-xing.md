@@ -88,6 +88,7 @@ reader.beans {
 * 为使用基于Java的配置的开发人员引入了@Description批注。
 
 * 通过@Conditional注释添加了有条件地过滤bean的通用模型。 这类似于@Profile支持，但允许以编程方式开发用户定义的策略。
+
 * 基于CGLIB的代理类不再需要默认构造函数。 通过objenesis库提供支持，该库在内部重新打包并作为Spring Framework的一部分进行分发。 使用此策略，根本不再为代理实例调用构造函数。
 * 现在，整个框架都有受管理的时区支持，例如： 在LocaleContext上。
 
@@ -159,7 +160,25 @@ Spring 4.1改进了自己的缓存抽象：
 
 ### 4.3 Web改进
 
-
+* 已经使用新的抽象ResourceResolver，ResourceTransformer和ResourceUrlProvider扩展了对基于ResourceHttpRequestHandler的资源处理的现有支持。许多内置实现提供对版本化资源URL的支持（用于有效的HTTP缓存），定位gzip压缩资源，生成HTML 5 AppCache清单等。请参见第22.16.9节“资源服务”。
+* 现在，@ RequestParam，@ RequestHeader和@MatrixVariable控制器方法参数支持JDK 1.8的java.util.Optional。
+* 支持ListenableFuture作为DeferredResult的返回值替代，其中底层服务（或者可能是对AsyncRestTemplate的调用）已经返回ListenableFuture。
+* @ModelAttribute方法现在以遵循相互依赖关系的顺序调用。见SPR-6299。
+* Jackson的@JsonView直接支持@ResponseBody和ResponseEntity控制器方法，用于序列化同一POJO的不同数量的详细信息（例如摘要与详细信息页面）。通过在特殊键下添加序列化视图类型作为模型属性，基于视图的渲染也支持此功能。有关详细信息，请参阅“Jackson序列化视图支持”一节。
+* Jackson现在支持JSONP。请参阅“Jackson JSONP支持”一节。
+* 一个新的生命周期选项可用于在控制器方法返回之后和写入响应之前拦截@ResponseBody和ResponseEntity方法。利用声明一个实现ResponseBodyAdvice的@ControllerAdvice bean。对@JsonView和JSONP的内置支持利用了这一点。请参见第22.4.1节“使用HandlerInterceptor拦截请求”。
+* 有三个新的HttpMessageConverter选项：
+  * Gson  - 比Jackson更轻; 已经在Spring Android中使用。
+  * Google协议缓冲区 - 作为企业内的服务间通信数据协议高效且有效，但也可以作为浏览器的JSON和XML公开。
+  * 现在通过jackson-dataformat-xml扩展支持基于Jackson的XML序列化。 当使用@EnableWebMvc或&lt;mvc:annotation-driven/&gt;时，如果jackson-dataformat-xml在类路径中，则默认使用它而不是JAXB2。
+* JSP之类的视图现在可以通过按名称引用控制器映射来构建到控制器的链接。每个@RequestMapping都分配了一个默认名称。例如，带有方法handleFoo的FooController被命名为“FC＃handleFoo”。命名策略是可插拔的。也可以通过其name属性显式命名@RequestMapping。 Spring JSP标记库中的新mvcUrl函数使其易于在JSP页面中使用。请参见第22.7.3节“从视图构建控制器和方法的URI”。
+* ResponseEntity提供了一个构建器式API，用于指导控制器方法准备服务器端响应，例如， ResponseEntity.ok\(\)。
+* RequestEntity是一种新类型，它提供构建器样式的API，以指导客户端REST代码准备HTTP请求。
+* MVC Java配置和XML命名空间：
+  * 现在可以配置视图解析器，包括支持内容协商，请参见第22.16.8节“查看解析器”。
+  * View Controllers现在具有内置的重定向支持和设置响应状态。应用程序可以使用它来配置重定向URL，使用视图呈现404响应，发送“无内容”响应等。此处列出了一些用例。
+  * 路径匹配自定义经常使用，现在是内置的。请参见第22.16.11节“路径匹配”。
+* Groovy标记模板支持（基于Groovy 2.3）。查看GroovyMarkupConfigurer并重新选择ViewResolver和\`View'实现。
 
 ### 4.4 WebSocket消息传递改进
 
