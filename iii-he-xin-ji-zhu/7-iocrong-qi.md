@@ -20,8 +20,6 @@ ApplicationContext接口的几个实现是与Spring一起提供的。 在独立�
 
 下图是Spring工作原理的高级视图。 您的应用程序类与配置元数据相结合，以便在创建和初始化ApplicationContext之后，您拥有一个完全配置且可执行的系统或应用程序。
 
-![](/assets/thespringioccontainer.png)
-
 ### 7.2.1配置元数据
 
 如上图所示，Spring IoC容器使用一种配置元数据形式; 此配置元数据表示您作为应用程序开发人员如何告诉Spring容器在应用程序中实例化，配置和组装对象。
@@ -305,10 +303,6 @@ public class Foo {
 ```
 
 当引用另一个bean时，类型是已知的，并且可以进行匹配（与前面的示例一样）。 当使用简单类型时，例如&lt;value&gt; true &lt;/ value&gt;，Spring无法确定值的类型，因此无法在没有帮助的情况下按类型进行匹配。 考虑以下class
-
-
-
-
 
 #### 
 
