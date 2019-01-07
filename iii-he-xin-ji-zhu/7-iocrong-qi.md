@@ -312,15 +312,69 @@ public class Foo {
 
 ### 7.4.2 依赖关系和配置详细
 
+如上一节所述，您可以将bean属性和构造函数参数定义为对其他托管bean（协作者）的引用，或者作为内联定义的值。 Spring的基于XML的配置元数据为此目的支持其&lt;property /&gt;和&lt;constructor-arg /&gt;元素中的子元素类型。
+
 #### 直值（基本类型，字符串等）
+
+&lt;property /&gt;元素的value属性将属性或构造函数参数指定为人类可读的字符串表示形式。 Spring的转换服务用于将这些值从String转换为属性或参数的实际类型。
+
+
 
 #### 引用其他bean（协作者）
 
 #### Inner beans
 
+&lt;property /&gt;或&lt;constructor-arg /&gt;元素中的&lt;bean /&gt;元素定义了一个所谓的内部bean。
+
+```
+<bean id="outer" class="...">
+    <!-- instead of using a reference to a target bean, simply define the target bean inline -->
+    <property name="target">
+        <bean class="com.example.Person"> <!-- this is the inner bean -->
+            <property name="name" value="Fiona Apple"/>
+            <property name="age" value="25"/>
+        </bean>
+    </property>
+</bean>
+```
+
+内部bean定义不需要定义的id或名称; 如果指定，则容器不使用这样的值作为标识符。 容器还会在创建时忽略范围标志：内部bean始终是匿名的，并且始终使用外部bean创建它们。 无法将内部bean注入协作bean，而不是将其注入封闭bean或独立访问它们。
+
+作为极端情况，可以从自定义范围接收销毁回调，例如， 对于包含在单例bean中的请求范围的内部bean：内部bean实例的创建将绑定到其包含的bean，但是销毁回调允许它参与请求范围的生命周期。 这不是常见的情况; 内部bean通常只是共享其包含bean的范围。
+
 #### 集合
 
 #### 空值和空字符串值
+
+Spring将属性等的空参数视为空字符串。 以下基于XML的配置元数据片段将email属性设置为空String值（“”）。
+
+```
+<bean class="ExampleBean">
+    <property name="email" value=""/>
+</bean>
+```
+
+上面的示例等效于以下Java代码：
+
+```
+exampleBean.setEmail("");
+```
+
+&lt;null /&gt;元素处理空值。 例如：
+
+```
+<bean class="ExampleBean">
+    <property name="email">
+        <null/>
+    </property>
+</bean>
+```
+
+以上配置等同于以下Java代码：
+
+```
+exampleBean.setEmail(null);
+```
 
 #### 带有p命名空间的XML快捷方式
 
@@ -330,9 +384,61 @@ public class Foo {
 
 ### 7.4.3 使用依赖
 
+如果bean是另一个bean的依赖项，通常意味着将一个bean设置为另一个bean的属性。 通常，您可以使用基于XML的配置元数据中的&lt;ref /&gt;元素来完成此操作。 但是，有时bean之间的依赖关系不那么直接; 例如，需要触发类中的静态初始化程序，例如数据库驱动程序注册。 在初始化使用此元素的bean之前，depends-on属性可以**显式强制初始化一个或多个bea**n。 以下示例使用depends-on属性表示对单个bean的依赖关系：
+
+```
+<bean id="beanOne" class="ExampleBean" depends-on="manager"/>
+<bean id="manager" class="ManagerBean" />
+```
+
+要表示对多个bean的依赖关系，请提供bean名称列表作为depends-on属性的值，使用逗号，空格和分号作为有效分隔符：
+
+```
+<bean id="beanOne" class="ExampleBean" depends-on="manager,accountDao">
+    <property name="manager" ref="manager" />
+</bean>
+
+<bean id="manager" class="ManagerBean" />
+<bean id="accountDao" class="x.y.jdbc.JdbcAccountDao" />
+```
+
+---
+
+_bean定义中的depends-on属性既可以指定初始化时间依赖关系，也可以指定仅限单例bean的相应销毁时间依赖关系。 在给定的bean本身被销毁之前，首先销毁定义与给定bean的依赖关系的从属bean。 因此，依赖也可以控制关机顺序。_
+
+---
+
 ### 7.4.4 懒惰初始化的bean
 
+默认情况下，ApplicationContext实现会急切地创建和配置所有单例bean，作为初始化过程的一部分。 通常，这种预先实例化是可取的，因为配置或周围环境中的错误是立即发现的，而不是几小时甚至几天后。 如果不希望出现这种情况，可以通过将bean定义标记为延迟初始化来阻止单例bean的预实例化。 延迟初始化的bean告诉IoC容器在第一次请求时创建bean实例，而不是在启动时。
+
+在XML中，此行为由&lt;bean /&gt;元素上的lazy-init属性控制; 例如：
+
+```
+<bean id="lazy" class="com.foo.ExpensiveToCreateBean" lazy-init="true"/>
+<bean name="not.lazy" class="com.foo.AnotherBean"/>
+```
+
+当ApplicationContext使用前面的配置时，在ApplicationContext启动时，不会急切地预先实例化名为lazy的bean，而是急切地预先实例化not.lazy bean。
+
+但是，当延迟初始化的bean是不是延迟初始化的单例bean的依赖项时，ApplicationContext会在启动时创建延迟初始化的bean，因为它必须满足单例的依赖关系。 惰性初始化的bean被注入到其他地方的单例bean中，而不是懒惰初始化的。
+
+您还可以使用&lt;beans /&gt;元素上的default-lazy-init属性在容器级别控制延迟初始化; 例如：
+
+```
+<beans default-lazy-init="true">
+    <!-- no beans will be pre-instantiated... -->
+</beans>
+```
+
 ### 7.4.5 自动装配协作者
+
+Spring容器可以自动连接协作bean之间的关系。 您可以通过检查ApplicationContext的内容，允许Spring自动为您的bean解析协作者（其他bean）。 自动装配具有以下优点：
+
+* 自动装配可以显着减少指定属性或构造函数参数的需要。 （在本章其他地方讨论的其他机制，如bean模板，在这方面也很有价值。）
+* 自动装配可以随着对象的发展更新配置。 例如，如果需要向类添加依赖项，则可以自动满足该依赖项，而无需修改配置。 因此，自动装配在开发期间尤其有用，而不会在代码库变得更稳定时否定切换到显式布线的选项。
+
+使用基于XML的配置元数据\[2\]时，可以使用&lt;bean /&gt;元素的autowire属性为bean定义指定autowire模式。 自动装配功能有四种模式。 您指定每个bean的自动装配，因此可以选择要自动装配的那些。
 
 #### 自动装配的局限和缺点
 
