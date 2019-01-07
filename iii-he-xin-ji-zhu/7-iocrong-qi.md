@@ -291,9 +291,28 @@ public class Foo {
 
 假设Bar和Baz类与继承无关，则不存在潜在的歧义。 因此，以下配置工作正常，您无需在&lt;constructor-arg/&gt;元素中显式指定构造函数参数索引和/或类型。
 
+```
+<beans>
+    <bean id="foo" class="x.y.Foo">
+        <constructor-arg ref="bar"/>
+        <constructor-arg ref="baz"/>
+    </bean>
+
+    <bean id="bar" class="x.y.Bar"/>
+
+    <bean id="baz" class="x.y.Baz"/>
+</beans>
+```
+
+当引用另一个bean时，类型是已知的，并且可以进行匹配（与前面的示例一样）。 当使用简单类型时，例如&lt;value&gt; true &lt;/ value&gt;，Spring无法确定值的类型，因此无法在没有帮助的情况下按类型进行匹配。 考虑以下class
+
+
+
+
+
+#### 
+
 #### 依赖性解决过程
-
-
 
 #### 依赖注入的例子
 
