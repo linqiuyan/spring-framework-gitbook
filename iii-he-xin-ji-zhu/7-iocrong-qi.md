@@ -679,7 +679,21 @@ Str
 
 开箱即用支持以下范围。您还可以创建自定义范围。
 
-### 7.5.1 single type
+| Scope | Description |
+| :--- | :--- |
+| [singleton](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-singleton) | （默认）将每个Spring IoC容器的单个bean定义范围限定为单个对象实例。 |
+| [prototype](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-prototype) | 将单个bean定义范围限定为任意数量的对象实例。 |
+| [request](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-request) | 将单个bean定义范围限定为单个HTTP请求的生命周期; 也就是说，每个HTTP请求都有自己的bean实例，它是在单个bean定义的后面创建的。 仅在Web感知Spring ApplicationContext的上下文中有效。 |
+| [session](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-session) | 将单个bean定义范围限定为HTTP会话的生命周期。 仅在Web感知Spring ApplicationContext的上下文中有效。 |
+| [globalSession](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-global-session) | 将单个bean定义范围限定为全局HTTP会话的生命周期。 通常仅在Portlet上下文中使用时有效。 仅在Web感知Spring ApplicationContext的上下文中有效。 |
+| [application](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes-application) | 将单个bean定义范围限定为ServletContext的生命周期。 仅在Web感知Spring ApplicationContext的上下文中有效。 |
+| [websocket](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#websocket-stomp-websocket-scope) | 将单个bean定义范围限定为WebSocket的生命周期。 仅在Web感知Spring ApplicationContext的上下文中有效。 |
+
+_从Spring 3.0开始，线程范围可用，但默认情况下未注册。 有关更多信息，请参阅SimpleThreadScope的文档。 有关如何注册此范围或任何其他自定义范围的说明，请参阅“使用自定义范围”一节。_
+
+### 7.5.1 单例范围
+
+
 
 ### 7.5.2 原型范围
 
