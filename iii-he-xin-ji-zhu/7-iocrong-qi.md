@@ -693,17 +693,91 @@ _从Spring 3.0开始，线程范围可用，但默认情况下未注册。 有�
 
 ### 7.5.1 单例范围
 
+只管理单个bean的一个共享实例，并且对具有与该bean定义匹配的id或id的bean的所有请求都会导致Spring容器返回一个特定的bean实例。
 
+换句话说，当您定义一个bean定义并且它的范围是一个单例时，Spring IoC容器只创建该bean定义定义的对象的一个实例。 此单个实例存储在此类单例bean的缓存中，并且该命名Bean的所有后续请求和引用都将返回缓存对象。
+
+Spring的单例bean概念不同于Gang of Four（GoF）模式书中定义的Singleton模式。 GoF Singleton对对象的范围进行硬编码，使得每个ClassLoader创建一个且只有一个特定类的实例。 Spring单例的范围最好按容器和每个bean描述。 这意味着如果在单个Spring容器中为特定类定义一个bean，那么Spring容器将创建该bean定义所定义的类的唯一一个实例。 单例范围是Spring中的默认范围。 要将bean定义为XML中的单例，您可以编写，例如：
+
+```
+<bean id="accountService" class="com.foo.DefaultAccountService"/>
+
+<!-- the following is equivalent, though redundant (singleton scope is the default) -->
+<bean id="accountService" class="com.foo.DefaultAccountService" scope="singleton"/>
+```
 
 ### 7.5.2 原型范围
 
+bean的非单例原型范围部署导致每次发出对该特定bean的请求时都会创建一个新的bean实例。 也就是说，bean被注入另一个bean，或者通过对容器的getBean（）方法调用来请求它。 通常，对所有有状态bean使用原型范围，对无状态bean使用单例范围。
+
+下图说明了Spring原型范围。 数据访问对象（DAO）通常不配置为原型，因为典型的DAO不保持任何会话状态; 这个作者更容易重用单例图的核心。
+
+以下示例将bean定义为XML中的原型：
+
+```
+<bean id="accountService" class="com.foo.DefaultAccountService" scope="prototype"/>
+```
+
+与其他作用域相比，Spring不管理原型bean的完整生命周期：容器实例化，配置和组装原型对象，并将其交给客户端，而不再记录该原型实例。因此，尽管无论范围如何都在所有对象上调用初始化生命周期回调方法，但在原型的情况下，不会调用已配置的销毁生命周期回调。客户端代码必须清理原型范围的对象并释放原型bean所持有的昂贵资源。要让Spring容器释放原型范围内的bean所拥有的资源，请尝试使用自定义bean后处理器，它包含对需要清理的bean的引用。
+
+在某些方面，Spring容器关于原型范围bean的角色是Java new运算符的替代品。超过该点的所有生命周期管理必须由客户端处理。 （有关Spring容器中bean的生命周期的详细信息，请参见第7.6.1节“生命周期回调”。）
+
 ### 7.5.3 具有原型bean依赖关系的单例bean
+
+当您使用具有依赖于原型bean的单例作用域bean时，请注意在实例化时解析依赖项。 因此，如果依赖项将原型范围的bean注入到单例范围的bean中，则会实例化一个新的原型bean，然后将依赖注入到单例bean中。 原型实例是唯一提供给单例范围bean的实例。
+
+但是，假设您希望单例范围的bean在运行时重复获取原型范围的bean的新实例。 您不能将原型范围的bean依赖注入到您的单例bean中，因为当Spring容器实例化单例bean并解析并注入其依赖项时，该注入只发生一次。 如果您需要在运行时多次使用原型bean的新实例，请参见第7.4.6节“方法注入”。
+
+
 
 ### 7.5.4 请求，会话，全局会话，应用程序和WebSocket范围
 
+Request, session, global session, application, and WebSocket scopes
+
+请求，会话，globalSession，应用程序和websocket范围仅在您使用Web感知的Spring ApplicationContext实现（例如XmlWebApplicationContext）时才可用。 如果将这些作用域与常规的Spring IoC容器（如ClassPathXmlApplicationContext）一起使用，则会抛出IllegalStateException，抱怨未知的bean作用域。
+
 #### 初始Web配置
 
+要在请求，会话，globalSession，应用程序和websocket级别（Web范围的bean）支持bean的范围，在定义bean之前需要一些小的初始配置。 （standard scopes，singleton和prototype不需要此初始设置。）
+
+如何完成此初始设置取决于您的特定Servlet环境。
+
+如果您在Spring Web MVC中访问作用域bean，实际上是在Spring DispatcherServlet或DispatcherPortlet处理的请求中，则无需进行特殊设置：DispatcherServlet和DispatcherPortlet已公开所有相关状态。
+
+如果您使用Servlet 2.5 Web容器，并且在Spring的DispatcherServlet之外处理请求（例如，使用JSF或Struts时），则需要注册org.springframework.web.context.request.RequestContextListener ServletRequestListener。对于Servlet 3.0+，可以通过WebApplicationInitializer界面以编程方式完成。或者，或者对于旧容器，将以下声明添加到Web应用程序的web.xml文件中：
+
+```
+<web-app>
+    ...
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+    ...
+</web-app>
+```
+
+或者，如果您的侦听器设置存在问题，请考虑使用Spring的RequestContextFilter。 过滤器映射取决于周围的Web应用程序配置，因此您必须根据需要进行更改。
+
+```
+<web-app>
+    ...
+    <filter>
+        <filter-name>requestContextFilter</filter-name>
+        <filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>requestContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    ...
+</web-app>
+```
+
 #### 请求范围
+
+
 
 #### 会话范围
 
