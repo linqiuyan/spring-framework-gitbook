@@ -728,8 +728,6 @@ bean的非单例原型范围部署导致每次发出对该特定bean的请求时
 
 但是，假设您希望单例范围的bean在运行时重复获取原型范围的bean的新实例。 您不能将原型范围的bean依赖注入到您的单例bean中，因为当Spring容器实例化单例bean并解析并注入其依赖项时，该注入只发生一次。 如果您需要在运行时多次使用原型bean的新实例，请参见第7.4.6节“方法注入”。
 
-
-
 ### 7.5.4 请求，会话，全局会话，应用程序和WebSocket范围
 
 Request, session, global session, application, and WebSocket scopes
@@ -775,7 +773,19 @@ Request, session, global session, application, and WebSocket scopes
 </web-app>
 ```
 
+DispatcherServlet，RequestContextListener和RequestContextFilter都完全相同，即将HTTP请求对象绑定到为该请求提供服务的Thread。 这使得请求和会话范围的bean可以在调用链的下游进一步使用。
+
 #### 请求范围
+
+考虑bean定义的以下XML配置：
+
+```
+<bean id="loginAction" class="com.foo.LoginAction" scope="request"/>
+```
+
+Spring容器通过对每个HTTP请求使用loginAction bean定义来创建LoginAction bean的新实例。 也就是说，loginAction bean的作用域是HTTP请求级别。 您可以根据需要更改创建的实例的内部状态，因为从同一个loginAction bean定义创建的其他实例将不会在状态中看到这些更改; 它们特别针对个人要求。 当请求完成处理时，将放弃作用于请求的bean。
+
+使用注释驱动的组件或Java Config时，可以使用@RequestScope注释将组件分配给请求范围。
 
 
 
