@@ -26,4 +26,5 @@
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
+* [7.6 自定义bean的本质](76-zi-ding-yi-bean-de-ben-zhi.md)
 
