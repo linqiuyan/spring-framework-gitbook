@@ -7,7 +7,7 @@
   * [7 IoC容器](iii-he-xin-ji-zhu/7-iocrong-qi.md)
     * [7.7 Bean定义继承](iii-he-xin-ji-zhu/77-beanding-yi-ji-cheng.md)
     * [7.8 容器扩展](iii-he-xin-ji-zhu/78-rong-qi-kuo-zhan.md)
-    * 7.9 基于注释的容器配置
+    * [7.9 基于注释的容器配置](iii-he-xin-ji-zhu/79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.md)
     * 7.10 类路径扫描和托管组件
     * 7.11 使用JSR 330标准注释
     * 7.12 基于Java的容器配置
