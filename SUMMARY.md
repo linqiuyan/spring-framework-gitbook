@@ -7,18 +7,19 @@
   * [7 IoC容器](iii-he-xin-ji-zhu/7-iocrong-qi.md)
     * [7.2 容器概述](iii-he-xin-ji-zhu/72-rong-qi-gai-shu.md)
     * [7.3 bean概述](73-beangai-shu.md)
+    * [7.4 依赖性](74-yi-lai-xing.md)
     * [7.5 Bean范围](75.md)
     * [7.6 自定义bean的本质](76-zi-ding-yi-bean-de-ben-zhi.md)
     * [7.7 Bean定义继承](iii-he-xin-ji-zhu/77-beanding-yi-ji-cheng.md)
     * [7.8 容器扩展](iii-he-xin-ji-zhu/78-rong-qi-kuo-zhan.md)
     * [7.9 基于注释的容器配置](iii-he-xin-ji-zhu/79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.md)
-    * 7.10 类路径扫描和托管组件
-    * 7.11 使用JSR 330标准注释
-    * 7.12 基于Java的容器配置
-    * 7.13 环境抽象
-    * 7.14 注册LoadTimeWeaver
-    * 7.15 ApplicationContext的其他功能
-    * 7.16 BeanFactory
+    * [7.10 类路径扫描和托管组件](iii-he-xin-ji-zhu/710-lei-lu-jing-sao-miao-he-tuo-guan-zu-jian.md)
+    * [7.11 使用JSR 330标准注释](iii-he-xin-ji-zhu/711-shi-yong-jsr-330-biao-zhun-zhu-shi.md)
+    * [7.12 基于Java的容器配置](iii-he-xin-ji-zhu/712-ji-yu-java-de-rong-qi-pei-zhi.md)
+    * [7.13 环境抽象](iii-he-xin-ji-zhu/713-huan-jing-chou-xiang.md)
+    * [7.14 注册LoadTimeWeaver](iii-he-xin-ji-zhu/714-zhu-ce-loadtimeweaver.md)
+    * [7.15 ApplicationContext的其他功能](iii-he-xin-ji-zhu/715-applicationcontextde-qi-ta-gong-neng.md)
+    * [7.16 BeanFactory](iii-he-xin-ji-zhu/716-beanfactory.md)
   * [8 资源](8-zi-yuan.md)
   * [9 验证，数据绑定和类型转换](9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md)
   * [10 Spring表达式语言](10-springbiao-da-shi-yu-yan.md)
@@ -28,5 +29,4 @@
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
-* [7.4 依赖性](74-yi-lai-xing.md)
 
