@@ -1305,174 +1305,24 @@ public interface BeanNameAware {
 
 | Name | Injected Dependency | Explained in…​ |
 | :--- | :--- | :--- |
-| `ApplicationContextAware` | 声明ApplicationContext | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
-| `ApplicationEventPublisherAware` | Event publisher of the enclosing`ApplicationContext` | [Section 7.15, “Additional capabilities of the ApplicationContext”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#context-introduction) |
-| `BeanClassLoaderAware` | 用于加载bean类的类加载器。 | [Section 7.3.2, “Instantiating beans”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-class) |
-| `BeanFactoryAware` | 声明BeanFactory | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
-| `BeanNameAware` | 声明bean的名称 | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
-| `BootstrapContextAware` | 资源adapterBootstrapContext容器运行。通常仅在JCA awareApplicationContexts中可用 | [Chapter 32,JCA CCI](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#cci) |
-| `LoadTimeWeaverAware` | 定义的weaver用于在加载时处理类定义 | [Section 11.8.4, “Load-time weaving with AspectJ in the Spring Framework”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#aop-aj-ltw) |
-| `MessageSourceAware` | 用于解析消息的已配置策略（支持参数化和国际化） | [Section 7.15, “Additional capabilities of the ApplicationContext”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#context-introduction) |
-| `NotificationPublisherAware` | Spring JMX通知发布者 | [Section 31.7, “Notifications”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#jmx-notifications) |
-| `PortletConfigAware` | CurrentPortletConfigthe容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 25,Portlet MVC Framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#portlet) |
-| `PortletContextAware` | CurrentPortletContext容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 25,Portlet MVC Framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#portlet) |
-| `ResourceLoaderAware` | 配置的加载程序，用于对资源进行低级访问 | [Chapter 8,Resources](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#resources) |
-| `ServletConfigAware` | CurrentServletConfigthe容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 22,Web MVC framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#mvc) |
-| `ServletContextAware` | CurrentServletContext容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 22,Web MVC framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#mvc) |
+| `ApplicationContextAware` | 声明ApplicationContext | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
+| `ApplicationEventPublisherAware` | Event publisher of the enclosing`ApplicationContext` | [Section 7.15, “Additional capabilities of the ApplicationContext”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#context-introduction) |
+| `BeanClassLoaderAware` | 用于加载bean类的类加载器。 | [Section 7.3.2, “Instantiating beans”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-class) |
+| `BeanFactoryAware` | 声明BeanFactory | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
+| `BeanNameAware` | 声明bean的名称 | [Section 7.6.2, “ApplicationContextAware and BeanNameAware”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-aware) |
+| `BootstrapContextAware` | 资源adapterBootstrapContext容器运行。通常仅在JCA awareApplicationContexts中可用 | [Chapter 32,JCA CCI](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#cci) |
+| `LoadTimeWeaverAware` | 定义的weaver用于在加载时处理类定义 | [Section 11.8.4, “Load-time weaving with AspectJ in the Spring Framework”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#aop-aj-ltw) |
+| `MessageSourceAware` | 用于解析消息的已配置策略（支持参数化和国际化） | [Section 7.15, “Additional capabilities of the ApplicationContext”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#context-introduction) |
+| `NotificationPublisherAware` | Spring JMX通知发布者 | [Section 31.7, “Notifications”](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#jmx-notifications) |
+| `PortletConfigAware` | CurrentPortletConfigthe容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 25,Portlet MVC Framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#portlet) |
+| `PortletContextAware` | CurrentPortletContext容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 25,Portlet MVC Framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#portlet) |
+| `ResourceLoaderAware` | 配置的加载程序，用于对资源进行低级访问 | [Chapter 8,Resources](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#resources) |
+| `ServletConfigAware` | CurrentServletConfigthe容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 22,Web MVC framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#mvc) |
+| `ServletContextAware` | CurrentServletContext容器运行。仅在支持Web的SpringApplicationContext中有效 | [Chapter 22,Web MVC framework](https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#mvc) |
 
 再次注意，这些接口的使用将您的代码与Spring API联系起来，并且不遵循Inversion of Control样式。 因此，建议将它们用于需要以编程方式访问容器的基础结构bean。
 
-## 7.7  Bean定义继承
+## 
 
-## 7.8 集装箱扩建点
 
-### 7.8.1 使用BeanPostProcessor定制bean
-
-示例：Hello World，BeanPostProcessor样式
-
-示例：RequiredAnnotationBeanPostProcessor
-
-### 7.8.2 使用BeanFactoryPostProcessor定制配置元数据
-
-示例：类名替换PropertyPlaceholderConfigurer
-
-示例：PropertyOverrideConfigurer
-
-### 7.8.3 使用FactoryBean自定义实例化逻辑
-
-## 7.9 基于注释的容器配置
-
-### 7.9.1  @Required
-
-### 7.9.2  @Autowired
-
-### 7.9.3 使用@Primary微调基于注释的自动装配
-
-### 7.9.4 使用限定符微调基于注释的自动装配
-
-### 7.9.5 使用泛型作为自动装配限定符
-
-### 7.9.6  CustomAutowireConfigurer上
-
-### 7.9.7  @Resource
-
-### 7.9.8  @PostConstruct和@PreDestroy
-
-## 7.10 类路径扫描和托管组件
-
-### 7.10.1  @Component和进一步的构造型注释
-
-### 7.10.2 元注释
-
-### 7.10.3 自动检测类并注册bean定义
-
-### 7.10.4 使用过滤器自定义扫描
-
-### 7.10.5 在组件中定义bean元数据
-
-### 7.10.6 命名自动检测的组件
-
-### 7.10.7 为自动检测的组件提供范围
-
-### 7.10.8 提供带注释的限定符元数据
-
-## 7.11 使用JSR 330标准注释
-
-### 7.11.1 使用@Inject和@Named进行依赖注入
-
-### 7.11.2  @Named和@ManagedBean：@Component注释的标准等价物
-
-### 7.11.3  JSR-330标准注释的局限性
-
-## 7.12 基于Java的容器配置
-
-### 7.12.1 基本概念：@Bean和@Configuration
-
-### 7.12.2 使用AnnotationConfigApplicationContext实例化Spring容器
-
-#### 结构简单
-
-#### 使用register（Class &lt;？&gt; ...）以编程方式构建容器
-
-#### 使用扫描启用组件扫描（String ...）
-
-#### 使用AnnotationConfigWebApplicationContext支持Web应用程序
-
-### 7.12.3 使用@Bean注释
-
-#### 声明一个bean
-
-#### Bean依赖项
-
-#### 接收生命周期回调
-
-#### 指定bean范围
-
-#### 自定义bean命名
-
-#### Bean别名
-
-#### bean的描述
-
-### 7.12.4 使用@Configuration注释
-
-#### 注入bean间依赖关系
-
-#### 查找方法注入
-
-#### 有关基于Java的配置如何在内部工作的更多信息
-
-7.12.5 编写基于Java的配置
-
-使用@Import注释
-
-有条件地包括@Configuration类或@Bean方法
-
-结合Java和XML配置
-
-7.13 环境抽象
-
-7.13.1  Bean定义配置文件
-
-@Profile
-
-XML bean定义配置文件
-
-激活profile
-
-默认profile
-
-7.13.2  PropertySource抽象
-
-7.13.3  @PropertySource
-
-7.13.4 占位符决议在陈述中
-
-7.14 注册LoadTimeWeaver
-
-7.15  ApplicationContext的其他功能
-
-7.15.1 使用MessageSource进行国际化
-
-7.15.2 标准和自定义活动
-
-基于注释的事件侦听器
-
-异步监听器
-
-订购听众
-
-通用事件
-
-7.15.3 方便地访问低级资源
-
-7.15.4 方便的Web应用程序的ApplicationContext实例化
-
-7.15.5 将Spring ApplicationContext部署为Java EE RAR文件
-
-7.16  BeanFactory
-
-7.16.1  BeanFactory或ApplicationContext？
-
-7.16.2 耦合代码与不良单例
 
