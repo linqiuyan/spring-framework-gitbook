@@ -6,6 +6,7 @@
 * [III 核心技术](iii-he-xin-ji-zhu.md)
   * [7 IoC容器](iii-he-xin-ji-zhu/7-iocrong-qi.md)
     * [7.2 容器概述](iii-he-xin-ji-zhu/72-rong-qi-gai-shu.md)
+    * [7.3 bean概述](73-beangai-shu.md)
     * [7.5 Bean范围](75.md)
     * [7.6 自定义bean的本质](76-zi-ding-yi-bean-de-ben-zhi.md)
     * [7.7 Bean定义继承](iii-he-xin-ji-zhu/77-beanding-yi-ji-cheng.md)
@@ -27,5 +28,5 @@
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
-* [7.3 bean概述](73-beangai-shu.md)
+* [7.4 依赖性](74-yi-lai-xing.md)
 
