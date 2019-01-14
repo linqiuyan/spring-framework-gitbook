@@ -29,4 +29,11 @@
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
+* 8.1 介绍
+* 8.2 资源界面
+* 8.3 内置资源实现
+* 8.4 ResourceLoader
+* [8.5 ResourceLoaderAware接口](8-5-resourceloaderawarejie-kou.md)
+* 8.6 资源作为依赖项
+* 8.7 应用程序上下文和资源路径
 
