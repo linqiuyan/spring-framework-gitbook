@@ -31,7 +31,7 @@
 * [VII 集成](vii-ji-cheng.md)
 * [8.1 介绍](81-jie-shao.md)
 * [8.2 资源界面](82-zi-yuan-jie-mian.md)
-* 8.3 内置资源实现
+* [8.3 内置资源实现](83-nei-zhi-zi-yuan-shi-xian.md)
 * 8.4 ResourceLoader
 * [8.5 ResourceLoaderAware接口](8-5-resourceloaderawarejie-kou.md)
 * 8.6 资源作为依赖项
