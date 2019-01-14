@@ -58,8 +58,8 @@
   * [32 JCA CCI](32-jca-cci.md)
   * [33 Email](33-email.md)
   * [34 任务执行和调度](34-ren-wu-zhi-xing-he-diao-du.md)
-  * 35 动态语言支持
-  * 36 缓存抽象
+  * [35 动态语言支持](35-dong-tai-yu-yan-zhi-chi.md)
+  * [36 缓存抽象](36-huan-cun-chou-xiang.md)
 * VIII 附录
   * 37 迁移到Spring Framework 4.x
   * 38 Spring注释编程模型
