@@ -88,8 +88,6 @@ public @interface Production {
 
 如果使用@Profile标记@Configuration类，则将绕过与该类关联的所有@Bean方法和@Import注释，除非一个或多个指定的配置文件处于活动状态。 如果使用@Profile（{“p1”，“p2”}）标记@Component或@Configuration类，则除非已激活配置文件“p1”和/或“p2”，否则不会注册/处理该类。 如果给定的配置文件以NOT运算符（！）作为前缀，则如果配置文件未处于活动状态，则将注册带注释的元素。 例如，给定@Profile（{“p1”，“！p2”}），如果配置文件“p1”处于活动状态或配置文件“p2”未激活，则会进行注册。
 
-
-
 @Profile也可以在方法级别声明，以仅包括配置类的一个特定bean，例如 对于特定bean的替代变体：
 
 ```
@@ -306,8 +304,6 @@ public class AppConfig {
 假设“my.placeholder”存在于已经注册的一个属性源中，例如 系统属性或环境变量，占位符将被解析为相应的值。 如果没有，则“default / path”将用作默认值。 如果未指定缺省值且无法解析属性，则将抛出IllegalArgumentException。
 
 @PropertySource注释可根据Java 8约定重复。 但是，所有这些@PropertySource注释都需要在同一级别声明：直接在配置类上或在同一自定义注释中的元注释。 不建议混合直接注释和元注释，因为直接注释将有效地覆盖元注释。
-
-
 
 ### 7.13.4 占位符决议在statements \(Placeholder resolution in statements\)
 
