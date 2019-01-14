@@ -61,12 +61,14 @@
   * 35 动态语言支持
   * 36 缓存抽象
 * VIII 附录
-* 37 迁移到Spring Framework 4.x
-* 38 Spring注释编程模型
-* 39 经典Spring用法
-* 40 经典SpringAOP用法
-* 41 基于XML Schema的配置
-* 42 可扩展的XML
-* 43 spring JSP Tag Library
-* 44 spring-form JSP Tag Library
+  * 37 迁移到Spring Framework 4.x
+  * 38 Spring注释编程模型
+  * 39 经典Spring用法
+  * 40 经典SpringAOP用法
+  * 41 基于XML Schema的配置
+  * 42 可扩展的XML
+  * 43 spring JSP Tag Library
+  * 44 spring-form JSP Tag Library
+
+
 
