@@ -50,7 +50,8 @@
   * 25 Portlet MVC框架
   * 26 WebSocket支持
   * 27 CORS支持
-* VII 集成
-* 
+
+
+
 
 
