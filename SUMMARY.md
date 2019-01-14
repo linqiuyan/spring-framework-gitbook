@@ -32,8 +32,8 @@
 * [8.1 介绍](81-jie-shao.md)
 * [8.2 资源界面](82-zi-yuan-jie-mian.md)
 * [8.3 内置资源实现](83-nei-zhi-zi-yuan-shi-xian.md)
-* 8.4 ResourceLoader
+* [8.4 ResourceLoader](84-resourceloader.md)
 * [8.5 ResourceLoaderAware接口](8-5-resourceloaderawarejie-kou.md)
-* 8.6 资源作为依赖项
-* 8.7 应用程序上下文和资源路径
+* [8.6 资源作为依赖项](86-zi-yuan-zuo-wei-yi-lai-xiang.md)
+* [8.7 应用程序上下文和资源路径](87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md)
 
