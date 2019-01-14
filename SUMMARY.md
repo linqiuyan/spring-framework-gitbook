@@ -67,6 +67,6 @@
   * [40 经典SpringAOP用法](40-jing-dian-springaop-yong-fa.md)
   * [41 基于XML Schema的配置](41-ji-yu-xml-schema-de-pei-zhi.md)
   * [42 可扩展的XML](42-ke-kuo-zhan-de-xml.md)
-  * 43 spring JSP Tag Library
-  * 44 spring-form JSP Tag Library
+  * [43 spring JSP Tag Library](43-spring-jsp-tag-library.md)
+  * [44 spring-form JSP Tag Library](44-spring-form-jsp-tag-library.md)
 
