@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>10 Spring表达式语言 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chapter1.html" />
+    <link rel="next" href="11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html" />
     
+    
+    <link rel="prev" href="9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -477,7 +479,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="10-springbiao-da-shi-yu-yan.html">
+        <li class="chapter active" data-level="1.4.4" data-path="10-springbiao-da-shi-yu-yan.html">
             
                 <a href="10-springbiao-da-shi-yu-yan.html">
             
@@ -1062,7 +1064,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >介绍</a>
+        <a href="." >10 Spring表达式语言</a>
     </h1>
 </div>
 
@@ -1077,8 +1079,42 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="spring-framework-&#x53C2;&#x8003;&#x6587;&#x6863;">Spring Framework &#x53C2;&#x8003;&#x6587;&#x6863;</h1>
-<p>&#x672C;&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x7FFB;&#x8BD1;&#x57FA;&#x4E8E;Spring 4.3.21.RELEASE&#x5B98;&#x65B9;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF0C;&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/&#x3002;" target="_blank">https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/</a></p>
+                                <p>10.1&#x3002; &#x4ECB;&#x7ECD;</p>
+<p>10.2&#x3002;&#x8BC4;&#x4F30;</p>
+<p>10.2.1&#x3002;EvaluationContext</p>
+<p>&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
+<p>10.2.2&#x3002; &#x89E3;&#x6790;&#x5668;&#x914D;&#x7F6E;</p>
+<p>10.2.3&#x3002; SpEL&#x7F16;&#x8BD1;</p>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x914D;&#x7F6E;</p>
+<p>&#x7F16;&#x8BD1;&#x5668;&#x9650;&#x5236;</p>
+<p>10.3&#x3002; bean&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</p>
+<p>10.3.1&#x3002; XML&#x914D;&#x7F6E;</p>
+<p>10.3.2&#x3002; &#x6CE8;&#x91CA;&#x914D;&#x7F6E;</p>
+<p>10.4&#x3002; &#x8BED;&#x8A00;&#x53C2;&#x8003;</p>
+<p>10.4.1&#x3002; &#x6587;&#x5B57;&#x8868;&#x8FBE;</p>
+<p>10.4.2&#x3002; &#x5C5E;&#x6027;&#xFF0C;&#x6570;&#x7EC4;&#xFF0C;&#x5217;&#x8868;&#xFF0C;&#x5730;&#x56FE;&#xFF0C;&#x7D22;&#x5F15;&#x5668;</p>
+<p>10.4.3&#x3002; &#x5185;&#x8054;&#x5217;&#x8868;</p>
+<p>10.4.4&#x3002; &#x5185;&#x8054;&#x5730;&#x56FE;</p>
+<p>10.4.5&#x3002; &#x9635;&#x5217;&#x6784;&#x9020;</p>
+<p>10.4.6&#x3002; &#x65B9;&#x6CD5;</p>
+<p>10.4.7&#x3002;&#x8FD0;&#x8425;&#x5546;</p>
+<p>&#x5173;&#x7CFB;&#x8FD0;&#x7B97;&#x7B26;</p>
+<p>&#x903B;&#x8F91;&#x8FD0;&#x7B97;&#x7B26;</p>
+<p>&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x7B26;</p>
+<p>10.4.8&#x3002; &#x5206;&#x914D;</p>
+<p>10.4.9&#x3002;&#x7C7B;&#x578B;</p>
+<p>10.4.10&#x3002;&#x6784;&#x9020;&#x51FD;&#x6570;</p>
+<p>10.4.11&#x3002;&#x53D8;&#x91CF;</p>
+<p>#this&#x548C;#root&#x53D8;&#x91CF;</p>
+<p>10.4.12&#x3002; &#x529F;&#x80FD;</p>
+<p>10.4.13&#x3002; Bean&#x5F15;&#x7528;</p>
+<p>10.4.14&#x3002; &#x4E09;&#x5143;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;If-Then-Else&#xFF09;</p>
+<p>10.4.15&#x3002; &#x732B;&#x738B;&#x8FD0;&#x8425;&#x5546;</p>
+<p>10.4.16&#x3002; &#x5B89;&#x5168;&#x5BFC;&#x822A;&#x64CD;&#x4F5C;&#x5458;</p>
+<p>10.4.17&#x3002; &#x6536;&#x85CF;&#x9009;&#x62E9;</p>
+<p>10.4.18&#x3002; &#x6536;&#x96C6;&#x6295;&#x5F71;</p>
+<p>19&#x5E74;4&#x6708;10&#x65E5;&#x3002; &#x8868;&#x8FBE;&#x6A21;&#x677F;</p>
+<p>10.5&#x3002; &#x793A;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x7C7B;</p>
 
                                 
                                 </section>
@@ -1106,8 +1142,12 @@
 
             
                 
+                <a href="9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html" class="navigation navigation-prev " aria-label="Previous page: 9 验证，数据绑定和类型转换">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: I Spring Framework概述">
+                
+                <a href="11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html" class="navigation navigation-next " aria-label="Next page: 11 使用Spring进行面向切面编程">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1118,7 +1158,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"I Spring Framework概述","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-05T03:32:06.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10 Spring表达式语言","level":"1.4.4","depth":2,"next":{"title":"11 使用Spring进行面向切面编程","level":"1.4.5","depth":2,"path":"11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md","ref":"11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md","articles":[]},"previous":{"title":"9 验证，数据绑定和类型转换","level":"1.4.3","depth":2,"path":"9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md","ref":"9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"10-springbiao-da-shi-yu-yan.md","mtime":"2019-01-14T06:38:53.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

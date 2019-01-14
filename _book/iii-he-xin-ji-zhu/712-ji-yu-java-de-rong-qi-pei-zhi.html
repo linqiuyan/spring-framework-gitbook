@@ -1,0 +1,1813 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.12 基于Java的容器配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="713-huan-jing-chou-xiang.html" />
+    
+    
+    <link rel="prev" href="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    I Spring Framework概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ii-spring-framework-4xxin-te-xing.html">
+            
+                <a href="../ii-spring-framework-4xxin-te-xing.html">
+            
+                    
+                    II Spring Framework 4.X新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../iii-he-xin-ji-zhu.html">
+            
+                <a href="../iii-he-xin-ji-zhu.html">
+            
+                    
+                    III 核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="7-iocrong-qi.html">
+            
+                <a href="7-iocrong-qi.html">
+            
+                    
+                    7 IoC容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="72-rong-qi-gai-shu.html">
+            
+                <a href="72-rong-qi-gai-shu.html">
+            
+                    
+                    7.2 容器概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../73-beangai-shu.html">
+            
+                <a href="../73-beangai-shu.html">
+            
+                    
+                    7.3 bean概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../74-yi-lai-xing.html">
+            
+                <a href="../74-yi-lai-xing.html">
+            
+                    
+                    7.4 依赖性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../75.html">
+            
+                <a href="../75.html">
+            
+                    
+                    7.5 Bean范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="../76-zi-ding-yi-bean-de-ben-zhi.html">
+            
+                <a href="../76-zi-ding-yi-bean-de-ben-zhi.html">
+            
+                    
+                    7.6 自定义bean的本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="77-beanding-yi-ji-cheng.html">
+            
+                <a href="77-beanding-yi-ji-cheng.html">
+            
+                    
+                    7.7 Bean定义继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" data-path="78-rong-qi-kuo-zhan.html">
+            
+                <a href="78-rong-qi-kuo-zhan.html">
+            
+                    
+                    7.8 容器扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" data-path="79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.html">
+            
+                <a href="79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.html">
+            
+                    
+                    7.9 基于注释的容器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" data-path="710-lei-lu-jing-sao-miao-he-tuo-guan-zu-jian.html">
+            
+                <a href="710-lei-lu-jing-sao-miao-he-tuo-guan-zu-jian.html">
+            
+                    
+                    7.10 类路径扫描和托管组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" data-path="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html">
+            
+                <a href="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html">
+            
+                    
+                    7.11 使用JSR 330标准注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.11" data-path="712-ji-yu-java-de-rong-qi-pei-zhi.html">
+            
+                <a href="712-ji-yu-java-de-rong-qi-pei-zhi.html">
+            
+                    
+                    7.12 基于Java的容器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.12" data-path="713-huan-jing-chou-xiang.html">
+            
+                <a href="713-huan-jing-chou-xiang.html">
+            
+                    
+                    7.13 环境抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.13" data-path="714-zhu-ce-loadtimeweaver.html">
+            
+                <a href="714-zhu-ce-loadtimeweaver.html">
+            
+                    
+                    7.14 注册LoadTimeWeaver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.14" data-path="715-applicationcontextde-qi-ta-gong-neng.html">
+            
+                <a href="715-applicationcontextde-qi-ta-gong-neng.html">
+            
+                    
+                    7.15 ApplicationContext的其他功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.15" data-path="716-beanfactory.html">
+            
+                <a href="716-beanfactory.html">
+            
+                    
+                    7.16 BeanFactory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../8-zi-yuan.html">
+            
+                <a href="../8-zi-yuan.html">
+            
+                    
+                    8 资源
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../81-jie-shao.html">
+            
+                <a href="../81-jie-shao.html">
+            
+                    
+                    8.1 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../82-zi-yuan-jie-mian.html">
+            
+                <a href="../82-zi-yuan-jie-mian.html">
+            
+                    
+                    8.2 资源界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../83-nei-zhi-zi-yuan-shi-xian.html">
+            
+                <a href="../83-nei-zhi-zi-yuan-shi-xian.html">
+            
+                    
+                    8.3 内置资源实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../84-resourceloader.html">
+            
+                <a href="../84-resourceloader.html">
+            
+                    
+                    8.4 ResourceLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../8-5-resourceloaderawarejie-kou.html">
+            
+                <a href="../8-5-resourceloaderawarejie-kou.html">
+            
+                    
+                    8.5 ResourceLoaderAware接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../86-zi-yuan-zuo-wei-yi-lai-xiang.html">
+            
+                <a href="../86-zi-yuan-zuo-wei-yi-lai-xiang.html">
+            
+                    
+                    8.6 资源作为依赖项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html">
+            
+                <a href="../87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html">
+            
+                    
+                    8.7 应用程序上下文和资源路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
+            
+                <a href="../9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
+            
+                    
+                    9 验证，数据绑定和类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../10-springbiao-da-shi-yu-yan.html">
+            
+                <a href="../10-springbiao-da-shi-yu-yan.html">
+            
+                    
+                    10 Spring表达式语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html">
+            
+                <a href="../11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html">
+            
+                    
+                    11 使用Spring进行面向切面编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../12-spring-aop-api.html">
+            
+                <a href="../12-spring-aop-api.html">
+            
+                    
+                    12 Spring AOP API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../iv-ce-shi.html">
+            
+                <a href="../iv-ce-shi.html">
+            
+                    
+                    IV 测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../13-springce-shi-jian-jie.html">
+            
+                <a href="../13-springce-shi-jian-jie.html">
+            
+                    
+                    13 Spring测试简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../14-dan-yuan-ce-shi.html">
+            
+                <a href="../14-dan-yuan-ce-shi.html">
+            
+                    
+                    14 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../15-ji-cheng-ce-shi.html">
+            
+                <a href="../15-ji-cheng-ce-shi.html">
+            
+                    
+                    15 集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../16-geng-duo-zi-yuan.html">
+            
+                <a href="../16-geng-duo-zi-yuan.html">
+            
+                    
+                    16 更多资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../v-shu-ju-fang-wen.html">
+            
+                <a href="../v-shu-ju-fang-wen.html">
+            
+                    
+                    V 数据访问
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../v-shu-ju-fang-wen/17-transactionguan-li.html">
+            
+                <a href="../v-shu-ju-fang-wen/17-transactionguan-li.html">
+            
+                    
+                    17 transaction管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../v-shu-ju-fang-wen/18-daozhi-chi.html">
+            
+                <a href="../v-shu-ju-fang-wen/18-daozhi-chi.html">
+            
+                    
+                    18 DAO支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../v-shu-ju-fang-wen/19-shu-ju-fang-wen-yu-jdbc.html">
+            
+                <a href="../v-shu-ju-fang-wen/19-shu-ju-fang-wen-yu-jdbc.html">
+            
+                    
+                    19 数据访问与JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../v-shu-ju-fang-wen/20-dui-xiang-guan-xi-ying-she-ff08-orm-ff09-shu-ju-fang-wen.html">
+            
+                <a href="../v-shu-ju-fang-wen/20-dui-xiang-guan-xi-ying-she-ff08-orm-ff09-shu-ju-fang-wen.html">
+            
+                    
+                    20 对象关系映射（ORM）数据访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../v-shu-ju-fang-wen/21-shi-yong-o-x-mappers-bian-zu-xml.html">
+            
+                <a href="../v-shu-ju-fang-wen/21-shi-yong-o-x-mappers-bian-zu-xml.html">
+            
+                    
+                    21 使用O / X Mappers编组XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vi-web.html">
+            
+                <a href="../vi-web.html">
+            
+                    
+                    VI Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../22-web-mvckuang-jia.html">
+            
+                <a href="../22-web-mvckuang-jia.html">
+            
+                    
+                    22 Web MVC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../23-viewji-zhu.html">
+            
+                <a href="../23-viewji-zhu.html">
+            
+                    
+                    23 View技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../24-yu-qi-ta-web-kuang-jia-ji-cheng.html">
+            
+                <a href="../24-yu-qi-ta-web-kuang-jia-ji-cheng.html">
+            
+                    
+                    24 与其他web框架集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../25-portlet-mvckuang-jia.html">
+            
+                <a href="../25-portlet-mvckuang-jia.html">
+            
+                    
+                    25 Portlet MVC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../26-websocketzhi-chi.html">
+            
+                <a href="../26-websocketzhi-chi.html">
+            
+                    
+                    26 WebSocket支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../27-corszhi-chi.html">
+            
+                <a href="../27-corszhi-chi.html">
+            
+                    
+                    27 CORS支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vii-ji-cheng.html">
+            
+                <a href="../vii-ji-cheng.html">
+            
+                    
+                    VII 集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../28-shi-yongspring-jin-xing-yuan-cheng-chu-li-he-web-fu-wu.html">
+            
+                <a href="../28-shi-yongspring-jin-xing-yuan-cheng-chu-li-he-web-fu-wu.html">
+            
+                    
+                    28 使用Spring进行远程处理和Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../29-enterprise-javabeansejbff09-ji-cheng.html">
+            
+                <a href="../29-enterprise-javabeansejbff09-ji-cheng.html">
+            
+                    
+                    29 Enterprise JavaBeans（EJB）集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../30-jms-java-message-service.html">
+            
+                <a href="../30-jms-java-message-service.html">
+            
+                    
+                    30 JMS (Java Message Service)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../31-jmx.html">
+            
+                <a href="../31-jmx.html">
+            
+                    
+                    31 JMX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../32-jca-cci.html">
+            
+                <a href="../32-jca-cci.html">
+            
+                    
+                    32 JCA CCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../33-email.html">
+            
+                <a href="../33-email.html">
+            
+                    
+                    33 Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../34-ren-wu-zhi-xing-he-diao-du.html">
+            
+                <a href="../34-ren-wu-zhi-xing-he-diao-du.html">
+            
+                    
+                    34 任务执行和调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../35-dong-tai-yu-yan-zhi-chi.html">
+            
+                <a href="../35-dong-tai-yu-yan-zhi-chi.html">
+            
+                    
+                    35 动态语言支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../36-huan-cun-chou-xiang.html">
+            
+                <a href="../36-huan-cun-chou-xiang.html">
+            
+                    
+                    36 缓存抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../viii-fu-lu.html">
+            
+                <a href="../viii-fu-lu.html">
+            
+                    
+                    VIII 附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../37-qian-yidao-spring-framework-4-x.html">
+            
+                <a href="../37-qian-yidao-spring-framework-4-x.html">
+            
+                    
+                    37 迁移到Spring Framework 4.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../38-springzhu-shi-bian-cheng-mo-xing.html">
+            
+                <a href="../38-springzhu-shi-bian-cheng-mo-xing.html">
+            
+                    
+                    38 Spring注释编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../39-jing-dian-spring-yong-fa.html">
+            
+                <a href="../39-jing-dian-spring-yong-fa.html">
+            
+                    
+                    39 经典Spring用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../40-jing-dian-springaop-yong-fa.html">
+            
+                <a href="../40-jing-dian-springaop-yong-fa.html">
+            
+                    
+                    40 经典SpringAOP用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../41-ji-yu-xml-schema-de-pei-zhi.html">
+            
+                <a href="../41-ji-yu-xml-schema-de-pei-zhi.html">
+            
+                    
+                    41 基于XML Schema的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../42-ke-kuo-zhan-de-xml.html">
+            
+                <a href="../42-ke-kuo-zhan-de-xml.html">
+            
+                    
+                    42 可扩展的XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../43-spring-jsp-tag-library.html">
+            
+                <a href="../43-spring-jsp-tag-library.html">
+            
+                    
+                    43 spring JSP Tag Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../44-spring-form-jsp-tag-library.html">
+            
+                <a href="../44-spring-form-jsp-tag-library.html">
+            
+                    
+                    44 spring-form JSP Tag Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.12 基于Java的容器配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="712-&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x914D;&#x7F6E;">7.12 &#x57FA;&#x4E8E;Java&#x7684;&#x5BB9;&#x5668;&#x914D;&#x7F6E;</h2>
+<h3 id="7121-&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF1A;bean&#x548C;configuration">7.12.1 &#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF1A;@Bean&#x548C;@Configuration</h3>
+<p>Spring&#x65B0;&#x7684;Java&#x914D;&#x7F6E;&#x652F;&#x6301;&#x4E2D;&#x7684;&#x4E2D;&#x5FC3;&#x5DE5;&#x4EF6;&#x662F;@Configuration-annotated&#x7C7B;&#x548C;@ Bean-annotated&#x65B9;&#x6CD5;&#x3002;</p>
+<p>@Bean&#x6CE8;&#x91CA;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x914D;&#x7F6E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x7531;Spring IoC&#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x65B0;&#x5BF9;&#x8C61;&#x3002; &#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x719F;&#x6089;Spring&#x7684;&lt;beans /&gt; XML&#x914D;&#x7F6E;&#x7684;&#x4EBA;&#x6765;&#x8BF4;&#xFF0C;@ Boan&#x6CE8;&#x91CA;&#x626E;&#x6F14;&#x7684;&#x89D2;&#x8272;&#x4E0E;&lt;bean /&gt;&#x5143;&#x7D20;&#x76F8;&#x540C;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x5C06;@Bean&#x5E26;&#x6CE8;&#x91CA;&#x7684;&#x65B9;&#x6CD5;&#x4E0E;&#x4EFB;&#x4F55;Spring @Component&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x4EEC;&#x6700;&#x5E38;&#x7528;&#x4E8E;@Configuration bean&#x3002;</p>
+<p>&#x4F7F;&#x7528;@Configuration&#x6CE8;&#x91CA;&#x7C7B;&#x8868;&#x793A;&#x5176;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x4F5C;&#x4E3A;bean&#x5B9A;&#x4E49;&#x7684;&#x6E90;&#x3002; &#x6B64;&#x5916;&#xFF0C;@ Configuration&#x7C7B;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x5730;&#x8C03;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x7684;&#x5176;&#x4ED6;@Bean&#x65B9;&#x6CD5;&#x6765;&#x5B9A;&#x4E49;bean&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002; &#x6700;&#x7B80;&#x5355;&#x7684;@Configuration&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public MyService myService() {
+        return new MyServiceImpl();
+    }
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;AppConfig&#x7C7B;&#x5C06;&#x7B49;&#x6548;&#x4E8E;&#x4EE5;&#x4E0B;Spring &lt;beans /&gt; XML&#xFF1A;</p>
+<pre><code>&lt;beans&gt;
+    &lt;bean id=&quot;myService&quot; class=&quot;com.acme.services.MyServiceImpl&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><hr>
+<p>&#x5B8C;&#x6574;@Configuration vs &apos;lite&apos;@Bean&#x6A21;&#x5F0F;&#xFF1F;</p>
+<p>&#x5F53;@Bean&#x65B9;&#x6CD5;&#x5728;&#x672A;&#x4F7F;&#x7528;@Configuration&#x6CE8;&#x91CA;&#x7684;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x88AB;&#x79F0;&#x4E3A;&#x4EE5;&apos;lite&apos;&#x6A21;&#x5F0F;&#x5904;&#x7406;&#x3002; &#x5728;@Component&#x6216;&#x751A;&#x81F3;&#x666E;&#x901A;&#x65E7;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x7684;Bean&#x65B9;&#x6CD5;&#x5C06;&#x88AB;&#x89C6;&#x4E3A;&apos;lite&apos;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7C7B;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x800C;@Bean&#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x5956;&#x52B1;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x670D;&#x52A1;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x6BCF;&#x4E2A;&#x9002;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x7C7B;&#x4E0A;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x7684;@Bean&#x65B9;&#x6CD5;&#x5C06;&#x7BA1;&#x7406;&#x89C6;&#x56FE;&#x516C;&#x5F00;&#x7ED9;&#x5BB9;&#x5668;&#x3002; &#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;@ Bean&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x901A;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x673A;&#x5236;&#x3002;</p>
+<p>&#x4E0E;&#x5B8C;&#x6574;&#x7684;@Configuration&#x4E0D;&#x540C;&#xFF0C;lite @Bean&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x58F0;&#x660E;bean&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002; &#x76F8;&#x53CD;&#xFF0C;&#x5B83;&#x4EEC;&#x5BF9;&#x5176;&#x5305;&#x542B;&#x7EC4;&#x4EF6;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x9009;&#x5730;&#x5BF9;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002; &#x56E0;&#x6B64;&#xFF0C;&#x8FD9;&#x6837;&#x7684;@Bean&#x65B9;&#x6CD5;&#x4E0D;&#x5E94;&#x8BE5;&#x8C03;&#x7528;&#x5176;&#x4ED6;@Bean&#x65B9;&#x6CD5;; &#x6BCF;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;bean&#x5F15;&#x7528;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7279;&#x6B8A;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x8BED;&#x4E49;&#x3002; &#x8FD9;&#x91CC;&#x7684;&#x79EF;&#x6781;&#x526F;&#x4F5C;&#x7528;&#x662F;&#x4E0D;&#x5FC5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5E94;&#x7528;CGLIB&#x5B50;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x7C7B;&#x8BBE;&#x8BA1;&#x65B9;&#x9762;&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF08;&#x5373;&#x5305;&#x542B;&#x7C7B;&#x53EF;&#x80FD;&#x662F;&#x6700;&#x7EC8;&#x7684;&#x7B49;&#x7B49;&#xFF09;&#x3002;</p>
+<p>&#x5728;&#x5E38;&#x89C1;&#x7684;&#x573A;&#x666F;&#x4E2D;&#xFF0C;@ Bean&#x65B9;&#x6CD5;&#x5C06;&#x5728;@Configuration&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#xFF0C;&#x786E;&#x4FDD;&#x59CB;&#x7EC8;&#x4F7F;&#x7528;&#x201C;&#x5B8C;&#x6574;&#x201D;&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x4EA4;&#x53C9;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x5C06;&#x88AB;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x5BB9;&#x5668;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x7BA1;&#x7406;&#x3002; &#x8FD9;&#x5C06;&#x9632;&#x6B62;&#x901A;&#x8FC7;&#x5E38;&#x89C4;Java&#x8C03;&#x7528;&#x610F;&#x5916;&#x5730;&#x8C03;&#x7528;&#x76F8;&#x540C;&#x7684;@Bean&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6709;&#x52A9;&#x4E8E;&#x51CF;&#x5C11;&#x5728;&#x201C;&#x7CBE;&#x7B80;&#x201D;&#x6A21;&#x5F0F;&#x4E0B;&#x64CD;&#x4F5C;&#x65F6;&#x96BE;&#x4EE5;&#x8DDF;&#x8E2A;&#x7684;&#x7EC6;&#x5FAE;&#x9519;&#x8BEF;&#x3002;</p>
+<hr>
+<p>@Bean&#x548C;@Configuration&#x6CE8;&#x91CA;&#x5C06;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x90E8;&#x5206;&#x4E2D;&#x8FDB;&#x884C;&#x6DF1;&#x5165;&#x8BA8;&#x8BBA;&#x3002; &#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;Java&#x7684;&#x914D;&#x7F6E;&#x521B;&#x5EFA;&#x5F39;&#x7C27;&#x5BB9;&#x5668;&#x7684;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="7122-&#x4F7F;&#x7528;annotationconfigapplicationcontext&#x5B9E;&#x4F8B;&#x5316;spring&#x5BB9;&#x5668;">7.12.2 &#x4F7F;&#x7528;AnnotationConfigApplicationContext&#x5B9E;&#x4F8B;&#x5316;Spring&#x5BB9;&#x5668;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x90E8;&#x5206;&#x8BB0;&#x5F55;&#x4E86;Spring&#x7684;AnnotationConfigApplicationContext&#xFF0C;Spring 3.0&#x4E2D;&#x7684;&#x65B0;&#x589E;&#x5185;&#x5BB9;&#x3002; &#x8FD9;&#x4E2A;&#x591A;&#x529F;&#x80FD;&#x7684;ApplicationContext&#x5B9E;&#x73B0;&#x4E0D;&#x4EC5;&#x80FD;&#x591F;&#x63A5;&#x53D7;@Configuration&#x7C7B;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x8FD8;&#x80FD;&#x63A5;&#x53D7;&#x4F7F;&#x7528;JSR-330&#x5143;&#x6570;&#x636E;&#x6CE8;&#x91CA;&#x7684;&#x666E;&#x901A;@Component&#x7C7B;&#x548C;&#x7C7B;&#x3002;</p>
+<p>&#x5F53;@Configuration&#x7C7B;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x63D0;&#x4F9B;&#x65F6;&#xFF0C;@ Configuration&#x7C7B;&#x672C;&#x8EAB;&#x88AB;&#x6CE8;&#x518C;&#x4E3A;bean&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x7C7B;&#x4E2D;&#x6240;&#x6709;&#x58F0;&#x660E;&#x7684;@Bean&#x65B9;&#x6CD5;&#x4E5F;&#x88AB;&#x6CE8;&#x518C;&#x4E3A;bean&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x5F53;&#x63D0;&#x4F9B;@Component&#x548C;JSR-330&#x7C7B;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x88AB;&#x6CE8;&#x518C;&#x4E3A;bean&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x5047;&#x8BBE;&#x5728;&#x5FC5;&#x8981;&#x65F6;&#x5728;&#x8FD9;&#x4E9B;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x8BF8;&#x5982;@Autowired&#x6216;@Inject&#x4E4B;&#x7C7B;&#x7684;DI&#x5143;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="&#x7ED3;&#x6784;&#x7B80;&#x5355;">&#x7ED3;&#x6784;&#x7B80;&#x5355;</h4>
+<p>&#x4E0E;&#x5B9E;&#x4F8B;&#x5316;ClassPathXmlApplicationContext&#x65F6;&#x5C06;Spring XML&#x6587;&#x4EF6;&#x7528;&#x4F5C;&#x8F93;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x5927;&#x81F4;&#x76F8;&#x540C;&#xFF0C;&#x5728;&#x5B9E;&#x4F8B;&#x5316;AnnotationConfigApplicationContext&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;@Configuration&#x7C7B;&#x7528;&#x4F5C;&#x8F93;&#x5165;&#x3002; &#x8FD9;&#x5141;&#x8BB8;Spring&#x5BB9;&#x5668;&#x7684;&#x5B8C;&#x5168;&#x65E0;XML&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+</code></pre><p>&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;AnnotationConfigApplicationContext&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;&#x4F7F;&#x7528;@Configuration&#x7C7B;&#x3002; &#x4EFB;&#x4F55;@Component&#x6216;JSR-330&#x5E26;&#x6CE8;&#x91CA;&#x7684;&#x7C7B;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x63D0;&#x4F9B;&#x7ED9;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(MyServiceImpl.class, Dependency1.class, Dependency2.class);
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+</code></pre><p>&#x4EE5;&#x4E0A;&#x5047;&#x8BBE;MyServiceImpl&#xFF0C;Dependency1&#x548C;Dependency2&#x4F7F;&#x7528;Spring&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x6CE8;&#x91CA;&#xFF0C;&#x4F8B;&#x5982;@Autowired&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;register&#xFF08;class-&#xFF1F;-&#xFF09;&#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#x5BB9;&#x5668;">&#x4F7F;&#x7528;register&#xFF08;Class &lt;&#xFF1F;&gt; ...&#xFF09;&#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;&#x5BB9;&#x5668;</h4>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;no-arg&#x6784;&#x9020;&#x51FD;&#x6570;&#x5B9E;&#x4F8B;&#x5316;AnnotationConfigApplicationContext&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;register&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#x3002; &#x5728;&#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x6784;&#x5EFA;AnnotationConfigApplicationContext&#x65F6;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</p>
+<pre><code>public static void main(String[] args) {
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+    ctx.register(AppConfig.class, OtherConfig.class);
+    ctx.register(AdditionalConfig.class);
+    ctx.refresh();
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+</code></pre><h4 id="&#x4F7F;&#x7528;&#x626B;&#x63CF;&#x542F;&#x7528;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#xFF08;string-&#xFF09;">&#x4F7F;&#x7528;&#x626B;&#x63CF;&#x542F;&#x7528;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#xFF08;String ...&#xFF09;</h4>
+<p>&#x8981;&#x542F;&#x7528;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#xFF0C;&#x53EA;&#x9700;&#x6CE8;&#x91CA;@Configuration&#x7C7B;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>@Configuration
+@ComponentScan(basePackages = &quot;com.acme&quot;)
+public class AppConfig  {
+    ...
+}
+</code></pre><p>&#x6709;&#x7ECF;&#x9A8C;&#x7684;Spring&#x7528;&#x6237;&#x5C06;&#x719F;&#x6089;&#x4E0E;Spring&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x76F8;&#x540C;&#x7684;XML&#x58F0;&#x660E;&#xFF1A;namespace</p>
+<pre><code>&lt;beans&gt;
+    &lt;context:component-scan base-package=&quot;com.acme&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5C06;&#x626B;&#x63CF;com.acme&#x5305;&#xFF0C;&#x67E5;&#x627E;&#x4EFB;&#x4F55;@ Component-annotated&#x7C7B;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x5C06;&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;&#x4E3A;Spring bean&#x5B9A;&#x4E49;&#x3002; AnnotationConfigApplicationContext&#x516C;&#x5F00;scan&#xFF08;String ...&#xFF09;&#x65B9;&#x6CD5;&#x4EE5;&#x5141;&#x8BB8;&#x76F8;&#x540C;&#x7684;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#x529F;&#x80FD;&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+    ctx.scan(&quot;com.acme&quot;);
+    ctx.refresh();
+    MyService myService = ctx.getBean(MyService.class);
+}
+</code></pre><p>&#x8BF7;&#x8BB0;&#x4F4F;@Configuration&#x7C7B;&#x662F;&#x4F7F;&#x7528;@Component&#x8FDB;&#x884C;&#x5143;&#x6CE8;&#x91CA;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x662F;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#x7684;&#x5019;&#x9009;&#x8005;&#xFF01; &#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5047;&#x8BBE;AppConfig&#x662F;&#x5728;com.acme&#x5305;&#xFF08;&#x6216;&#x4E0B;&#x9762;&#x7684;&#x4EFB;&#x4F55;&#x5305;&#xFF09;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x8C03;&#x7528;scan&#xFF08;&#xFF09;&#x671F;&#x95F4;&#x88AB;&#x62FE;&#x53D6;&#xFF0C;&#x5E76;&#x4E14;&#x5728;refresh&#xFF08;&#xFF09;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x6240;&#x6709;@Bean&#x65B9;&#x6CD5;&#x90FD;&#x5C06;&#x88AB;&#x5904;&#x7406;&#x5E76;&#x4E14; &#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x6CE8;&#x518C;&#x4E3A;bean&#x5B9A;&#x4E49;&#x3002;</p>
+<h4 id="&#x4F7F;&#x7528;annotationconfigwebapplicationcontext&#x652F;&#x6301;web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;">&#x4F7F;&#x7528;AnnotationConfigWebApplicationContext&#x652F;&#x6301;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h4>
+<p>AnnotationConfigApplicationContext&#x7684;WebApplicationContext&#x53D8;&#x4F53;&#x4E0E;AnnotationConfigWebApplicationContext&#x4E00;&#x8D77;&#x63D0;&#x4F9B;&#x3002; &#x914D;&#x7F6E;Spring ContextLoaderListener servlet&#x4FA6;&#x542C;&#x5668;&#xFF0C;Spring MVC DispatcherServlet&#x7B49;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x5B9E;&#x73B0;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x914D;&#x7F6E;&#x5178;&#x578B;Spring MVC Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;web.xml&#x4EE3;&#x7801;&#x6BB5;&#x3002; &#x6CE8;&#x610F;contextClass context-param&#x548C;init-param&#x7684;&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code>&lt;web-app&gt;
+    &lt;!-- Configure ContextLoaderListener to use AnnotationConfigWebApplicationContext
+        instead of the default XmlWebApplicationContext --&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextClass&lt;/param-name&gt;
+        &lt;param-value&gt;
+            org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+        &lt;/param-value&gt;
+    &lt;/context-param&gt;
+
+    &lt;!-- Configuration locations must consist of one or more comma- or space-delimited
+        fully-qualified @Configuration classes. Fully-qualified packages may also be
+        specified for component-scanning --&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;com.acme.AppConfig&lt;/param-value&gt;
+    &lt;/context-param&gt;
+
+    &lt;!-- Bootstrap the root application context as usual using ContextLoaderListener --&gt;
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+
+    &lt;!-- Declare a Spring MVC DispatcherServlet as usual --&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;!-- Configure DispatcherServlet to use AnnotationConfigWebApplicationContext
+            instead of the default XmlWebApplicationContext --&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextClass&lt;/param-name&gt;
+            &lt;param-value&gt;
+                org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+            &lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;!-- Again, config locations must consist of one or more comma- or space-delimited
+            and fully-qualified @Configuration classes --&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;com.acme.web.MvcConfig&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+
+    &lt;!-- map all requests for /app/* to the dispatcher servlet --&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/app/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre><h3 id="7123-&#x4F7F;&#x7528;bean&#x6CE8;&#x91CA;">7.12.3 &#x4F7F;&#x7528;@Bean&#x6CE8;&#x91CA;</h3>
+<p>@Bean&#x662F;&#x65B9;&#x6CD5;&#x7EA7;&#x6CE8;&#x91CA;&#xFF0C;&#x662F;XML &lt;bean /&gt;&#x5143;&#x7D20;&#x7684;&#x76F4;&#x63A5;&#x6A21;&#x62DF;&#x3002; &#x6CE8;&#x91CA;&#x652F;&#x6301;&lt;bean /&gt;&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;init-method&#xFF0C;destroy-method&#xFF0C;autowiring&#x548C;name&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x5728;@Configuration-annotated&#x6216;@Component-annotated&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;@Bean&#x6279;&#x6CE8;&#x3002;</p>
+<h4 id="&#x58F0;&#x660E;&#x4E00;&#x4E2A;bean">&#x58F0;&#x660E;&#x4E00;&#x4E2A;bean</h4>
+<p>&#x8981;&#x58F0;&#x660E;bean&#xFF0C;&#x53EA;&#x9700;&#x4F7F;&#x7528;@Bean&#x6279;&#x6CE8;&#x6CE8;&#x91CA;&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x5728;&#x6307;&#x5B9A;&#x4E3A;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x7684;ApplicationContext&#x4E2D;&#x6CE8;&#x518C;bean&#x5B9A;&#x4E49;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;bean&#x540D;&#x79F0;&#x5C06;&#x4E0E;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x76F8;&#x540C;&#x3002; &#x4EE5;&#x4E0B;&#x662F;@Bean&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x7684;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferServiceImpl transferService() {
+        return new TransferServiceImpl();
+    }
+}
+</code></pre><p>&#x524D;&#x9762;&#x7684;&#x914D;&#x7F6E;&#x5B8C;&#x5168;&#x7B49;&#x540C;&#x4E8E;&#x4EE5;&#x4E0B;Spring XML&#xFF1A;</p>
+<pre><code>&lt;beans&gt;
+    &lt;bean id=&quot;transferService&quot; class=&quot;com.acme.TransferServiceImpl&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><p>&#x8FD9;&#x4E24;&#x4E2A;&#x58F0;&#x660E;&#x90FD;&#x5728;ApplicationContext&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;transferService&#x7684;bean&#xFF0C;&#x7ED1;&#x5B9A;&#x5230;TransferServiceImpl&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF1A;</p>
+<pre><code>transferService -&gt; com.acme.TransferServiceImpl
+</code></pre><p>&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x63A5;&#x53E3;&#xFF08;&#x6216;&#x57FA;&#x7C7B;&#xFF09;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x60A8;&#x7684;@Bean&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl();
+    }
+}
+</code></pre><p>&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4F1A;&#x5C06;&#x9AD8;&#x7EA7;&#x7C7B;&#x578B;&#x9884;&#x6D4B;&#x7684;&#x53EF;&#x89C1;&#x6027;&#x9650;&#x5236;&#x4E3A;&#x6307;&#x5B9A;&#x7684;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#xFF08;TransferService&#xFF09;&#xFF0C;&#x7136;&#x540E;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x53D7;&#x5F71;&#x54CD;&#x7684;&#x5355;&#x4F8B;bean&#x540E;&#xFF0C;&#x5BB9;&#x5668;&#x624D;&#x77E5;&#x9053;&#x5B8C;&#x6574;&#x7C7B;&#x578B;&#xFF08;TransferServiceImpl&#xFF09;&#x3002; &#x975E;&#x5EF6;&#x8FDF;&#x5355;&#x4F8B;bean&#x6839;&#x636E;&#x5176;&#x58F0;&#x660E;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x53EF;&#x80FD;&#x4F1A;&#x770B;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x7ED3;&#x679C;&#xFF0C;&#x5177;&#x4F53;&#x53D6;&#x51B3;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4F55;&#x65F6;&#x5C1D;&#x8BD5;&#x901A;&#x8FC7;&#x975E;&#x58F0;&#x660E;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF08;&#x4F8B;&#x5982;@Autowired TransferServiceImpl&#xFF0C;&#x5B83;&#x53EA;&#x4F1A;&#x89E3;&#x6790;&#x4E00;&#x6B21;&#x201C;transferService&#x201D; bean&#x5DF2;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#xFF09;&#x3002;</p>
+<p><em>&#x5982;&#x679C;&#x60A8;&#x59CB;&#x7EC8;&#x901A;&#x8FC7;&#x58F0;&#x660E;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x5F15;&#x7528;&#x60A8;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5219;@Bean&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x5B89;&#x5168;&#x5730;&#x52A0;&#x5165;&#x8BE5;&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7EC4;&#x4EF6;&#x6216;&#x53EF;&#x80FD;&#x7531;&#x5176;&#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x5F15;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x66F4;&#x5B89;&#x5168;&#x5730;&#x58F0;&#x660E;&#x53EF;&#x80FD;&#x7684;&#x6700;&#x5177;&#x4F53;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF08;&#x81F3;&#x5C11;&#x4E0E;&#x5F15;&#x7528;&#x60A8;&#x7684;bean&#x7684;&#x6CE8;&#x5165;&#x70B9;&#x6240;&#x9700;&#x7684;&#x5177;&#x4F53;&#x76F8;&#x540C;&#xFF09;&#x3002;</em></p>
+<h4 id="bean&#x4F9D;&#x8D56;&#x9879;">Bean&#x4F9D;&#x8D56;&#x9879;</h4>
+<p>@Bean&#x6CE8;&#x91CA;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#x6765;&#x63CF;&#x8FF0;&#x6784;&#x5EFA;&#x8BE5;bean&#x6240;&#x9700;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x7684;TransferService&#x9700;&#x8981;AccountRepository&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x5B9E;&#x73B0;&#x8BE5;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferService transferService(AccountRepository accountRepository) {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+</code></pre><p>&#x89E3;&#x6790;&#x673A;&#x5236;&#x4E0E;&#x57FA;&#x4E8E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x76F8;&#x5173;&#x90E8;&#x5206;&#x3002;</p>
+<h4 id="&#x63A5;&#x6536;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;">&#x63A5;&#x6536;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;</h4>
+<p>&#x4F7F;&#x7528;@Bean&#x6279;&#x6CE8;&#x5B9A;&#x4E49;&#x7684;&#x4EFB;&#x4F55;&#x7C7B;&#x90FD;&#x652F;&#x6301;&#x5E38;&#x89C4;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;JSR-250&#x4E2D;&#x7684;@PostConstruct&#x548C;@PreDestroy&#x6279;&#x6CE8;&#xFF0C;&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;JSR-250&#x6279;&#x6CE8;&#x3002;</p>
+<p>&#x5B8C;&#x5168;&#x652F;&#x6301;&#x5E38;&#x89C4;&#x7684;Spring&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x3002; &#x5982;&#x679C;bean&#x5B9E;&#x73B0;InitializingBean&#xFF0C;DisposableBean&#x6216;Lifecycle&#xFF0C;&#x5219;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x65B9;&#x6CD5;&#x7531;&#x5BB9;&#x5668;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x8FD8;&#x5B8C;&#x5168;&#x652F;&#x6301;&#x6807;&#x51C6;&#x7684;* Aware&#x63A5;&#x53E3;&#x96C6;&#xFF0C;&#x4F8B;&#x5982;BeanFactoryAware&#xFF0C;BeanNameAware&#xFF0C;MessageSourceAware&#xFF0C;ApplicationContextAware&#x7B49;&#x3002;</p>
+<p>@Bean&#x6CE8;&#x91CA;&#x652F;&#x6301;&#x6307;&#x5B9A;&#x4EFB;&#x610F;&#x521D;&#x59CB;&#x5316;&#x548C;&#x9500;&#x6BC1;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x50CF;bean&#x5143;&#x7D20;&#x4E0A;&#x7684;Spring XML&#x7684;init-method&#x548C;destroy-method&#x5C5E;&#x6027;&#x4E00;&#x6837;&#xFF1A;</p>
+<pre><code>public class Foo {
+
+    public void init() {
+        // initialization logic
+    }
+}
+
+public class Bar {
+
+    public void cleanup() {
+        // destruction logic
+    }
+}
+
+@Configuration
+public class AppConfig {
+
+    @Bean(initMethod = &quot;init&quot;)
+    public Foo foo() {
+        return new Foo();
+    }
+
+    @Bean(destroyMethod = &quot;cleanup&quot;)
+    public Bar bar() {
+        return new Bar();
+    }
+}
+</code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;Java&#x914D;&#x7F6E;&#x5B9A;&#x4E49;&#x7684;&#x5177;&#x6709;&#x516C;&#x5171;&#x5173;&#x95ED;&#x6216;&#x5173;&#x95ED;&#x65B9;&#x6CD5;&#x7684;bean&#x4F1A;&#x81EA;&#x52A8;&#x4F7F;&#x7528;&#x9500;&#x6BC1;&#x56DE;&#x8C03;&#x767B;&#x8BB0;&#x3002; &#x5982;&#x679C;&#x60A8;&#x6709;&#x4E00;&#x4E2A;&#x516C;&#x5171;&#x5173;&#x95ED;&#x6216;&#x5173;&#x95ED;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x4E0D;&#x5E0C;&#x671B;&#x5728;&#x5BB9;&#x5668;&#x5173;&#x95ED;&#x65F6;&#x8C03;&#x7528;&#x5B83;&#xFF0C;&#x53EA;&#x9700;&#x5C06;@Bean&#xFF08;destroyMethod =&#x201C;&#x201D;&#xFF09;&#x6DFB;&#x52A0;&#x5230;&#x60A8;&#x7684;bean&#x5B9A;&#x4E49;&#x4E2D;&#x4EE5;&#x7981;&#x7528;&#x9ED8;&#x8BA4;&#xFF08;&#x63A8;&#x65AD;&#xFF09;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x5BF9;&#x901A;&#x8FC7;JNDI&#x83B7;&#x53D6;&#x7684;&#x8D44;&#x6E90;&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x751F;&#x547D;&#x5468;&#x671F;&#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5916;&#x90E8;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002; &#x7279;&#x522B;&#x662F;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x59CB;&#x7EC8;&#x4E3A;DataSource&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x4E3A;&#x5DF2;&#x77E5;&#x5B83;&#x5728;Java EE&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x5B58;&#x5728;&#x95EE;&#x9898;&#x3002;</p>
+<pre><code>@Bean(destroyMethod=&quot;&quot;)
+public DataSource dataSource() throws NamingException {
+    return (DataSource) jndiTemplate.lookup(&quot;MyDS&quot;);
+}
+</code></pre><p>&#x6B64;&#x5916;&#xFF0C;&#x4F7F;&#x7528;@Bean&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x901A;&#x5E38;&#x4F1A;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7F16;&#x7A0B;JNDI&#x67E5;&#x627E;&#xFF1A;&#x4F7F;&#x7528;Spring&#x7684;JndiTemplate / JndiLocatorDelegate&#x5E2E;&#x52A9;&#x7A0B;&#x5E8F;&#x6216;&#x76F4;&#x63A5;JNDI InitialContext&#x7528;&#x6CD5;&#xFF0C;&#x4F46;&#x4E0D;&#x4F7F;&#x7528;JndiObjectFactoryBean&#x53D8;&#x91CF;&#xFF0C;&#x5B83;&#x4F1A;&#x5F3A;&#x5236;&#x60A8;&#x5C06;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x4E3A;FactoryBean&#x7C7B;&#x578B;&#x800C;&#x4E0D;&#x662F; &#x5B9E;&#x9645;&#x7684;&#x76EE;&#x6807;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x5176;&#x66F4;&#x96BE;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x6253;&#x7B97;&#x5728;&#x6B64;&#x5904;&#x5F15;&#x7528;&#x6240;&#x63D0;&#x4F9B;&#x8D44;&#x6E90;&#x7684;@Bean&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4EA4;&#x53C9;&#x5F15;&#x7528;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5728;&#x4E0A;&#x9762;&#x7684;Foo&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x6784;&#x9020;&#x671F;&#x95F4;&#x76F4;&#x63A5;&#x8C03;&#x7528;init&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x540C;&#x6837;&#x6709;&#x6548;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public Foo foo() {
+        Foo foo = new Foo();
+        foo.init();
+        return foo;
+    }
+
+    // ...
+}
+</code></pre><p>&#x5F53;&#x60A8;&#x76F4;&#x63A5;&#x4F7F;&#x7528;Java&#x5DE5;&#x4F5C;&#x65F6;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x60A8;&#x559C;&#x6B22;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x4E0D;&#x5FC5;&#x603B;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x5BB9;&#x5668;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF01;</p>
+<h4 id="&#x6307;&#x5B9A;bean&#x8303;&#x56F4;">&#x6307;&#x5B9A;bean&#x8303;&#x56F4;</h4>
+<h5 id="&#x4F7F;&#x7528;scope&#x6CE8;&#x91CA;">&#x4F7F;&#x7528;@Scope&#x6CE8;&#x91CA;</h5>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4F7F;&#x7528;@Bean&#x6279;&#x6CE8;&#x5B9A;&#x4E49;&#x7684;bean&#x5E94;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x8303;&#x56F4;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Bean Scopes&#x90E8;&#x5206;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x4EFB;&#x4F55;&#x6807;&#x51C6;&#x4F5C;&#x7528;&#x57DF;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x8303;&#x56F4;&#x662F;&#x5355;&#x4F8B;&#xFF0C;&#x4F46;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;@Scope&#x6279;&#x6CE8;&#x8986;&#x76D6;&#x5B83;&#xFF1A;</p>
+<pre><code>@Configuration
+public class MyConfiguration {
+
+    @Bean
+    @Scope(&quot;prototype&quot;)
+    public Encryptor encryptor() {
+        // ...
+    }
+}
+</code></pre><h5 id="scope&#x548C;scoped-proxy">@Scope&#x548C;scoped-proxy</h5>
+<p>Spring&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x4F5C;&#x7528;&#x57DF;&#x4EE3;&#x7406;&#x5904;&#x7406;&#x4F5C;&#x7528;&#x57DF;&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x5F0F;&#x3002; &#x4F7F;&#x7528;XML&#x914D;&#x7F6E;&#x65F6;&#x521B;&#x5EFA;&#x6B64;&#x7C7B;&#x4EE3;&#x7406;&#x7684;&#x6700;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&lt;aop&#xFF1A;scoped-proxy /&gt;&#x5143;&#x7D20;&#x3002; &#x4F7F;&#x7528;@Scope&#x6279;&#x6CE8;&#x5728;Java&#x4E2D;&#x914D;&#x7F6E;bean&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;proxyMode&#x5C5E;&#x6027;&#x7684;&#x7B49;&#x6548;&#x652F;&#x6301;&#x3002; &#x9ED8;&#x8BA4;&#x503C;&#x4E3A;&#x65E0;&#x4EE3;&#x7406;&#xFF08;ScopedProxyMode.NO&#xFF09;&#xFF0C;&#x4F46;&#x60A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;ScopedProxyMode.TARGET_CLASS&#x6216;ScopedProxyMode.INTERFACES&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;Java&#x5C06;XML&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF08;&#x53C2;&#x89C1;&#x524D;&#x9762;&#x7684;&#x94FE;&#x63A5;&#xFF09;&#x4E2D;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4EE3;&#x7406;&#x793A;&#x4F8B;&#x79FB;&#x690D;&#x5230;&#x6211;&#x4EEC;&#x7684;@Bean&#xFF0C;&#x5B83;&#x5C06;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>// an HTTP Session-scoped bean exposed as a proxy
+@Bean
+@SessionScope
+public UserPreferences userPreferences() {
+    return new UserPreferences();
+}
+
+@Bean
+public Service userService() {
+    UserService service = new SimpleUserService();
+    // a reference to the proxied userPreferences bean
+    service.setUserPreferences(userPreferences());
+    return service;
+}
+</code></pre><h4 id="&#x81EA;&#x5B9A;&#x4E49;bean&#x547D;&#x540D;">&#x81EA;&#x5B9A;&#x4E49;bean&#x547D;&#x540D;</h4>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x914D;&#x7F6E;&#x7C7B;&#x4F7F;&#x7528;@Bean&#x65B9;&#x6CD5;&#x7684;&#x540D;&#x79F0;&#x4F5C;&#x4E3A;&#x7ED3;&#x679C;bean&#x7684;&#x540D;&#x79F0;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;name&#x5C5E;&#x6027;&#x8986;&#x76D6;&#x6B64;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean(name = &quot;myFoo&quot;)
+    public Foo foo() {
+        return new Foo();
+    }
+}
+</code></pre><h4 id="bean&#x522B;&#x540D;">Bean&#x522B;&#x540D;</h4>
+<p>&#x6B63;&#x5982;&#x7B2C;7.3.1&#x8282;&#x201C;&#x547D;&#x540D;bean&#x201D;&#x4E2D;&#x6240;&#x8BA8;&#x8BBA;&#x7684;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x4E3A;&#x5355;&#x4E2A;bean&#x63D0;&#x4F9B;&#x591A;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;bean&#x522B;&#x540D;&#x3002; @Bean&#x6279;&#x6CE8;&#x7684;name&#x5C5E;&#x6027;&#x4E3A;&#x6B64;&#x63A5;&#x53D7;String&#x6570;&#x7EC4;&#x3002;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean({&quot;dataSource&quot;, &quot;subsystemA-dataSource&quot;, &quot;subsystemB-dataSource&quot;})
+    public DataSource dataSource() {
+        // instantiate, configure and return DataSource bean...
+    }
+}
+</code></pre><h4 id="bean&#x7684;&#x63CF;&#x8FF0;">bean&#x7684;&#x63CF;&#x8FF0;</h4>
+<p>&#x6709;&#x65F6;&#x63D0;&#x4F9B;bean&#x7684;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x6587;&#x672C;&#x63CF;&#x8FF0;&#x662F;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002; &#x5F53;bean&#x66B4;&#x9732;&#xFF08;&#x53EF;&#x80FD;&#x901A;&#x8FC7;JMX&#xFF09;&#x7528;&#x4E8E;&#x76D1;&#x89C6;&#x76EE;&#x7684;&#x65F6;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</p>
+<p>&#x8981;&#x5411;@Bean&#x6DFB;&#x52A0;&#x63CF;&#x8FF0;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;@Description&#x6CE8;&#x91CA;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    @Description(&quot;Provides a basic example of a bean&quot;)
+    public Foo foo() {
+        return new Foo();
+    }
+}
+</code></pre><h3 id="7124-&#x4F7F;&#x7528;configuration&#x6CE8;&#x91CA;">7.12.4 &#x4F7F;&#x7528;@Configuration&#x6CE8;&#x91CA;</h3>
+<p>@Configuration&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7EA7;&#x6CE8;&#x91CA;&#xFF0C;&#x6307;&#x793A;&#x5BF9;&#x8C61;&#x662F;bean&#x5B9A;&#x4E49;&#x7684;&#x6E90;&#x3002; @Configuration&#x7C7B;&#x901A;&#x8FC7;&#x516C;&#x5171;@Bean&#x6CE8;&#x91CA;&#x65B9;&#x6CD5;&#x58F0;&#x660E;bean&#x3002; &#x5728;@Configuration&#x7C7B;&#x4E0A;&#x8C03;&#x7528;@Bean&#x65B9;&#x6CD5;&#x4E5F;&#x53EF;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;bean&#x95F4;&#x4F9D;&#x8D56;&#x9879;&#x3002; &#x6709;&#x5173;&#x4E00;&#x822C;&#x4ECB;&#x7ECD;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x7B2C;7.12.1&#x8282;&#x201C;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF1A;@Bean&#x548C;@Configuration&#x201D;&#x3002;</p>
+<h4 id="&#x6CE8;&#x5165;bean&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;">&#x6CE8;&#x5165;bean&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h4>
+<p>&#x5F53;@Beans&#x5F7C;&#x6B64;&#x4F9D;&#x8D56;&#x65F6;&#xFF0C;&#x8868;&#x8FBE;&#x8BE5;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x5C31;&#x50CF;&#x8BA9;&#x4E00;&#x4E2A;bean&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x4E00;&#x6837;&#x7B80;&#x5355;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public Foo foo() {
+        return new Foo(bar());
+    }
+
+    @Bean
+    public Bar bar() {
+        return new Bar();
+    }
+}
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;foo bean&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#x63A5;&#x6536;&#x5BF9;bar&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x58F0;&#x660E;bean&#x95F4;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x65B9;&#x6CD5;&#x4EC5;&#x5728;@Configuration&#x7C7B;&#x4E2D;&#x58F0;&#x660E;@Bean&#x65B9;&#x6CD5;&#x65F6;&#x624D;&#x6709;&#x6548;&#x3002; &#x60A8;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;@Component&#x7C7B;&#x58F0;&#x660E;bean&#x95F4;&#x4F9D;&#x8D56;&#x9879;&#x3002;</p>
+<h4 id="&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;">&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;</h4>
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#x6CE8;&#x5165;&#x662F;&#x4E00;&#x9879;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#x7684;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#x3002; &#x5728;&#x5355;&#x4F8B;&#x8303;&#x56F4;&#x7684;bean&#x4F9D;&#x8D56;&#x4E8E;&#x539F;&#x578B;&#x8303;&#x56F4;&#x7684;bean&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x5F88;&#x6709;&#x7528;&#x3002; &#x5C06;Java&#x7528;&#x4E8E;&#x6B64;&#x7C7B;&#x914D;&#x7F6E;&#x63D0;&#x4F9B;&#x4E86;&#x5B9E;&#x73B0;&#x6B64;&#x6A21;&#x5F0F;&#x7684;&#x81EA;&#x7136;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>public abstract class CommandManager {
+    public Object process(Object commandState) {
+        // grab a new instance of the appropriate Command interface
+        Command command = createCommand();
+        // set the state on the (hopefully brand new) Command instance
+        command.setState(commandState);
+        return command.execute();
+    }
+
+    // okay... but where is the implementation of this method?
+    protected abstract Command createCommand();
+}
+</code></pre><p>&#x4F7F;&#x7528;Java&#x914D;&#x7F6E;&#x652F;&#x6301;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;CommandManager&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5176;&#x4E2D;&#x8986;&#x76D6;&#x62BD;&#x8C61;createCommand&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5176;&#x67E5;&#x627E;&#x65B0;&#x7684;&#xFF08;&#x539F;&#x578B;&#xFF09;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;&#xFF1A;</p>
+<pre><code>@Bean
+@Scope(&quot;prototype&quot;)
+public AsyncCommand asyncCommand() {
+    AsyncCommand command = new AsyncCommand();
+    // inject dependencies here as required
+    return command;
+}
+
+@Bean
+public CommandManager commandManager() {
+    // return new anonymous implementation of CommandManager with command() overridden
+    // to return a new prototype Command object
+    return new CommandManager() {
+        protected Command createCommand() {
+            return asyncCommand();
+        }
+    }
+}
+</code></pre><h4 id="&#x6709;&#x5173;&#x57FA;&#x4E8E;java&#x7684;&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5728;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;">&#x6709;&#x5173;&#x57FA;&#x4E8E;Java&#x7684;&#x914D;&#x7F6E;&#x5982;&#x4F55;&#x5728;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;</h4>
+<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x663E;&#x793A;&#x4E86;&#x88AB;&#x8C03;&#x7528;&#x4E24;&#x6B21;&#x7684;@Bean&#x6CE8;&#x91CA;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean
+    public ClientService clientService1() {
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        clientService.setClientDao(clientDao());
+        return clientService;
+    }
+
+    @Bean
+    public ClientService clientService2() {
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        clientService.setClientDao(clientDao());
+        return clientService;
+    }
+
+    @Bean
+    public ClientDao clientDao() {
+        return new ClientDaoImpl();
+    }
+}
+</code></pre><p>clientDao&#xFF08;&#xFF09;&#x5728;clientService1&#xFF08;&#xFF09;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x5728;clientService2&#xFF08;&#xFF09;&#x4E2D;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#x3002; &#x7531;&#x4E8E;&#x6B64;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x4E86;ClientDaoImpl&#x7684;&#x65B0;&#x5B9E;&#x4F8B;&#x5E76;&#x5C06;&#x5176;&#x8FD4;&#x56DE;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x5E38;&#x9700;&#x8981;2&#x4E2A;&#x5B9E;&#x4F8B;&#xFF08;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x4E00;&#x4E2A;&#xFF09;&#x3002; &#x8FD9;&#x80AF;&#x5B9A;&#x4F1A;&#x6709;&#x95EE;&#x9898;&#xFF1A;&#x5728;Spring&#x4E2D;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x7684;bean&#x9ED8;&#x8BA4;&#x5177;&#x6709;&#x5355;&#x4F8B;&#x8303;&#x56F4;&#x3002; &#x8FD9;&#x5C31;&#x662F;&#x9B54;&#x672F;&#x6240;&#x5E26;&#x6765;&#x7684;&#xFF1A;&#x6240;&#x6709;@Configuration&#x7C7B;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x90FD;&#x4F7F;&#x7528;CGLIB&#x8FDB;&#x884C;&#x5B50;&#x7C7B;&#x5316;&#x3002; &#x5728;&#x5B50;&#x7C7B;&#x4E2D;&#xFF0C;&#x5B50;&#x65B9;&#x6CD5;&#x5728;&#x8C03;&#x7528;&#x7236;&#x65B9;&#x6CD5;&#x5E76;&#x521B;&#x5EFA;&#x65B0;&#x5B9E;&#x4F8B;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x68C0;&#x67E5;&#x5BB9;&#x5668;&#x662F;&#x5426;&#x6709;&#x4EFB;&#x4F55;&#x7F13;&#x5B58;&#xFF08;&#x4F5C;&#x7528;&#x57DF;&#xFF09;bean&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4ECE;Spring 3.2&#x5F00;&#x59CB;&#xFF0C;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x5C06;CGLIB&#x6DFB;&#x52A0;&#x5230;&#x7C7B;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;CGLIB&#x7C7B;&#x5DF2;&#x5728;org.springframework.cglib&#x4E0B;&#x91CD;&#x65B0;&#x6253;&#x5305;&#x5E76;&#x76F4;&#x63A5;&#x5305;&#x542B;&#x5728;spring-core JAR&#x4E2D;&#x3002;</p>
+<p>&#x6839;&#x636E;bean&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x884C;&#x4E3A;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002; &#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x8C08;&#x8BBA;&#x5355;&#x4F8B;&#x3002;</p>
+<p>&#x7531;&#x4E8E;CGLIB&#x5728;&#x542F;&#x52A8;&#x65F6;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x529F;&#x80FD;&#xFF0C;&#x56E0;&#x6B64;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x914D;&#x7F6E;&#x7C7B;&#x4E0D;&#x80FD;&#x662F;&#x6700;&#x7EC8;&#x7684;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x4ECE;4.3&#x5F00;&#x59CB;&#xFF0C;&#x914D;&#x7F6E;&#x7C7B;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5305;&#x62EC;&#x4F7F;&#x7528;@Autowired&#x6216;&#x5355;&#x4E2A;&#x975E;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x8FDB;&#x884C;&#x9ED8;&#x8BA4;&#x6CE8;&#x5165;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x5E0C;&#x671B;&#x907F;&#x514D;&#x4EFB;&#x4F55;CGLIB&#x5F3A;&#x52A0;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x5728;&#x975E;@Configuration&#x7C7B;&#x4E0A;&#x58F0;&#x660E;&#x60A8;&#x7684;@Bean&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982; &#x800C;&#x662F;&#x5728;&#x666E;&#x901A;&#x7684;@Component&#x7C7B;&#x4E0A;&#x3002; &#x7136;&#x540E;&#xFF0C;@ Bean&#x65B9;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8DE8;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x4E0D;&#x4F1A;&#x88AB;&#x622A;&#x83B7;&#xFF0C;&#x56E0;&#x6B64;&#x60A8;&#x5FC5;&#x987B;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x4E13;&#x95E8;&#x4F9D;&#x8D56;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#x3002;</p>
+<h3 id="7125-&#x7F16;&#x5199;&#x57FA;&#x4E8E;java&#x7684;&#x914D;&#x7F6E;">7.12.5 &#x7F16;&#x5199;&#x57FA;&#x4E8E;Java&#x7684;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x4F7F;&#x7528;import&#x6CE8;&#x91CA;">&#x4F7F;&#x7528;@Import&#x6CE8;&#x91CA;</h4>
+<p>&#x5C31;&#x50CF;&#x5728;Spring XML&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&lt;import /&gt;&#x5143;&#x7D20;&#x6765;&#x5E2E;&#x52A9;&#x6A21;&#x5757;&#x5316;&#x914D;&#x7F6E;&#x4E00;&#x6837;&#xFF0C;@ Immort&#x6CE8;&#x91CA;&#x5141;&#x8BB8;&#x4ECE;&#x53E6;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x7C7B;&#x52A0;&#x8F7D;@Bean&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code>@Configuration
+public class ConfigA {
+
+    @Bean
+    public A a() {
+        return new A();
+    }
+}
+
+@Configuration
+@Import(ConfigA.class)
+public class ConfigB {
+
+    @Bean
+    public B b() {
+        return new B();
+    }
+}
+</code></pre><p>&#x73B0;&#x5728;&#xFF0C;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x4E0A;&#x4E0B;&#x6587;&#x65F6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x540C;&#x65F6;&#x6307;&#x5B9A;ConfigA.class&#x548C;ConfigB.class&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x63D0;&#x4F9B;ConfigB&#xFF1A;</p>
+<pre><code>public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigB.class);
+
+    // now both beans A and B will be available...
+    A a = ctx.getBean(A.class);
+    B b = ctx.getBean(B.class);
+}
+</code></pre><p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x7B80;&#x5316;&#x4E86;&#x5BB9;&#x5668;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x9700;&#x8981;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8981;&#x6C42;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5728;&#x6784;&#x9020;&#x671F;&#x95F4;&#x8BB0;&#x4F4F;&#x53EF;&#x80FD;&#x5927;&#x91CF;&#x7684;@Configuration&#x7C7B;&#x3002;</p>
+<p>&#x4ECE;Spring Framework 4.2&#x5F00;&#x59CB;&#xFF0C;@ Immort&#x8FD8;&#x652F;&#x6301;&#x5BF9;&#x5E38;&#x89C4;&#x7EC4;&#x4EF6;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;AnnotationConfigApplicationContext.register&#x65B9;&#x6CD5;&#x3002; &#x5982;&#x679C;&#x60A8;&#x60F3;&#x907F;&#x514D;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x7C7B;&#x4F5C;&#x4E3A;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x5165;&#x53E3;&#x70B9;&#xFF0C;&#x8FD9;&#x5C06;&#x7279;&#x522B;&#x6709;&#x7528;&#x3002;</p>
+<h4 id="&#x6CE8;&#x5165;&#x5BF9;&#x5BFC;&#x5165;&#x7684;bean&#x5B9A;&#x4E49;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;">&#x6CE8;&#x5165;&#x5BF9;&#x5BFC;&#x5165;&#x7684;@Bean&#x5B9A;&#x4E49;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h4>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6709;&#x6548;&#xFF0C;&#x4F46;&#x5F88;&#x7B80;&#x5355;&#x3002; &#x5728;&#x5927;&#x591A;&#x6570;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;bean&#x5C06;&#x8DE8;&#x914D;&#x7F6E;&#x7C7B;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x3002; &#x4F7F;&#x7528;XML&#x65F6;&#xFF0C;&#x8FD9;&#x672C;&#x8EAB;&#x4E0D;&#x662F;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x6D89;&#x53CA;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x58F0;&#x660E;ref =&#x201C;someBean&#x201D;&#x5E76;&#x76F8;&#x4FE1;Spring&#x4F1A;&#x5728;&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;&#x671F;&#x95F4;&#x89E3;&#x51B3;&#x5B83;&#x3002; &#x5F53;&#x7136;&#xFF0C;&#x5728;&#x4F7F;&#x7528;@Configuration&#x7C7B;&#x65F6;&#xFF0C;Java&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x5BF9;&#x914D;&#x7F6E;&#x6A21;&#x578B;&#x65BD;&#x52A0;&#x7EA6;&#x675F;&#xFF0C;&#x56E0;&#x4E3A;&#x5BF9;&#x5176;&#x4ED6;bean&#x7684;&#x5F15;&#x7528;&#x5FC5;&#x987B;&#x662F;&#x6709;&#x6548;&#x7684;Java&#x8BED;&#x6CD5;&#x3002;</p>
+<p>&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5F88;&#x7B80;&#x5355;&#x3002; &#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BA8;&#x8BBA;&#x8FC7;&#x7684;&#xFF0C;@ Node&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#x6765;&#x63CF;&#x8FF0;bean&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002; &#x8BA9;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x66F4;&#x771F;&#x5B9E;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x51E0;&#x4E2A;@Configuration&#x7C7B;&#xFF0C;&#x6BCF;&#x4E2A;&#x7C7B;&#x90FD;&#x53D6;&#x51B3;&#x4E8E;&#x5176;&#x4ED6;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x7684;bean&#xFF1A;</p>
+<pre><code>@Configuration
+public class ServiceConfig {
+
+    @Bean
+    public TransferService transferService(AccountRepository accountRepository) {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+
+@Configuration
+public class RepositoryConfig {
+
+    @Bean
+    public AccountRepository accountRepository(DataSource dataSource) {
+        return new JdbcAccountRepository(dataSource);
+    }
+}
+
+@Configuration
+@Import({ServiceConfig.class, RepositoryConfig.class})
+public class SystemTestConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        // return new DataSource
+    }
+}
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
+    // everything wires up across configuration classes...
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(100.00, &quot;A123&quot;, &quot;C456&quot;);
+}
+</code></pre><p>&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x76F8;&#x540C;&#x7684;&#x6548;&#x679C;&#x3002; &#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;@ Configuration&#x7C7B;&#x6700;&#x7EC8;&#x53EA;&#x662F;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x53E6;&#x4E00;&#x4E2A;bean&#xFF1A;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4ED6;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;bean&#x4E00;&#x6837;&#x5229;&#x7528;@Autowired&#x548C;@Value&#x6CE8;&#x5165;&#x7B49;&#xFF01;</p>
+<p>&#x786E;&#x4FDD;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x53EA;&#x662F;&#x6700;&#x7B80;&#x5355;&#x7684;&#x3002; @Configuration&#x7C7B;&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x521D;&#x59CB;&#x5316;&#x671F;&#x95F4;&#x5F88;&#x65E9;&#x5C31;&#x88AB;&#x5904;&#x7406;&#xFF0C;&#x5E76;&#x4E14;&#x5F3A;&#x5236;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6CE8;&#x5165;&#x4F9D;&#x8D56;&#x9879;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x610F;&#x5916;&#x7684;&#x65E9;&#x671F;&#x521D;&#x59CB;&#x5316;&#x3002; &#x5C3D;&#x53EF;&#x80FD;&#x91C7;&#x7528;&#x57FA;&#x4E8E;&#x53C2;&#x6570;&#x7684;&#x6CE8;&#x5165;&#xFF0C;&#x5982;&#x4E0A;&#x4F8B;&#x6240;&#x793A;&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x901A;&#x8FC7;@Bean&#x7279;&#x522B;&#x6CE8;&#x610F;BeanPostProcessor&#x548C;BeanFactoryPostProcessor&#x5B9A;&#x4E49;&#x3002; &#x8FD9;&#x4E9B;&#x901A;&#x5E38;&#x5E94;&#x8BE5;&#x58F0;&#x660E;&#x4E3A;&#x9759;&#x6001;@Bean&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x89E6;&#x53D1;&#x5176;&#x5305;&#x542B;&#x914D;&#x7F6E;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x3002; &#x5426;&#x5219;&#xFF0C;@ Autowired&#x548C;@Value&#x5C06;&#x65E0;&#x6CD5;&#x5728;&#x914D;&#x7F6E;&#x7C7B;&#x672C;&#x8EAB;&#x4E0A;&#x5DE5;&#x4F5C;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x8FC7;&#x65E9;&#x5730;&#x88AB;&#x521B;&#x5EFA;&#x4E3A;bean&#x5B9E;&#x4F8B;&#x3002;</p>
+<pre><code>@Configuration
+public class ServiceConfig {
+
+    @Autowired
+    private AccountRepository accountRepository;
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+
+@Configuration
+public class RepositoryConfig {
+
+    private final DataSource dataSource;
+
+    @Autowired
+    public RepositoryConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    @Bean
+    public AccountRepository accountRepository() {
+        return new JdbcAccountRepository(dataSource);
+    }
+}
+
+@Configuration
+@Import({ServiceConfig.class, RepositoryConfig.class})
+public class SystemTestConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        // return new DataSource
+    }
+}
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
+    // everything wires up across configuration classes...
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(100.00, &quot;A123&quot;, &quot;C456&quot;);
+}
+</code></pre><p>&#x4EC5;&#x5728;Spring Framework 4.3&#x4E2D;&#x652F;&#x6301;@Configuration&#x7C7B;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#x3002; &#x53E6;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;bean&#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x6307;&#x5B9A;@Autowired; &#x5728;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;RepositoryConfig&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x4E0D;&#x9700;&#x8981;@Autowired&#x3002;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;@Autowired&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x5DE5;&#x4F5C;&#x5E76;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x7684;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x4F46;&#x786E;&#x5B9A;&#x58F0;&#x660E;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x7684;bean&#x5B9A;&#x4E49;&#x7684;&#x786E;&#x5207;&#x4F4D;&#x7F6E;&#x4ECD;&#x7136;&#x6709;&#x4E9B;&#x6A21;&#x68F1;&#x4E24;&#x53EF;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x4F5C;&#x4E3A;&#x67E5;&#x770B;ServiceConfig&#x7684;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#xFF0C;&#x60A8;&#x5982;&#x4F55;&#x786E;&#x5207;&#x5730;&#x77E5;&#x9053;@Autowired AccountRepository bean&#x7684;&#x58F0;&#x660E;&#x4F4D;&#x7F6E;&#xFF1F; &#x5B83;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5E76;&#x4E0D;&#x660E;&#x786E;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x5C31;&#x597D;&#x4E86;&#x3002; &#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;Spring Tool Suite&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x5448;&#x73B0;&#x56FE;&#x8868;&#xFF0C;&#x663E;&#x793A;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x7684;&#x8FDE;&#x7EBF;&#x65B9;&#x5F0F; - &#x8FD9;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x60A8;&#x6240;&#x9700;&#x8981;&#x7684;&#x3002; &#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x7684;Java IDE&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x627E;&#x5230;AccountRepository&#x7C7B;&#x578B;&#x7684;&#x6240;&#x6709;&#x58F0;&#x660E;&#x548C;&#x7528;&#x6CD5;&#xFF0C;&#x5E76;&#x5C06;&#x5FEB;&#x901F;&#x663E;&#x793A;&#x8FD4;&#x56DE;&#x8BE5;&#x7C7B;&#x578B;&#x7684;@Bean&#x65B9;&#x6CD5;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8FD9;&#x79CD;&#x6B67;&#x4E49;&#x662F;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x60A8;&#x5E0C;&#x671B;&#x4ECE;IDE&#x4E2D;&#x4ECE;&#x4E00;&#x4E2A;@Configuration&#x7C7B;&#x76F4;&#x63A5;&#x5BFC;&#x822A;&#x5230;&#x53E6;&#x4E00;&#x4E2A;@Configuration&#x7C7B;&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x81EA;&#x52A8;&#x5BF9;&#x914D;&#x7F6E;&#x7C7B;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#xFF1A;</p>
+<pre><code>@Configuration
+public class ServiceConfig {
+
+    @Autowired
+    private RepositoryConfig repositoryConfig;
+
+    @Bean
+    public TransferService transferService() {
+        // navigate &apos;through&apos; the config class to the @Bean method!
+        return new TransferServiceImpl(repositoryConfig.accountRepository());
+    }
+}
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x60C5;&#x51B5;&#x4E2D;&#xFF0C;&#x5B83;&#x662F;&#x5B8C;&#x5168;&#x660E;&#x786E;&#x7684;&#xFF0C;&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;AccountRepository&#x3002; &#x4F46;&#x662F;&#xFF0C;ServiceConfig&#x73B0;&#x5728;&#x4E0E;RepositoryConfig&#x7D27;&#x5BC6;&#x8026;&#x5408;; &#x8FD9;&#x662F;&#x6743;&#x8861;&#x3002; &#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x7684;&#x6216;&#x57FA;&#x4E8E;&#x7C7B;&#x7684;&#x62BD;&#x8C61;@Configuration&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x51CF;&#x8F7B;&#x8FD9;&#x79CD;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x3002; &#x8003;&#x8651;&#x4EE5;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ServiceConfig</span> </span>{
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> RepositoryConfig repositoryConfig;
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> TransferService <span class="hljs-title">transferService</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> TransferServiceImpl(repositoryConfig.accountRepository());
+    }
+}
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">RepositoryConfig</span> </span>{
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function">AccountRepository <span class="hljs-title">accountRepository</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DefaultRepositoryConfig</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">RepositoryConfig</span> </span>{
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> AccountRepository <span class="hljs-title">accountRepository</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> JdbcAccountRepository(...);
+    }
+}
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@Import</span>({ServiceConfig.class, DefaultRepositoryConfig.class})  <span class="hljs-comment">// import the concrete config!</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SystemTestConfig</span> </span>{
+
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DataSource <span class="hljs-title">dataSource</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// return DataSource</span>
+    }
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    ApplicationContext ctx = <span class="hljs-keyword">new</span> AnnotationConfigApplicationContext(SystemTestConfig.class);
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(<span class="hljs-number">100.00</span>, <span class="hljs-string">&quot;A123&quot;</span>, <span class="hljs-string">&quot;C456&quot;</span>);
+}
+</code></pre>
+<p>&#x73B0;&#x5728;&#xFF0C;ServiceConfig&#x4E0E;&#x5177;&#x4F53;&#x7684;DefaultRepositoryConfig&#x677E;&#x6563;&#x8026;&#x5408;&#xFF0C;&#x5185;&#x7F6E;&#x7684;IDE&#x5DE5;&#x5177;&#x4ECD;&#x7136;&#x5F88;&#x6709;&#x7528;&#xFF1A;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5F88;&#x5BB9;&#x6613;&#x83B7;&#x5F97;RepositoryConfig&#x5B9E;&#x73B0;&#x7684;&#x7C7B;&#x578B;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x3002; &#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5BFC;&#x822A;@Configuration&#x7C7B;&#x53CA;&#x5176;&#x4F9D;&#x8D56;&#x9879;&#x4E0E;&#x5BFC;&#x822A;&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x5E38;&#x89C4;&#x8FC7;&#x7A0B;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60A8;&#x60F3;&#x5F71;&#x54CD;&#x67D0;&#x4E9B;bean&#x7684;&#x542F;&#x52A8;&#x521B;&#x5EFA;&#x987A;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5C06;&#x5176;&#x4E2D;&#x4E00;&#x4E9B;&#x58F0;&#x660E;&#x4E3A;@Lazy&#xFF08;&#x5728;&#x9996;&#x6B21;&#x8BBF;&#x95EE;&#x65F6;&#x521B;&#x5EFA;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x521B;&#x5EFA;&#xFF09;&#x6216;&#x5728;&#x67D0;&#x4E9B;&#x5176;&#x4ED6;bean&#x4E0A;&#x58F0;&#x660E;&#x4E3A;@DependsOn&#xFF08;&#x786E;&#x4FDD;&#x5176;&#x4ED6;&#x7279;&#x5B9A;bean&#x5C06;&#x662F; &#x5728;&#x5F53;&#x524D;bean&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#xFF0C;&#x8D85;&#x51FA;&#x540E;&#x8005;&#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#x6240;&#x6697;&#x793A;&#x7684;&#x5185;&#x5BB9;&#xFF09;&#x3002;</p>
+<h4 id="&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5305;&#x62EC;configuration&#x7C7B;&#x6216;bean&#x65B9;&#x6CD5;">&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5305;&#x62EC;@Configuration&#x7C7B;&#x6216;@Bean&#x65B9;&#x6CD5;</h4>
+<p>&#x57FA;&#x4E8E;&#x67D0;&#x4E9B;&#x4EFB;&#x610F;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#xFF0C;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x5B8C;&#x6574;&#x7684;@Configuration&#x7C7B;&#xFF0C;&#x751A;&#x81F3;&#x5355;&#x72EC;&#x7684;@Bean&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x5F88;&#x6709;&#x7528;&#x3002; &#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x53EA;&#x6709;&#x5728;Spring&#x73AF;&#x5883;&#x4E2D;&#x542F;&#x7528;&#x4E86;&#x7279;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x65F6;&#x624D;&#x4F7F;&#x7528;@Profile&#x6CE8;&#x91CA;&#x6765;&#x6FC0;&#x6D3B;bean&#xFF08;&#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x89C1;&#x7B2C;7.13.1&#x8282;&#x201C;Bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x201D;&#xFF09;&#x3002;</p>
+<p>@Profile&#x6CE8;&#x91CA;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;@Conditional&#x7684;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x6CE8;&#x91CA;&#x5B9E;&#x73B0;&#x7684;&#x3002; @Conditional&#x6279;&#x6CE8;&#x6307;&#x793A;&#x5728;&#x6CE8;&#x518C;@Bean&#x4E4B;&#x524D;&#x5E94;&#x8BE5;&#x53C2;&#x8003;&#x7684;&#x7279;&#x5B9A;org.springframework.context.annotation.Condition&#x5B9E;&#x73B0;&#x3002;</p>
+<p>Condition&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x53EA;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;true&#x6216;false&#x7684;matches&#xFF08;...&#xFF09;&#x65B9;&#x6CD5;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x7528;&#x4E8E;@Profile&#x7684;&#x5B9E;&#x9645;Condition&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code>@Override
+public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+    if (context.getEnvironment() != null) {
+        // Read the @Profile annotation attributes
+        MultiValueMap&lt;String, Object&gt; attrs = metadata.getAllAnnotationAttributes(Profile.class.getName());
+        if (attrs != null) {
+            for (Object value : attrs.get(&quot;value&quot;)) {
+                if (context.getEnvironment().acceptsProfiles(((String[]) value))) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    return true;
+}
+</code></pre><p>&#x6709;&#x5173;&#x66F4;&#x591A;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;@Conditional javadocs&#x3002;</p>
+<h4 id="&#x7ED3;&#x5408;java&#x548C;xml&#x914D;&#x7F6E;">&#x7ED3;&#x5408;Java&#x548C;XML&#x914D;&#x7F6E;</h4>
+<p>Spring&#x7684;@Configuration&#x7C7B;&#x652F;&#x6301;&#x5E76;&#x975E;&#x65E8;&#x5728;&#x6210;&#x4E3A;Spring XML&#x7684;100&#xFF05;&#x5B8C;&#x5168;&#x66FF;&#x4EE3;&#x54C1;&#x3002; &#x8BF8;&#x5982;Spring XML&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E4B;&#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x4ECD;&#x7136;&#x662F;&#x914D;&#x7F6E;&#x5BB9;&#x5668;&#x7684;&#x7406;&#x60F3;&#x65B9;&#x5F0F;&#x3002; &#x5728;XML&#x65B9;&#x4FBF;&#x6216;&#x5FC5;&#x8981;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF1A;&#x4F7F;&#x7528;&#x4F8B;&#x5982;ClassPathXmlApplicationContext&#x4EE5;&#x201C;&#x4EE5;XML&#x4E3A;&#x4E2D;&#x5FC3;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x4F8B;&#x5316;&#x5BB9;&#x5668;&#xFF0C;&#x6216;&#x8005;&#x4F7F;&#x7528;AnnotationConfigApplicationContext&#x548C;@ImportResource&#x6CE8;&#x91CA;&#x4EE5;&#x201C;&#x4EE5;Java&#x4E3A;&#x4E2D;&#x5FC3;&#x201D;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x4F8B;&#x5316;&#x5BB9;&#x5668; &#x6839;&#x636E;&#x9700;&#x8981;&#x5BFC;&#x5165;XML&#x3002;</p>
+<h4 id="&#x4EE5;xml&#x4E3A;&#x4E2D;&#x5FC3;&#x7684;configuration&#x7C7B;&#x7684;&#x4F7F;&#x7528;">&#x4EE5;XML&#x4E3A;&#x4E2D;&#x5FC3;&#x7684;@Configuration&#x7C7B;&#x7684;&#x4F7F;&#x7528;</h4>
+<p>&#x6700;&#x597D;&#x4ECE;XML&#x5F15;&#x5BFC;Spring&#x5BB9;&#x5668;&#xFF0C;&#x5E76;&#x4EE5;ad-hoc&#x65B9;&#x5F0F;&#x5305;&#x542B;@Configuration&#x7C7B;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x4F7F;&#x7528;Spring XML&#x7684;&#x5927;&#x578B;&#x73B0;&#x6709;&#x4EE3;&#x7801;&#x5E93;&#x4E2D;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x521B;&#x5EFA;@Configuration&#x7C7B;&#x5E76;&#x5C06;&#x5176;&#x5305;&#x542B;&#x5728;&#x73B0;&#x6709;XML&#x6587;&#x4EF6;&#x4E2D;&#x4F1A;&#x66F4;&#x5BB9;&#x6613;&#x3002; &#x4E0B;&#x9762;&#x4F60;&#x5C06;&#x627E;&#x5230;&#x5728;&#x8FD9;&#x79CD;&#x201C;&#x4EE5;XML&#x4E3A;&#x4E2D;&#x5FC3;&#x201D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;@Configuration&#x7C7B;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;@ Configuration&#x7C7B;&#x6700;&#x7EC8;&#x53EA;&#x662F;&#x5BB9;&#x5668;&#x4E2D;&#x7684;bean&#x5B9A;&#x4E49;&#x3002; &#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;AppConfig&#x7684;@Configuration&#x7C7B;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&lt;bean /&gt;&#x5B9A;&#x4E49;&#x5305;&#x542B;&#x5728;system-test-config.xml&#x4E2D;&#x3002; &#x7531;&#x4E8E;&lt;context&#xFF1A;annotation-config /&gt;&#x5DF2;&#x6253;&#x5F00;&#xFF0C;&#x5BB9;&#x5668;&#x5C06;&#x8BC6;&#x522B;@Configuration&#x6279;&#x6CE8;&#x5E76;&#x6B63;&#x786E;&#x5904;&#x7406;AppConfig&#x4E2D;&#x58F0;&#x660E;&#x7684;@Bean&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Bean
+    public AccountRepository accountRepository() {
+        return new JdbcAccountRepository(dataSource);
+    }
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferService(accountRepository());
+    }
+}
+</code></pre><p><strong>system-test-config.xml</strong>:</p>
+<pre><code>&lt;beans&gt;
+    &lt;!-- enable processing of annotations such as @Autowired and @Configuration --&gt;
+    &lt;context:annotation-config/&gt;
+    &lt;context:property-placeholder location=&quot;classpath:/com/acme/jdbc.properties&quot;/&gt;
+
+    &lt;bean class=&quot;com.acme.AppConfig&quot;/&gt;
+
+    &lt;bean class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre><p><strong>jdbc.properties</strong>:</p>
+<pre><code>jdbc.url=jdbc:hsqldb:hsql://localhost/xdb
+jdbc.username=sa
+jdbc.password=
+</code></pre><pre><code>public static void main(String[] args) {
+    ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;classpath:/com/acme/system-test-config.xml&quot;);
+    TransferService transferService = ctx.getBean(TransferService.class);
+    // ...
+}
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;system-test-config.xml&#x4E2D;&#xFF0C;AppConfig &lt;bean /&gt;&#x4E0D;&#x58F0;&#x660E;id&#x5143;&#x7D20;&#x3002; &#x867D;&#x7136;&#x8FD9;&#x6837;&#x505A;&#x662F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x5176;&#x4ED6;bean&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x5B83;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x4ECE;&#x5BB9;&#x5668;&#x4E2D;&#x663E;&#x5F0F;&#x83B7;&#x53D6;&#x5B83;&#x3002; &#x4E0E;DataSource bean&#x7C7B;&#x4F3C; - &#x5B83;&#x53EA;&#x662F;&#x6309;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4E25;&#x683C;&#x8981;&#x6C42;&#x663E;&#x5F0F;bean ID&#x3002;</p>
+<p>&#x56E0;&#x4E3A;@Configuration&#x662F;&#x4F7F;&#x7528;@Component&#x8FDB;&#x884C;&#x5143;&#x6CE8;&#x91CA;&#x7684;&#xFF0C;&#x6240;&#x4EE5;@Configuration-annotated&#x7C7B;&#x81EA;&#x52A8;&#x6210;&#x4E3A;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#x7684;&#x5019;&#x9009;&#x8005;&#x3002; &#x4F7F;&#x7528;&#x4E0E;&#x4E0A;&#x9762;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x5B9A;&#x4E49;system-test-config.xml&#x4EE5;&#x5229;&#x7528;&#x7EC4;&#x4EF6;&#x626B;&#x63CF;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x58F0;&#x660E;&lt;context&#xFF1A;annotation-config /&gt;&#xFF0C;&#x56E0;&#x4E3A;&lt;context&#xFF1A;component-scan /&gt;&#x542F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p><strong>system-test-config.xml</strong>:</p>
+<pre><code>&lt;beans&gt;
+    &lt;!-- picks up and registers AppConfig as a bean definition --&gt;
+    &lt;context:component-scan base-package=&quot;com.acme&quot;/&gt;
+    &lt;context:property-placeholder location=&quot;classpath:/com/acme/jdbc.properties&quot;/&gt;
+
+    &lt;bean class=&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre><h4 id="configuration&#x4EE5;&#x7C7B;&#x4E3A;&#x4E2D;&#x5FC3;&#x4F7F;&#x7528;&#x5E26;importresource&#x7684;xml">@Configuration&#x4EE5;&#x7C7B;&#x4E3A;&#x4E2D;&#x5FC3;&#x4F7F;&#x7528;&#x5E26;@ImportResource&#x7684;XML</h4>
+<p>&#x5728;@Configuration&#x7C7B;&#x662F;&#x914D;&#x7F6E;&#x5BB9;&#x5668;&#x7684;&#x4E3B;&#x8981;&#x673A;&#x5236;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x4ECD;&#x7136;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x81F3;&#x5C11;&#x4E00;&#x4E9B;XML&#x3002; &#x5728;&#x8FD9;&#x4E9B;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x53EA;&#x9700;&#x4F7F;&#x7528;@ImportResource&#x5E76;&#x4EC5;&#x6839;&#x636E;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;XML&#x3002; &#x8FD9;&#x6837;&#x505A;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x201C;&#x4EE5;Java&#x4E3A;&#x4E2D;&#x5FC3;&#x201D;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x914D;&#x7F6E;&#x5BB9;&#x5668;&#x5E76;&#x5C06;XML&#x4FDD;&#x6301;&#x5728;&#x6700;&#x4F4E;&#x9650;&#x5EA6;&#x3002;</p>
+<pre><code>@Configuration
+@ImportResource(&quot;classpath:/com/acme/properties-config.xml&quot;)
+public class AppConfig {
+
+    @Value(&quot;${jdbc.url}&quot;)
+    private String url;
+
+    @Value(&quot;${jdbc.username}&quot;)
+    private String username;
+
+    @Value(&quot;${jdbc.password}&quot;)
+    private String password;
+
+    @Bean
+    public DataSource dataSource() {
+        return new DriverManagerDataSource(url, username, password);
+    }
+}
+</code></pre><pre><code>properties-config.xml
+&lt;beans&gt;
+    &lt;context:property-placeholder location=&quot;classpath:/com/acme/jdbc.properties&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><pre><code>jdbc.properties
+jdbc.url=jdbc:hsqldb:hsql://localhost/xdb
+jdbc.username=sa
+jdbc.password=
+</code></pre><pre><code>public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    TransferService transferService = ctx.getBean(TransferService.class);
+    // ...
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html" class="navigation navigation-prev " aria-label="Previous page: 7.11 使用JSR 330标准注释">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="713-huan-jing-chou-xiang.html" class="navigation navigation-next " aria-label="Next page: 7.13 环境抽象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.12 基于Java的容器配置","level":"1.4.1.11","depth":3,"next":{"title":"7.13 环境抽象","level":"1.4.1.12","depth":3,"path":"iii-he-xin-ji-zhu/713-huan-jing-chou-xiang.md","ref":"iii-he-xin-ji-zhu/713-huan-jing-chou-xiang.md","articles":[]},"previous":{"title":"7.11 使用JSR 330标准注释","level":"1.4.1.10","depth":3,"path":"iii-he-xin-ji-zhu/711-shi-yong-jsr-330-biao-zhun-zhu-shi.md","ref":"iii-he-xin-ji-zhu/711-shi-yong-jsr-330-biao-zhun-zhu-shi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iii-he-xin-ji-zhu/712-ji-yu-java-de-rong-qi-pei-zhi.md","mtime":"2019-01-14T14:04:33.026Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

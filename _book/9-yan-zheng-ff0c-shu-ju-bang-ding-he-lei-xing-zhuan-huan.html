@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>9 验证，数据绑定和类型转换 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chapter1.html" />
+    <link rel="next" href="10-springbiao-da-shi-yu-yan.html" />
     
+    
+    <link rel="prev" href="87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -464,7 +466,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
+        <li class="chapter active" data-level="1.4.3" data-path="9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
             
                 <a href="9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
             
@@ -1062,7 +1064,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >介绍</a>
+        <a href="." >9 验证，数据绑定和类型转换</a>
     </h1>
 </div>
 
@@ -1077,8 +1079,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="spring-framework-&#x53C2;&#x8003;&#x6587;&#x6863;">Spring Framework &#x53C2;&#x8003;&#x6587;&#x6863;</h1>
-<p>&#x672C;&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x7FFB;&#x8BD1;&#x57FA;&#x4E8E;Spring 4.3.21.RELEASE&#x5B98;&#x65B9;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF0C;&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/&#x3002;" target="_blank">https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/</a></p>
+                                <p>9.1 &#x4ECB;&#x7ECD;</p>
+<p>9.2 &#x4F7F;&#x7528;Spring&#x7684;Validator&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;</p>
+<p>9.3 &#x89E3;&#x51B3;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x7684;&#x4EE3;&#x7801;</p>
+<p>9.4 Bean&#x64CD;&#x4F5C;&#x548C;BeanWrapper</p>
+<p>9.4.1 &#x8BBE;&#x7F6E;&#x548C;&#x83B7;&#x53D6;&#x57FA;&#x672C;&#x548C;&#x5D4C;&#x5957;&#x5C5E;&#x6027;</p>
+<p>9.4.2 &#x5185;&#x7F6E;PropertyEditor&#x5B9E;&#x73B0;</p>
+<p>&#x6CE8;&#x518C;&#x5176;&#x4ED6;&#x81EA;&#x5B9A;&#x4E49;PropertyEditors</p>
+<p>9.5 &#x5F39;&#x7C27;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
+<p>9.5.1 &#x8F6C;&#x6362;&#x5668;SPI</p>
+<p>9.5.2 ConverterFactory</p>
+<p>9.5.3 GenericConverter</p>
+<p>ConditionalGenericConverter</p>
+<p>9.5.4 ConversionService API</p>
+<p>9.5.5 &#x914D;&#x7F6E;ConversionService</p>
+<p>9.5.6 &#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;ConversionService</p>
+<p>9.6 Spring Field&#x683C;&#x5F0F;</p>
+<p>9.6.1 &#x683C;&#x5F0F;&#x5316;SPI</p>
+<p>9.6.2 &#x6CE8;&#x91CA;&#x9A71;&#x52A8;&#x7684;&#x683C;&#x5F0F;</p>
+<p>&#x683C;&#x5F0F;&#x6CE8;&#x91CA;API</p>
+<p>9.6.3 FormatterRegistry SPI</p>
+<p>9.6.4 FormatterRegistrar SPI</p>
+<p>9.6.5 &#x5728;Spring MVC&#x4E2D;&#x914D;&#x7F6E;&#x683C;&#x5F0F;&#x5316;</p>
+<p>9.7 &#x914D;&#x7F6E;&#x5168;&#x5C40;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x683C;&#x5F0F;</p>
+<p>9.8 Spring&#x9A8C;&#x8BC1;</p>
+<p>9.8.1 JSR-303 Bean Validation API&#x6982;&#x8FF0;</p>
+<p>9.8.2 &#x914D;&#x7F6E;Bean&#x9A8C;&#x8BC1;&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;</p>
+<p>&#x6CE8;&#x5165;&#x9A8C;&#x8BC1;&#x5668;</p>
+<p>&#x914D;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x7EA6;&#x675F;</p>
+<p>&#x5F39;&#x7C27;&#x9A71;&#x52A8;&#x7684;&#x65B9;&#x6CD5;&#x9A8C;&#x8BC1;</p>
+<p>&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x9009;&#x9879;</p>
+<p>9.8.3 &#x914D;&#x7F6E;DataBinder</p>
+<p>9.8.4 Spring MVC 3&#x9A8C;&#x8BC1;</p>
 
                                 
                                 </section>
@@ -1106,8 +1138,12 @@
 
             
                 
+                <a href="87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html" class="navigation navigation-prev " aria-label="Previous page: 8.7 应用程序上下文和资源路径">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: I Spring Framework概述">
+                
+                <a href="10-springbiao-da-shi-yu-yan.html" class="navigation navigation-next " aria-label="Next page: 10 Spring表达式语言">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1118,7 +1154,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"I Spring Framework概述","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-05T03:32:06.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9 验证，数据绑定和类型转换","level":"1.4.3","depth":2,"next":{"title":"10 Spring表达式语言","level":"1.4.4","depth":2,"path":"10-springbiao-da-shi-yu-yan.md","ref":"10-springbiao-da-shi-yu-yan.md","articles":[]},"previous":{"title":"8.7 应用程序上下文和资源路径","level":"1.4.2.7","depth":3,"path":"87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md","ref":"87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md","mtime":"2019-01-14T06:38:30.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

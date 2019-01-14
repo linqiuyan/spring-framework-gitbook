@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>12 Spring AOP API · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chapter1.html" />
+    <link rel="next" href="iv-ce-shi.html" />
     
+    
+    <link rel="prev" href="11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -503,7 +505,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="12-spring-aop-api.html">
+        <li class="chapter active" data-level="1.4.6" data-path="12-spring-aop-api.html">
             
                 <a href="12-spring-aop-api.html">
             
@@ -1062,7 +1064,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >介绍</a>
+        <a href="." >12 Spring AOP API</a>
     </h1>
 </div>
 
@@ -1077,8 +1079,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="spring-framework-&#x53C2;&#x8003;&#x6587;&#x6863;">Spring Framework &#x53C2;&#x8003;&#x6587;&#x6863;</h1>
-<p>&#x672C;&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x7FFB;&#x8BD1;&#x57FA;&#x4E8E;Spring 4.3.21.RELEASE&#x5B98;&#x65B9;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF0C;&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/&#x3002;" target="_blank">https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/</a></p>
+                                <p>12.1&#x3002;&#x4ECB;&#x7ECD;</p>
+<p>12.2&#x3002; Spring&#x4E2D;&#x7684;Pointcut API</p>
+<p>12.2.1&#x3002;&#x6982;&#x5FF5;</p>
+<p>12.2.2&#x3002;&#x5207;&#x5165;&#x70B9;&#x7684;&#x64CD;&#x4F5C;</p>
+<p>12.2.3&#x3002; AspectJ&#x8868;&#x8FBE;&#x5F0F;&#x5207;&#x5165;&#x70B9;</p>
+<p>12.2.4&#x3002;&#x4FBF;&#x5229;&#x5207;&#x5165;&#x70B9;&#x5B9E;&#x73B0;</p>
+<p>&#x9759;&#x6001;&#x5207;&#x5165;&#x70B9;</p>
+<p>&#x52A8;&#x6001;&#x5207;&#x5165;&#x70B9;</p>
+<p>12.2.5&#x3002;&#x5207;&#x5165;&#x70B9;&#x8D85;&#x7C7B;</p>
+<p>12.2.6&#x3002;&#x81EA;&#x5B9A;&#x4E49;&#x5207;&#x5165;&#x70B9;</p>
+<p>12.3&#x3002; Spring&#x4E2D;&#x7684;&#x5EFA;&#x8BAE;API</p>
+<p>12.3.1&#x3002;&#x5EFA;&#x8BAE;&#x751F;&#x547D;&#x5468;&#x671F;</p>
+<p>12.3.2&#x3002; Spring&#x4E2D;&#x7684;&#x5EFA;&#x8BAE;&#x7C7B;&#x578B;</p>
+<p>&#x62E6;&#x622A;&#x5EFA;&#x8BAE;</p>
+<p>&#x5728;&#x5EFA;&#x8BAE;&#x4E4B;&#x524D;</p>
+<p>&#x63D0;&#x51FA;&#x5EFA;&#x8BAE;</p>
+<p>&#x5728;&#x56DE;&#x590D;&#x5EFA;&#x8BAE;&#x540E;</p>
+<p>&#x4ECB;&#x7ECD;&#x5EFA;&#x8BAE;</p>
+<p>12.4&#x3002; Spring&#x4E2D;&#x7684;Advisor API</p>
+<p>12.5&#x3002;&#x4F7F;&#x7528;ProxyFactoryBean&#x521B;&#x5EFA;AOP&#x4EE3;&#x7406;</p>
+<p>12.5.1&#x3002;&#x57FA;&#x672C;</p>
+<p>12.5.2&#x3002; JavaBean&#x5C5E;&#x6027;</p>
+<p>12.5.3&#x3002;&#x57FA;&#x4E8E;JDK&#x548C;CGLIB&#x7684;&#x4EE3;&#x7406;</p>
+<p>12.5.4&#x3002;&#x4EE3;&#x7406;&#x63A5;&#x53E3;</p>
+<p>12.5.5&#x3002;&#x4EE3;&#x7406;&#x8BFE;&#x7A0B;</p>
+<p>12.5.6&#x3002;&#x4F7F;&#x7528;&#x201C;&#x5168;&#x7403;&#x201D;&#x987E;&#x95EE;</p>
+<p>12.6&#x3002;&#x7B80;&#x660E;&#x7684;&#x4EE3;&#x7406;&#x5B9A;&#x4E49;</p>
+<p>12.7&#x3002;&#x4F7F;&#x7528;ProxyFactory&#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;AOP&#x4EE3;&#x7406;</p>
+<p>12.8&#x3002;&#x64CD;&#x7EB5;&#x5EFA;&#x8BAE;&#x7684;&#x5BF9;&#x8C61;</p>
+<p>12.9&#x3002;&#x4F7F;&#x7528;&#x201C;&#x81EA;&#x52A8;&#x4EE3;&#x7406;&#x201D;&#x5DE5;&#x5177;</p>
+<p>12.9.1&#x3002; Autoproxy bean&#x5B9A;&#x4E49;</p>
+<p>&#x7684;BeanNameAutoProxyCreator</p>
+<p>DefaultAdvisorAutoProxyCreator&#x7684;</p>
+<p>AbstractAdvisorAutoProxyCreator</p>
+<p>12.9.2&#x3002;&#x4F7F;&#x7528;&#x5143;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7684;&#x81EA;&#x52A8;&#x4EE3;&#x7406;</p>
+<p>12.10&#x3002;&#x4F7F;&#x7528;TargetSources</p>
+<p>12.10.1&#x3002;&#x70ED;&#x63D2;&#x62D4;&#x76EE;&#x6807;&#x6E90;</p>
+<p>12.10.2&#x3002;&#x6C47;&#x96C6;&#x76EE;&#x6807;&#x6765;&#x6E90;</p>
+<p>12.10.3&#x3002;&#x539F;&#x578B;&#x76EE;&#x6807;&#x6765;&#x6E90;</p>
+<p>12.10.4&#x3002; ThreadLocal&#x76EE;&#x6807;&#x6E90;</p>
+<p>12.11&#x3002;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x5EFA;&#x8BAE;&#x7C7B;&#x578B;</p>
+<p>12.12&#x3002;&#x66F4;&#x591A;&#x8D44;&#x6E90;</p>
 
                                 
                                 </section>
@@ -1106,8 +1148,12 @@
 
             
                 
+                <a href="11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html" class="navigation navigation-prev " aria-label="Previous page: 11 使用Spring进行面向切面编程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: I Spring Framework概述">
+                
+                <a href="iv-ce-shi.html" class="navigation navigation-next " aria-label="Next page: IV 测试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1118,7 +1164,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"I Spring Framework概述","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-05T03:32:06.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"12 Spring AOP API","level":"1.4.6","depth":2,"next":{"title":"IV 测试","level":"1.5","depth":1,"path":"iv-ce-shi.md","ref":"iv-ce-shi.md","articles":[{"title":"13 Spring测试简介","level":"1.5.1","depth":2,"path":"13-springce-shi-jian-jie.md","ref":"13-springce-shi-jian-jie.md","articles":[]},{"title":"14 单元测试","level":"1.5.2","depth":2,"path":"14-dan-yuan-ce-shi.md","ref":"14-dan-yuan-ce-shi.md","articles":[]},{"title":"15 集成测试","level":"1.5.3","depth":2,"path":"15-ji-cheng-ce-shi.md","ref":"15-ji-cheng-ce-shi.md","articles":[]},{"title":"16 更多资源","level":"1.5.4","depth":2,"path":"16-geng-duo-zi-yuan.md","ref":"16-geng-duo-zi-yuan.md","articles":[]}]},"previous":{"title":"11 使用Spring进行面向切面编程","level":"1.4.5","depth":2,"path":"11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md","ref":"11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"12-spring-aop-api.md","mtime":"2019-01-14T06:39:41.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

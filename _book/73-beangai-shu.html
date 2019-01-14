@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>介绍 · GitBook</title>
+        <title>7.3 bean概述 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chapter1.html" />
+    <link rel="next" href="74-yi-lai-xing.html" />
     
+    
+    <link rel="prev" href="iii-he-xin-ji-zhu/72-rong-qi-gai-shu.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -167,7 +169,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.2" data-path="73-beangai-shu.html">
+        <li class="chapter active" data-level="1.4.1.2" data-path="73-beangai-shu.html">
             
                 <a href="73-beangai-shu.html">
             
@@ -1062,7 +1064,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >介绍</a>
+        <a href="." >7.3 bean概述</a>
     </h1>
 </div>
 
@@ -1077,8 +1079,78 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="spring-framework-&#x53C2;&#x8003;&#x6587;&#x6863;">Spring Framework &#x53C2;&#x8003;&#x6587;&#x6863;</h1>
-<p>&#x672C;&#x7CFB;&#x5217;&#x6587;&#x7AE0;&#x7FFB;&#x8BD1;&#x57FA;&#x4E8E;Spring 4.3.21.RELEASE&#x5B98;&#x65B9;&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF0C;&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/&#x3002;" target="_blank">https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/</a></p>
+                                <h2 id="73-bean&#x6982;&#x8FF0;">7.3 Bean&#x6982;&#x8FF0;</h2>
+<p>Spring IoC&#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;bean&#x3002; &#x8FD9;&#x4E9B;bean&#x662F;&#x4F7F;&#x7528;&#x60A8;&#x63D0;&#x4F9B;&#x7ED9;&#x5BB9;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x5143;&#x6570;&#x636E;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;XML &lt;bean/&gt;&#x5B9A;&#x4E49;&#x7684;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x5728;&#x5BB9;&#x5668;&#x672C;&#x8EAB;&#x5185;&#xFF0C;&#x8FD9;&#x4E9B;bean&#x5B9A;&#x4E49;&#x8868;&#x793A;&#x4E3A;BeanDefinition&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#xFF08;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x4FE1;&#x606F;&#xFF09;&#x4EE5;&#x4E0B;&#x5143;&#x6570;&#x636E;&#xFF1A;</p>
+<ul>
+<li>&#x5305;&#x9650;&#x5B9A;&#x7684;&#x7C7B;&#x540D;&#xFF1A;&#x901A;&#x5E38;&#x662F;&#x6B63;&#x5728;&#x5B9A;&#x4E49;&#x7684;bean&#x7684;&#x5B9E;&#x9645;&#x5B9E;&#x73B0;&#x7C7B;&#x3002;</li>
+<li>Bean&#x884C;&#x4E3A;&#x914D;&#x7F6E;&#x5143;&#x7D20;&#xFF0C;&#x8BF4;&#x660E;bean&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x884C;&#x4E3A;&#x65B9;&#x5F0F;&#xFF08;&#x8303;&#x56F4;&#xFF0C;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x7B49;&#xFF09;&#x3002;</li>
+<li>&#x5F15;&#x7528;bean&#x6267;&#x884C;&#x5176;&#x5DE5;&#x4F5C;&#x6240;&#x9700;&#x7684;&#x5176;&#x4ED6;bean; &#x8FD9;&#x4E9B;&#x5F15;&#x7528;&#x4E5F;&#x79F0;&#x4E3A;&#x534F;&#x4F5C;&#x8005;&#x6216;&#x4F9D;&#x8D56;&#x9879;&#x3002;</li>
+<li>&#x8981;&#x5728;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x7BA1;&#x7406;&#x8FDE;&#x63A5;&#x6C60;&#x7684;Bean&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x8FDE;&#x63A5;&#x6570;&#x6216;&#x6C60;&#x7684;&#x5927;&#x5C0F;&#x9650;&#x5236;&#x3002;</li>
+</ul>
+<p>&#x6B64;&#x5143;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x7EC4;&#x6210;&#x6BCF;&#x4E2A;bean&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x7EC4;&#x5C5E;&#x6027;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property</th>
+<th style="text-align:left">Explained in&#x2026;&#x200B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">class</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-class" target="_blank">Section 7.3.2, &#x201C;Instantiating beans&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-beanname" target="_blank">Section 7.3.1, &#x201C;Naming beans&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">scope</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-scopes" target="_blank">Section 7.5, &#x201C;Bean scopes&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">constructor arguments</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-collaborators" target="_blank">Section 7.4.1, &#x201C;Dependency Injection&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">properties</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-collaborators" target="_blank">Section 7.4.1, &#x201C;Dependency Injection&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">autowiring mode</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-autowire" target="_blank">Section 7.4.5, &#x201C;Autowiring collaborators&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">lazy-initialization mode</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-lazy-init" target="_blank">Section 7.4.4, &#x201C;Lazy-initialized beans&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">initialization method</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-lifecycle-initializingbean" target="_blank">the section called &#x201C;Initialization callbacks&#x201D;</a></td>
+</tr>
+<tr>
+<td style="text-align:left">destruction method</td>
+<td style="text-align:left"><a href="https://docs.spring.io/spring/docs/4.3.21.RELEASE/spring-framework-reference/htmlsingle/#beans-factory-lifecycle-disposablebean" target="_blank">the section called &#x201C;Destruction callbacks&#x201D;</a></td>
+</tr>
+</tbody>
+</table>
+<p>&#x9664;&#x4E86;&#x5305;&#x542B;&#x6709;&#x5173;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x7279;&#x5B9A;bean&#x7684;&#x4FE1;&#x606F;&#x7684;bean&#x5B9A;&#x4E49;&#x4E4B;&#x5916;&#xFF0C;ApplicationContext&#x5B9E;&#x73B0;&#x8FD8;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x6CE8;&#x518C;&#x5728;&#x5BB9;&#x5668;&#x5916;&#x90E8;&#x521B;&#x5EFA;&#x7684;&#x73B0;&#x6709;&#x5BF9;&#x8C61;&#x3002; &#x8FD9;&#x662F;&#x901A;&#x8FC7;getBeanFactory()&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;ApplicationContext&#x7684;BeanFactory&#x6765;&#x5B8C;&#x6210;&#x7684;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;BeanFactory&#x5B9E;&#x73B0;DefaultListableBeanFactory&#x3002; DefaultListableBeanFactory&#x901A;&#x8FC7;&#x65B9;&#x6CD5;registerSingleton&#xFF08;..&#xFF09;&#x548C;registerBeanDefinition&#xFF08;..&#xFF09;&#x652F;&#x6301;&#x6B64;&#x6CE8;&#x518C;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x5178;&#x578B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x901A;&#x8FC7;&#x5143;&#x6570;&#x636E;bean&#x5B9A;&#x4E49;&#x5B9A;&#x4E49;&#x7684;bean&#x3002;</p>
+<p><em>&#x9700;&#x8981;&#x5C3D;&#x65E9;&#x6CE8;&#x518C;Bean&#x5143;&#x6570;&#x636E;&#x548C;&#x624B;&#x52A8;&#x63D0;&#x4F9B;&#x7684;&#x5355;&#x4F8B;&#x5B9E;&#x4F8B;&#xFF0C;&#x4EE5;&#x4FBF;&#x5BB9;&#x5668;&#x5728;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x548C;&#x5176;&#x4ED6;&#x5185;&#x7701;&#x6B65;&#x9AA4;&#x671F;&#x95F4;&#x6B63;&#x786E;&#x63A8;&#x7406;&#x5B83;&#x4EEC;&#x3002; &#x867D;&#x7136;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x652F;&#x6301;&#x8986;&#x76D6;&#x73B0;&#x6709;&#x5143;&#x6570;&#x636E;&#x548C;&#x73B0;&#x6709;&#x5355;&#x4F8B;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6CE8;&#x518C;&#x65B0;bean&#xFF08;&#x4E0E;&#x5BF9;&#x5DE5;&#x5382;&#x7684;&#x5B9E;&#x65F6;&#x8BBF;&#x95EE;&#x540C;&#x65F6;&#xFF09;&#x5E76;&#x672A;&#x5F97;&#x5230;&#x5B98;&#x65B9;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;bean&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x5F02;&#x5E38;&#x548C;/&#x6216;&#x4E0D;&#x4E00;&#x81F4;&#x72B6;&#x6001;&#x3002;</em></p>
+<h3 id="731&#x547D;&#x540D;bean">7.3.1&#x547D;&#x540D;bean</h3>
+<p>&#x6BCF;&#x4E2A;bean&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#x3002;&#x8FD9;&#x4E9B;&#x6807;&#x8BC6;&#x7B26;&#x5728;&#x6258;&#x7BA1;bean&#x7684;&#x5BB9;&#x5668;&#x4E2D;&#x5FC5;&#x987B;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;bean&#x901A;&#x5E38;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x5B83;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x5219;&#x989D;&#x5916;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x53EF;&#x4EE5;&#x88AB;&#x89C6;&#x4E3A;&#x522B;&#x540D;&#x3002;</p>
+<p>&#x5728;&#x57FA;&#x4E8E;XML&#x7684;&#x914D;&#x7F6E;&#x5143;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;id&#x548C;/&#x6216;name&#x5C5E;&#x6027;&#x6307;&#x5B9A;bean&#x6807;&#x8BC6;&#x7B26;&#x3002;&#x8BE5;id&#x5C5E;&#x6027;&#x5141;&#x8BB8;&#x60A8;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;id&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x8FD9;&#x4E9B;&#x540D;&#x79F0;&#x662F;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#xFF08;&apos;myBean&apos;&#xFF0C;&apos;fooService&apos;&#x7B49;&#xFF09;&#xFF0C;&#x4F46;&#x4E5F;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x3002;&#x5982;&#x679C;&#x8981;&#x5411;bean&#x5F15;&#x5165;&#x5176;&#x4ED6;&#x522B;&#x540D;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;name &#x5C5E;&#x6027;&#x4E2D;&#x6307;&#x5B9A;&#x5B83;&#x4EEC;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#xFF08;,&#xFF09;&#xFF0C;&#x5206;&#x53F7;&#xFF08;;&#xFF09;&#x6216;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x3002;&#x4F5C;&#x4E3A;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x5728;Spring 3.1&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8BE5;id&#x5C5E;&#x6027;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x79CD;xsd:ID&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x7EA6;&#x675F;&#x4E86;&#x53EF;&#x80FD;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x4ECE;3.1&#x5F00;&#x59CB;&#xFF0C;&#x5B83;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x79CD;xsd:string&#x7C7B;&#x578B;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;id&#x5BB9;&#x5668;&#x4ECD;&#x7136;&#x5F3A;&#x5236;&#x6267;&#x884C;bean &#x552F;&#x4E00;&#x6027;&#xFF0C;&#x4F46;&#x4E0D;&#x518D;&#x662F;XML&#x89E3;&#x6790;&#x5668;&#x3002;</p>
+<p>&#x60A8;&#x4E0D;&#x9700;&#x8981;&#x4E3A;bean&#x63D0;&#x4F9B;&#x540D;&#x79F0;&#x6216;ID&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x663E;&#x5F0F;&#x63D0;&#x4F9B;&#x540D;&#x79F0;&#x6216;&#x6807;&#x8BC6;&#xFF0C;&#x5219;&#x5BB9;&#x5668;&#x4F1A;&#x4E3A;&#x8BE5;bean&#x751F;&#x6210;&#x552F;&#x4E00;&#x7684;&#x540D;&#x79F0;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x5F15;&#x7528;&#x8BE5;bean&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4F7F;&#x7528;ref&#x5143;&#x7D20;&#x6216; Service Locator&#x6837;&#x5F0F;&#x67E5;&#x627E;&#x6765;&#x63D0;&#x4F9B;&#x540D;&#x79F0;&#x3002;&#x4E0D;&#x63D0;&#x4F9B;&#x540D;&#x79F0;&#x7684;&#x52A8;&#x673A;&#x4E0E;&#x4F7F;&#x7528;&#x5185;&#x90E8;bean&#x548C;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x534F;&#x4F5C;&#x8005;&#x6709;&#x5173;&#x3002;</p>
+<p><em>Bean&#x547D;&#x540D;&#x7EA6;&#x5B9A;</em></p>
+<p><em>&#x60EF;&#x4F8B;&#x662F;&#x5728;&#x547D;&#x540D;bean&#x65F6;&#x4F7F;&#x7528;&#x6807;&#x51C6;Java&#x7EA6;&#x5B9A;&#x4F5C;&#x4E3A;&#x5B9E;&#x4F8B;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;bean&#x540D;&#x79F0;&#x4EE5;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#xFF0C;&#x4ECE;&#x90A3;&#x65F6;&#x8D77;&#x5C31;&#x662F;&#x9A7C;&#x5CF0;&#x5F0F;&#x7684;&#x3002;&#x8FD9;&#x79CD;&#x540D;&#x79F0;&#x7684;&#x4F8B;&#x5B50;&#x5C06;&#x662F;&#xFF08;&#x4E0D;&#x5E26;&#x5F15;&#x53F7;&#xFF09;&apos;accountManager&apos;&#xFF0C; &apos;accountService&apos;&#xFF0C;&apos;userDao&apos;&#xFF0C;&apos;loginController&apos;&#xFF0C;&#x7B49;&#x7B49;&#x3002;</em></p>
+<p><em>&#x547D;&#x540D;bean&#x59CB;&#x7EC8;&#x4F7F;&#x60A8;&#x7684;&#x914D;&#x7F6E;&#x66F4;&#x6613;&#x4E8E;&#x9605;&#x8BFB;&#x548C;&#x7406;&#x89E3;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F;Spring AOP&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x5C06;&#x5EFA;&#x8BAE;&#x5E94;&#x7528;&#x4E8E;&#x4E0E;&#x540D;&#x79F0;&#x76F8;&#x5173;&#x7684;&#x4E00;&#x7EC4;bean&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x6709;&#x5F88;&#x5927;&#x5E2E;&#x52A9;&#x3002;</em></p>
+<h3 id="732&#x5B9E;&#x4F8B;&#x5316;bean">7.3.2&#x5B9E;&#x4F8B;&#x5316;bean</h3>
+<p>bean&#x5B9A;&#x4E49;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x914D;&#x65B9;&#x3002;&#x5BB9;&#x5668;&#x5728;&#x88AB;&#x8BE2;&#x95EE;&#x65F6;&#x67E5;&#x770B;&#x547D;&#x540D;bean&#x7684;&#x914D;&#x65B9;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x7531;&#x8BE5;bean&#x5B9A;&#x4E49;&#x5C01;&#x88C5;&#x7684;&#x914D;&#x7F6E;&#x5143;&#x6570;&#x636E;&#x6765;&#x521B;&#x5EFA;&#xFF08;&#x6216;&#x83B7;&#x53D6;&#xFF09;&#x5B9E;&#x9645;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;XML&#x7684;&#x914D;&#x7F6E;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x6307;&#x5B9A;&#x8981;&#x5728;&#x5143;&#x7D20;&#x7684;class&#x5C5E;&#x6027;&#x4E2D;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#xFF08;&#x6216;&#x7C7B;&#xFF09;&lt;bean/&gt;&#x3002;&#x6B64; class&#x5C5E;&#x6027;&#x5728;&#x5185;&#x90E8;&#x662F; &#x5B9E;&#x4F8B;Class&#x4E0A;&#x7684;&#x5C5E;&#x6027;BeanDefinition&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5FC5;&#x9700;&#x7684;&#x3002;&#xFF08;&#x6709;&#x5173;&#x5F02;&#x5E38;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; &#x201C;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x201D;&#x4E00;&#x8282;&#x548C;&#x7B2C;7.7&#x8282;&#x201C;Bean&#x5B9A;&#x4E49;&#x7EE7;&#x627F;&#x201D;&#x3002;&#xFF09;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Class&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x4E4B;&#x4E00;&#x4F7F;&#x7528;&#x8BE5;&#x5C5E;&#x6027;&#xFF1A;</p>
+<h4 id="&#x4F7F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5B9E;&#x4F8B;&#x5316;">&#x4F7F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5B9E;&#x4F8B;&#x5316;</h4>
+<h4 id="&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;">&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;</h4>
+<h4 id="&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;">&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;</h4>
+<h2 id=""> </h2>
 
                                 
                                 </section>
@@ -1106,8 +1178,12 @@
 
             
                 
+                <a href="iii-he-xin-ji-zhu/72-rong-qi-gai-shu.html" class="navigation navigation-prev " aria-label="Previous page: 7.2 容器概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: I Spring Framework概述">
+                
+                <a href="74-yi-lai-xing.html" class="navigation navigation-next " aria-label="Next page: 7.4 依赖性">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1118,7 +1194,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"介绍","level":"1.1","depth":1,"next":{"title":"I Spring Framework概述","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2019-01-05T03:32:06.720Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3 bean概述","level":"1.4.1.2","depth":3,"next":{"title":"7.4 依赖性","level":"1.4.1.3","depth":3,"path":"74-yi-lai-xing.md","ref":"74-yi-lai-xing.md","articles":[]},"previous":{"title":"7.2 容器概述","level":"1.4.1.1","depth":3,"path":"iii-he-xin-ji-zhu/72-rong-qi-gai-shu.md","ref":"iii-he-xin-ji-zhu/72-rong-qi-gai-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"73-beangai-shu.md","mtime":"2019-01-13T08:13:02.788Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
