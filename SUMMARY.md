@@ -33,10 +33,10 @@
   * [11 使用Spring进行面向切面编程](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md)
   * [12 Spring AOP API](12-spring-aop-api.md)
 * [IV 测试](iv-ce-shi.md)
+* [13 Spring测试简介](13-springce-shi-jian-jie.md)
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
-* 13 Spring测试简介
 * 14 单元测试
 * 15 集成测试
 * 16 更多资源
