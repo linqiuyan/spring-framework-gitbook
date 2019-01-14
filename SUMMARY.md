@@ -38,6 +38,11 @@
   * 15 集成测试
   * 16 更多资源
 * [V 数据访问](v-shu-ju-fang-wen.md)
+* 17 transaction管理
+* 18 DAO支持
+* 19 数据访问与JDBC
+* 19 数据访问与JDBC
+* 20 对象关系映射（ORM）数据访问
+* 21 使用O / X Mappers编组XML
 * [VI Web](vi-web.md)
-* [VII 集成](vii-ji-cheng.md)
 
