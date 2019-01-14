@@ -22,6 +22,12 @@
     * [7.16 BeanFactory](iii-he-xin-ji-zhu/716-beanfactory.md)
   * [8 资源](8-zi-yuan.md)
     * [8.1 介绍](81-jie-shao.md)
+    * [8.2 资源界面](82-zi-yuan-jie-mian.md)
+    * [8.3 内置资源实现](83-nei-zhi-zi-yuan-shi-xian.md)
+    * [8.4 ResourceLoader](84-resourceloader.md)
+    * [8.5 ResourceLoaderAware接口](8-5-resourceloaderawarejie-kou.md)
+    * [8.6 资源作为依赖项](86-zi-yuan-zuo-wei-yi-lai-xiang.md)
+    * [8.7 应用程序上下文和资源路径](87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md)
   * [9 验证，数据绑定和类型转换](9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md)
   * [10 Spring表达式语言](10-springbiao-da-shi-yu-yan.md)
   * [11 使用Spring进行面向切面编程](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md)
@@ -30,12 +36,4 @@
 * [V 数据访问](v-shu-ju-fang-wen.md)
 * [VI Web](vi-web.md)
 * [VII 集成](vii-ji-cheng.md)
-* [8.2 资源界面](82-zi-yuan-jie-mian.md)
-* [8.3 内置资源实现](83-nei-zhi-zi-yuan-shi-xian.md)
-* [8.4 ResourceLoader](84-resourceloader.md)
-* [8.5 ResourceLoaderAware接口](8-5-resourceloaderawarejie-kou.md)
-* [8.6 资源作为依赖项](86-zi-yuan-zuo-wei-yi-lai-xiang.md)
-* [8.7 应用程序上下文和资源路径](87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md)
-
-
 
