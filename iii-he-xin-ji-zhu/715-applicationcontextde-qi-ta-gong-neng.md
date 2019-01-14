@@ -155,7 +155,7 @@ Spring提供以下标准事件：
 | `ContextStartedEvent` | Published when the`ApplicationContext`is started, using the`start()`method on the`ConfigurableApplicationContext`interface. "Started" here means that all`Lifecycle`beans receive an explicit start signal. Typically this signal is used to restart beans after an explicit stop, but it may also be used to start components that have not been configured for autostart , for example, components that have not already started on initialization. |
 | `ContextStoppedEvent` | Published when the`ApplicationContext`is stopped, using the`stop()`method on the`ConfigurableApplicationContext`interface. "Stopped" here means that all`Lifecycle`beans receive an explicit stop signal. A stopped context may be restarted through a`start()`call. |
 | `ContextClosedEvent` | Published when the`ApplicationContext`is closed, using the`close()`method on the`ConfigurableApplicationContext`interface. "Closed" here means that all singleton beans are destroyed. A closed context reaches its end of life; it cannot be refreshed or restarted. |
-| `RequestHandledEvent` | A web-specific event telling all beans that an HTTP request has been serviced. This event is published_after_the request is complete. This event is only applicable to web applications using Spring’s`DispatcherServlet`. |
+| `RequestHandledEvent` | A web-specific event telling all beans that an HTTP request has been serviced. This event is published\_after\_the request is complete. This event is only applicable to web applications using Spring’s`DispatcherServlet`. |
 
 您还可以创建和发布自己的自定义事件。 这个例子演示了一个扩展Spring的ApplicationEvent基类的简单类：
 
@@ -298,7 +298,7 @@ public void processBlackListEvent(BlackListEvent blEvent) {
 | :--- | :--- | :--- | :--- |
 | Event | root object | The actual`ApplicationEvent` | `#root.event` |
 | Arguments array | root object | The arguments \(as array\) used for invoking the target | `#root.args[0]` |
-| _Argument name_ | evaluation context | Name of any of the method arguments. If for some reason the names are not available \(e.g. no debug information\), the argument names are also available under the`#a<#arg>`where_\#arg_stands for the argument index \(starting from 0\). | `#blEvent`or`#a0`\(one can also use`#p0`or`#p<#arg>`notation as an alias\). |
+| _Argument name_ | evaluation context | Name of any of the method arguments. If for some reason the names are not available \(e.g. no debug information\), the argument names are also available under the`#a<#arg>`where\_\#arg\_stands for the argument index \(starting from 0\). | `#blEvent`or`#a0`\(one can also use`#p0`or`#p<#arg>`notation as an alias\). |
 
 请注意，＃root.event允许您访问基础事件，即使您的方法签名实际上引用了已发布的任意对象。
 
@@ -334,8 +334,6 @@ public void processBlackListEvent(BlackListEvent event) {
 2. 此类事件监听器无法发送回复。 如果您需要作为处理结果发送另一个事件，请注入ApplicationEventPublisher以手动发送事件。
 
 #### Ordering listeners
-
-
 
 #### 通用事件\(Generic events\)
 
