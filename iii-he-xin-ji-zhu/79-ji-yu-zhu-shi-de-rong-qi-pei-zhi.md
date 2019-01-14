@@ -704,5 +704,5 @@ public class CachingMovieLister {
 }
 ```
 
-
+有关组合各种生命周期机制的效果的详细信息，请参阅“组合生命周期机制”一节。
 
