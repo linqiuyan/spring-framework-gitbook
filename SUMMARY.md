@@ -50,7 +50,7 @@
   * [25 Portlet MVC框架](25-portlet-mvckuang-jia.md)
   * [26 WebSocket支持](26-websocketzhi-chi.md)
   * [27 CORS支持](27-corszhi-chi.md)
-* VII 集成
+* [VII 集成](vii-ji-cheng.md)
   * [28 使用Spring进行远程处理和Web服务](28-shi-yongspring-jin-xing-yuan-cheng-chu-li-he-web-fu-wu.md)
   * [29 Enterprise JavaBeans（EJB）集成](29-enterprise-javabeansejbff09-ji-cheng.md)
   * [30 JMS \(Java Message Service\)](30-jms-java-message-service.md)
@@ -60,7 +60,7 @@
   * [34 任务执行和调度](34-ren-wu-zhi-xing-he-diao-du.md)
   * [35 动态语言支持](35-dong-tai-yu-yan-zhi-chi.md)
   * [36 缓存抽象](36-huan-cun-chou-xiang.md)
-* VIII 附录
+* [VIII 附录](viii-fu-lu.md)
   * [37 迁移到Spring Framework 4.x](37-qian-yidao-spring-framework-4-x.md)
   * [38 Spring注释编程模型](38-springzhu-shi-bian-cheng-mo-xing.md)
   * [39 经典Spring用法](39-jing-dian-spring-yong-fa.md)
