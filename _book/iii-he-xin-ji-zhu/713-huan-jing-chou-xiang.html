@@ -1,0 +1,1382 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.13 环境抽象 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="714-zhu-ce-loadtimeweaver.html" />
+    
+    
+    <link rel="prev" href="712-ji-yu-java-de-rong-qi-pei-zhi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    I Spring Framework概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../ii-spring-framework-4xxin-te-xing.html">
+            
+                <a href="../ii-spring-framework-4xxin-te-xing.html">
+            
+                    
+                    II Spring Framework 4.X新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../iii-he-xin-ji-zhu.html">
+            
+                <a href="../iii-he-xin-ji-zhu.html">
+            
+                    
+                    III 核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="7-iocrong-qi.html">
+            
+                <a href="7-iocrong-qi.html">
+            
+                    
+                    7 IoC容器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="72-rong-qi-gai-shu.html">
+            
+                <a href="72-rong-qi-gai-shu.html">
+            
+                    
+                    7.2 容器概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../73-beangai-shu.html">
+            
+                <a href="../73-beangai-shu.html">
+            
+                    
+                    7.3 bean概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../74-yi-lai-xing.html">
+            
+                <a href="../74-yi-lai-xing.html">
+            
+                    
+                    7.4 依赖性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../75.html">
+            
+                <a href="../75.html">
+            
+                    
+                    7.5 Bean范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="../76-zi-ding-yi-bean-de-ben-zhi.html">
+            
+                <a href="../76-zi-ding-yi-bean-de-ben-zhi.html">
+            
+                    
+                    7.6 自定义bean的本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="77-beanding-yi-ji-cheng.html">
+            
+                <a href="77-beanding-yi-ji-cheng.html">
+            
+                    
+                    7.7 Bean定义继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.7" data-path="78-rong-qi-kuo-zhan.html">
+            
+                <a href="78-rong-qi-kuo-zhan.html">
+            
+                    
+                    7.8 容器扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.8" data-path="79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.html">
+            
+                <a href="79-ji-yu-zhu-shi-de-rong-qi-pei-zhi.html">
+            
+                    
+                    7.9 基于注释的容器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.9" data-path="710-lei-lu-jing-sao-miao-he-tuo-guan-zu-jian.html">
+            
+                <a href="710-lei-lu-jing-sao-miao-he-tuo-guan-zu-jian.html">
+            
+                    
+                    7.10 类路径扫描和托管组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.10" data-path="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html">
+            
+                <a href="711-shi-yong-jsr-330-biao-zhun-zhu-shi.html">
+            
+                    
+                    7.11 使用JSR 330标准注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.11" data-path="712-ji-yu-java-de-rong-qi-pei-zhi.html">
+            
+                <a href="712-ji-yu-java-de-rong-qi-pei-zhi.html">
+            
+                    
+                    7.12 基于Java的容器配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.1.12" data-path="713-huan-jing-chou-xiang.html">
+            
+                <a href="713-huan-jing-chou-xiang.html">
+            
+                    
+                    7.13 环境抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.13" data-path="714-zhu-ce-loadtimeweaver.html">
+            
+                <a href="714-zhu-ce-loadtimeweaver.html">
+            
+                    
+                    7.14 注册LoadTimeWeaver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.14" data-path="715-applicationcontextde-qi-ta-gong-neng.html">
+            
+                <a href="715-applicationcontextde-qi-ta-gong-neng.html">
+            
+                    
+                    7.15 ApplicationContext的其他功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.15" data-path="716-beanfactory.html">
+            
+                <a href="716-beanfactory.html">
+            
+                    
+                    7.16 BeanFactory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../8-zi-yuan.html">
+            
+                <a href="../8-zi-yuan.html">
+            
+                    
+                    8 资源
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../81-jie-shao.html">
+            
+                <a href="../81-jie-shao.html">
+            
+                    
+                    8.1 介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../82-zi-yuan-jie-mian.html">
+            
+                <a href="../82-zi-yuan-jie-mian.html">
+            
+                    
+                    8.2 资源界面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../83-nei-zhi-zi-yuan-shi-xian.html">
+            
+                <a href="../83-nei-zhi-zi-yuan-shi-xian.html">
+            
+                    
+                    8.3 内置资源实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../84-resourceloader.html">
+            
+                <a href="../84-resourceloader.html">
+            
+                    
+                    8.4 ResourceLoader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../8-5-resourceloaderawarejie-kou.html">
+            
+                <a href="../8-5-resourceloaderawarejie-kou.html">
+            
+                    
+                    8.5 ResourceLoaderAware接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="../86-zi-yuan-zuo-wei-yi-lai-xiang.html">
+            
+                <a href="../86-zi-yuan-zuo-wei-yi-lai-xiang.html">
+            
+                    
+                    8.6 资源作为依赖项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="../87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html">
+            
+                <a href="../87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.html">
+            
+                    
+                    8.7 应用程序上下文和资源路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
+            
+                <a href="../9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.html">
+            
+                    
+                    9 验证，数据绑定和类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../10-springbiao-da-shi-yu-yan.html">
+            
+                <a href="../10-springbiao-da-shi-yu-yan.html">
+            
+                    
+                    10 Spring表达式语言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html">
+            
+                <a href="../11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.html">
+            
+                    
+                    11 使用Spring进行面向切面编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../12-spring-aop-api.html">
+            
+                <a href="../12-spring-aop-api.html">
+            
+                    
+                    12 Spring AOP API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../iv-ce-shi.html">
+            
+                <a href="../iv-ce-shi.html">
+            
+                    
+                    IV 测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../13-springce-shi-jian-jie.html">
+            
+                <a href="../13-springce-shi-jian-jie.html">
+            
+                    
+                    13 Spring测试简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../14-dan-yuan-ce-shi.html">
+            
+                <a href="../14-dan-yuan-ce-shi.html">
+            
+                    
+                    14 单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../15-ji-cheng-ce-shi.html">
+            
+                <a href="../15-ji-cheng-ce-shi.html">
+            
+                    
+                    15 集成测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../16-geng-duo-zi-yuan.html">
+            
+                <a href="../16-geng-duo-zi-yuan.html">
+            
+                    
+                    16 更多资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../v-shu-ju-fang-wen.html">
+            
+                <a href="../v-shu-ju-fang-wen.html">
+            
+                    
+                    V 数据访问
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../v-shu-ju-fang-wen/17-transactionguan-li.html">
+            
+                <a href="../v-shu-ju-fang-wen/17-transactionguan-li.html">
+            
+                    
+                    17 transaction管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../v-shu-ju-fang-wen/18-daozhi-chi.html">
+            
+                <a href="../v-shu-ju-fang-wen/18-daozhi-chi.html">
+            
+                    
+                    18 DAO支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../v-shu-ju-fang-wen/19-shu-ju-fang-wen-yu-jdbc.html">
+            
+                <a href="../v-shu-ju-fang-wen/19-shu-ju-fang-wen-yu-jdbc.html">
+            
+                    
+                    19 数据访问与JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../v-shu-ju-fang-wen/20-dui-xiang-guan-xi-ying-she-ff08-orm-ff09-shu-ju-fang-wen.html">
+            
+                <a href="../v-shu-ju-fang-wen/20-dui-xiang-guan-xi-ying-she-ff08-orm-ff09-shu-ju-fang-wen.html">
+            
+                    
+                    20 对象关系映射（ORM）数据访问
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../v-shu-ju-fang-wen/21-shi-yong-o-x-mappers-bian-zu-xml.html">
+            
+                <a href="../v-shu-ju-fang-wen/21-shi-yong-o-x-mappers-bian-zu-xml.html">
+            
+                    
+                    21 使用O / X Mappers编组XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vi-web.html">
+            
+                <a href="../vi-web.html">
+            
+                    
+                    VI Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../22-web-mvckuang-jia.html">
+            
+                <a href="../22-web-mvckuang-jia.html">
+            
+                    
+                    22 Web MVC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../23-viewji-zhu.html">
+            
+                <a href="../23-viewji-zhu.html">
+            
+                    
+                    23 View技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../24-yu-qi-ta-web-kuang-jia-ji-cheng.html">
+            
+                <a href="../24-yu-qi-ta-web-kuang-jia-ji-cheng.html">
+            
+                    
+                    24 与其他web框架集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../25-portlet-mvckuang-jia.html">
+            
+                <a href="../25-portlet-mvckuang-jia.html">
+            
+                    
+                    25 Portlet MVC框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../26-websocketzhi-chi.html">
+            
+                <a href="../26-websocketzhi-chi.html">
+            
+                    
+                    26 WebSocket支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../27-corszhi-chi.html">
+            
+                <a href="../27-corszhi-chi.html">
+            
+                    
+                    27 CORS支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../vii-ji-cheng.html">
+            
+                <a href="../vii-ji-cheng.html">
+            
+                    
+                    VII 集成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../28-shi-yongspring-jin-xing-yuan-cheng-chu-li-he-web-fu-wu.html">
+            
+                <a href="../28-shi-yongspring-jin-xing-yuan-cheng-chu-li-he-web-fu-wu.html">
+            
+                    
+                    28 使用Spring进行远程处理和Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../29-enterprise-javabeansejbff09-ji-cheng.html">
+            
+                <a href="../29-enterprise-javabeansejbff09-ji-cheng.html">
+            
+                    
+                    29 Enterprise JavaBeans（EJB）集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../30-jms-java-message-service.html">
+            
+                <a href="../30-jms-java-message-service.html">
+            
+                    
+                    30 JMS (Java Message Service)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../31-jmx.html">
+            
+                <a href="../31-jmx.html">
+            
+                    
+                    31 JMX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../32-jca-cci.html">
+            
+                <a href="../32-jca-cci.html">
+            
+                    
+                    32 JCA CCI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../33-email.html">
+            
+                <a href="../33-email.html">
+            
+                    
+                    33 Email
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../34-ren-wu-zhi-xing-he-diao-du.html">
+            
+                <a href="../34-ren-wu-zhi-xing-he-diao-du.html">
+            
+                    
+                    34 任务执行和调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../35-dong-tai-yu-yan-zhi-chi.html">
+            
+                <a href="../35-dong-tai-yu-yan-zhi-chi.html">
+            
+                    
+                    35 动态语言支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="../36-huan-cun-chou-xiang.html">
+            
+                <a href="../36-huan-cun-chou-xiang.html">
+            
+                    
+                    36 缓存抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../viii-fu-lu.html">
+            
+                <a href="../viii-fu-lu.html">
+            
+                    
+                    VIII 附录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../37-qian-yidao-spring-framework-4-x.html">
+            
+                <a href="../37-qian-yidao-spring-framework-4-x.html">
+            
+                    
+                    37 迁移到Spring Framework 4.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../38-springzhu-shi-bian-cheng-mo-xing.html">
+            
+                <a href="../38-springzhu-shi-bian-cheng-mo-xing.html">
+            
+                    
+                    38 Spring注释编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../39-jing-dian-spring-yong-fa.html">
+            
+                <a href="../39-jing-dian-spring-yong-fa.html">
+            
+                    
+                    39 经典Spring用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../40-jing-dian-springaop-yong-fa.html">
+            
+                <a href="../40-jing-dian-springaop-yong-fa.html">
+            
+                    
+                    40 经典SpringAOP用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../41-ji-yu-xml-schema-de-pei-zhi.html">
+            
+                <a href="../41-ji-yu-xml-schema-de-pei-zhi.html">
+            
+                    
+                    41 基于XML Schema的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../42-ke-kuo-zhan-de-xml.html">
+            
+                <a href="../42-ke-kuo-zhan-de-xml.html">
+            
+                    
+                    42 可扩展的XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../43-spring-jsp-tag-library.html">
+            
+                <a href="../43-spring-jsp-tag-library.html">
+            
+                    
+                    43 spring JSP Tag Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../44-spring-form-jsp-tag-library.html">
+            
+                <a href="../44-spring-form-jsp-tag-library.html">
+            
+                    
+                    44 spring-form JSP Tag Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >7.13 环境抽象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="713-&#x73AF;&#x5883;&#x62BD;&#x8C61;">7.13 &#x73AF;&#x5883;&#x62BD;&#x8C61;</h2>
+<p>&#x73AF;&#x5883;&#x662F;&#x96C6;&#x6210;&#x5728;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5B83;&#x6A21;&#x62DF;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x73AF;&#x5883;&#x7684;&#x4E24;&#x4E2A;&#x5173;&#x952E;&#x65B9;&#x9762;&#xFF1A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x548C;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x4EC5;&#x5728;&#x7ED9;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x65F6;&#x624D;&#x5411;&#x5BB9;&#x5668;&#x6CE8;&#x518C;&#x7684;bean&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x540D;&#x903B;&#x8F91;&#x7EC4;&#x3002; &#x53EF;&#x4EE5;&#x5C06;Bean&#x5206;&#x914D;&#x7ED9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x4EE5;XML&#x8FD8;&#x662F;&#x901A;&#x8FC7;&#x6CE8;&#x91CA;&#x5B9A;&#x4E49;&#x3002; &#x4E0E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76F8;&#x5173;&#x7684;Environment&#x5BF9;&#x8C61;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x786E;&#x5B9A;&#x54EA;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x679C;&#x6709;&#xFF09;&#x5F53;&#x524D;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#xFF0C;&#x4EE5;&#x53CA;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x54EA;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x5982;&#x679C;&#x6709;&#xFF09;&#x5E94;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x5C5E;&#x6027;&#x5728;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x90FD;&#x53D1;&#x6325;&#x7740;&#x91CD;&#x8981;&#x4F5C;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x6E90;&#x81EA;&#x5404;&#x79CD;&#x6E90;&#xFF1A;&#x5C5E;&#x6027;&#x6587;&#x4EF6;&#xFF0C;JVM&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#xFF0C;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;JNDI&#xFF0C;servlet&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#xFF0C;ad-hoc&#x5C5E;&#x6027;&#x5BF9;&#x8C61;&#xFF0C;&#x6620;&#x5C04;&#x7B49;&#x3002; &#x4E0E;&#x5C5E;&#x6027;&#x76F8;&#x5173;&#x7684;Environment&#x5BF9;&#x8C61;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x65B9;&#x4FBF;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x5C5E;&#x6027;&#x6E90;&#x548C;&#x4ECE;&#x4E2D;&#x89E3;&#x6790;&#x5C5E;&#x6027;&#x3002;</p>
+<h3 id="7131--bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">7.13.1  Bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p>Bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x6838;&#x5FC3;&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#xFF0C;&#x5141;&#x8BB8;&#x5728;&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x4E2D;&#x6CE8;&#x518C;&#x4E0D;&#x540C;&#x7684;bean&#x3002; &#x5355;&#x8BCD;&#x73AF;&#x5883;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x6765;&#x8BF4;&#x610F;&#x5473;&#x7740;&#x4E0D;&#x540C;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x8BB8;&#x591A;&#x7528;&#x4F8B;&#xFF0C;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x5F00;&#x53D1;&#x4E2D;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x5728;QA&#x6216;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x67E5;&#x627E;&#x6765;&#x81EA;JNDI&#x7684;&#x76F8;&#x540C;&#x6570;&#x636E;&#x6E90;</li>
+<li>&#x4EC5;&#x5728;&#x5C06;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90E8;&#x7F72;&#x5230;&#x6027;&#x80FD;&#x73AF;&#x5883;&#x65F6;&#x6CE8;&#x518C;&#x76D1;&#x89C6;&#x57FA;&#x7840;&#x7ED3;&#x6784;</li>
+<li>&#x4E3A;&#x5BA2;&#x6237;A&#x548C;&#x5BA2;&#x6237;B&#x90E8;&#x7F72;&#x6CE8;&#x518C;bean&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;</li>
+</ul>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x9700;&#x8981;DataSource&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x4F8B;&#x3002; &#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x914D;&#x7F6E;&#x53EF;&#x80FD;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>@Bean
+public DataSource dataSource() {
+    return new EmbeddedDatabaseBuilder()
+        .setType(EmbeddedDatabaseType.HSQL)
+        .addScript(&quot;my-schema.sql&quot;)
+        .addScript(&quot;my-test-data.sql&quot;)
+        .build();
+}
+</code></pre><p>&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x5982;&#x4F55;&#x5C06;&#x6B64;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90E8;&#x7F72;&#x5230;QA&#x6216;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5047;&#x8BBE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x6E90;&#x5C06;&#x5728;&#x751F;&#x4EA7;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x670D;&#x52A1;&#x5668;&#x7684;JNDI&#x76EE;&#x5F55;&#x4E2D;&#x6CE8;&#x518C;&#x3002; &#x6211;&#x4EEC;&#x7684;dataSource bean&#x73B0;&#x5728;&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>@Bean(destroyMethod=&quot;&quot;)
+public DataSource dataSource() throws Exception {
+    Context ctx = new InitialContext();
+    return (DataSource) ctx.lookup(&quot;java:comp/env/jdbc/datasource&quot;);
+}
+</code></pre><p>&#x95EE;&#x9898;&#x662F;&#x5982;&#x4F55;&#x6839;&#x636E;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x5728;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x79CD;&#x53D8;&#x4F53;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x3002; &#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#xFF0C;Spring&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x8BBE;&#x8BA1;&#x4E86;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;&#x8FD9;&#x9879;&#x5DE5;&#x4F5C;&#xFF0C;&#x901A;&#x5E38;&#x4F9D;&#x8D56;&#x4E8E;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x548C;&#x5305;&#x542B;$ {placeholder}&#x6807;&#x8BB0;&#x7684;XML &lt;import /&gt;&#x8BED;&#x53E5;&#x7684;&#x7EC4;&#x5408;&#xFF0C;&#x8FD9;&#x4E9B;&#x6807;&#x8BB0;&#x6839;&#x636E;&#x503C;&#x89E3;&#x6790;&#x4E3A;&#x6B63;&#x786E;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8DEF;&#x5F84; &#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002; Bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F;&#x6838;&#x5FC3;&#x5BB9;&#x5668;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4E3A;&#x6B64;&#x95EE;&#x9898;&#x63D0;&#x4F9B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x6982;&#x62EC;&#x4E0A;&#x9762;&#x7279;&#x5B9A;&#x4E8E;&#x73AF;&#x5883;&#x7684;bean&#x5B9A;&#x4E49;&#x7684;&#x793A;&#x4F8B;&#x7528;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x7EC8;&#x9700;&#x8981;&#x5728;&#x67D0;&#x4E9B;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6CE8;&#x518C;&#x67D0;&#x4E9B;bean&#x5B9A;&#x4E49;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5176;&#x4ED6;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x8BF4;&#x60A8;&#x5E0C;&#x671B;&#x5728;&#x60C5;&#x5883;A&#x4E2D;&#x6CE8;&#x518C;&#x67D0;&#x4E2A;bean&#x5B9A;&#x4E49;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x60C5;&#x51B5;B&#x4E2D;&#x6CE8;&#x518C;&#x4E0D;&#x540C;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x770B;&#x770B;&#x5982;&#x4F55;&#x66F4;&#x65B0;&#x6211;&#x4EEC;&#x7684;&#x914D;&#x7F6E;&#x4EE5;&#x53CD;&#x6620;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#x3002;</p>
+<h4 id="profile">@Profile</h4>
+<p>@Profile&#x6CE8;&#x91CA;&#x5141;&#x8BB8;&#x60A8;&#x5728;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x65F6;&#x6307;&#x793A;&#x7EC4;&#x4EF6;&#x7B26;&#x5408;&#x6CE8;&#x518C;&#x6761;&#x4EF6;&#x3002; &#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5199;dataSource&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>@Configuration
+@Profile(&quot;development&quot;)
+public class StandaloneDataConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript(&quot;classpath:com/bank/config/sql/schema.sql&quot;)
+            .addScript(&quot;classpath:com/bank/config/sql/test-data.sql&quot;)
+            .build();
+    }
+}
+</code></pre><pre><code>@Configuration
+@Profile(&quot;production&quot;)
+public class JndiDataConfig {
+
+    @Bean(destroyMethod=&quot;&quot;)
+    public DataSource dataSource() throws Exception {
+        Context ctx = new InitialContext();
+        return (DataSource) ctx.lookup(&quot;java:comp/env/jdbc/datasource&quot;);
+    }
+}
+</code></pre><p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;&#x4F7F;&#x7528;@Bean&#x65B9;&#x6CD5;&#xFF0C;&#x60A8;&#x901A;&#x5E38;&#x4F1A;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7F16;&#x7A0B;JNDI&#x67E5;&#x627E;&#xFF1A;&#x4F7F;&#x7528;Spring&#x7684;JndiTemplate / JndiLocatorDelegate&#x5E2E;&#x52A9;&#x7A0B;&#x5E8F;&#x6216;&#x4E0A;&#x9762;&#x663E;&#x793A;&#x7684;&#x76F4;&#x63A5;JNDI InitialContext&#x7528;&#x6CD5;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x5F3A;&#x5236;&#x60A8;&#x5C06;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x58F0;&#x660E;&#x4E3A;JndiObjectFactoryBean&#x53D8;&#x91CF; FactoryBean&#x7C7B;&#x578B;&#x3002;</p>
+<p>@Profile&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x5143;&#x6CE8;&#x91CA;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x5408;&#x6CE8;&#x91CA;&#x3002; &#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;@Production&#x6279;&#x6CE8;&#xFF0C;&#x53EF;&#x7528;&#x4F5C;@Profile&#xFF08;&#x201C;&#x751F;&#x4EA7;&#x201D;&#xFF09;&#x7684;&#x66FF;&#x4EE3;&#x54C1;&#xFF1A;</p>
+<pre><code>@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Profile(&quot;production&quot;)
+public @interface Production {
+}
+</code></pre><p>&#x5982;&#x679C;&#x4F7F;&#x7528;@Profile&#x6807;&#x8BB0;@Configuration&#x7C7B;&#xFF0C;&#x5219;&#x5C06;&#x7ED5;&#x8FC7;&#x4E0E;&#x8BE5;&#x7C7B;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;@Bean&#x65B9;&#x6CD5;&#x548C;@Import&#x6CE8;&#x91CA;&#xFF0C;&#x9664;&#x975E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x3002; &#x5982;&#x679C;&#x4F7F;&#x7528;@Profile&#xFF08;{&#x201C;p1&#x201D;&#xFF0C;&#x201C;p2&#x201D;}&#xFF09;&#x6807;&#x8BB0;@Component&#x6216;@Configuration&#x7C7B;&#xFF0C;&#x5219;&#x9664;&#x975E;&#x5DF2;&#x6FC0;&#x6D3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x201C;p1&#x201D;&#x548C;/&#x6216;&#x201C;p2&#x201D;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x6CE8;&#x518C;/&#x5904;&#x7406;&#x8BE5;&#x7C7B;&#x3002; &#x5982;&#x679C;&#x7ED9;&#x5B9A;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4EE5;NOT&#x8FD0;&#x7B97;&#x7B26;&#xFF08;&#xFF01;&#xFF09;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x5219;&#x5982;&#x679C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x672A;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#xFF0C;&#x5219;&#x5C06;&#x6CE8;&#x518C;&#x5E26;&#x6CE8;&#x91CA;&#x7684;&#x5143;&#x7D20;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x7ED9;&#x5B9A;@Profile&#xFF08;{&#x201C;p1&#x201D;&#xFF0C;&#x201C;&#xFF01;p2&#x201D;}&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x201C;p1&#x201D;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x6216;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x201C;p2&#x201D;&#x672A;&#x6FC0;&#x6D3B;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x3002;</p>
+<p>@Profile&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x58F0;&#x660E;&#xFF0C;&#x4EE5;&#x4EC5;&#x5305;&#x62EC;&#x914D;&#x7F6E;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;bean&#xFF0C;&#x4F8B;&#x5982; &#x5BF9;&#x4E8E;&#x7279;&#x5B9A;bean&#x7684;&#x66FF;&#x4EE3;&#x53D8;&#x4F53;&#xFF1A;</p>
+<pre><code>@Configuration
+public class AppConfig {
+
+    @Bean(&quot;dataSource&quot;)
+    @Profile(&quot;development&quot;)
+    public DataSource standaloneDataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript(&quot;classpath:com/bank/config/sql/schema.sql&quot;)
+            .addScript(&quot;classpath:com/bank/config/sql/test-data.sql&quot;)
+            .build();
+    }
+
+    @Bean(&quot;dataSource&quot;)
+    @Profile(&quot;production&quot;)
+    public DataSource jndiDataSource() throws Exception {
+        Context ctx = new InitialContext();
+        return (DataSource) ctx.lookup(&quot;java:comp/env/jdbc/datasource&quot;);
+    }
+}
+</code></pre><p>&#x5BF9;&#x4E8E;@Bean&#x65B9;&#x6CD5;&#x7684;@Profile&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x573A;&#x666F;&#xFF1A;&#x5BF9;&#x4E8E;&#x76F8;&#x540C;Java&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x7684;&#x91CD;&#x8F7D;@Bean&#x65B9;&#x6CD5;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x6240;&#x6709;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x4E0A;&#x4E00;&#x81F4;&#x5730;&#x58F0;&#x660E;@Profile&#x6761;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5219;&#x53EA;&#x6709;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;&#x58F0;&#x660E;&#x7684;&#x6761;&#x4EF6;&#x624D;&#x91CD;&#x8981;&#x3002;&#x56E0;&#x6B64;&#xFF0C;@ Profile&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x9009;&#x62E9;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#x7684;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x800C;&#x4E0D;&#x662F;&#x53E6;&#x4E00;&#x4E2A;;&#x540C;&#x4E00;&#x4E2A;bean&#x7684;&#x6240;&#x6709;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x8FA8;&#x7387;&#x9075;&#x5FAA;Spring&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x89E3;&#x6790;&#x7B97;&#x6CD5;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x5B9A;&#x4E49;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6761;&#x4EF6;&#x7684;&#x5907;&#x7528;Bean&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x901A;&#x8FC7;@Bean name&#x5C5E;&#x6027;&#x6307;&#x5411;&#x540C;&#x4E00;bean&#x540D;&#x79F0;&#x7684;&#x4E0D;&#x540C;Java&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#xFF0C;&#x5982;&#x4E0A;&#x4F8B;&#x6240;&#x793A;&#x3002;&#x5982;&#x679C;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#x90FD;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x6240;&#x6709;&#x53D8;&#x4F53;&#x90FD;&#x5177;&#x6709;no-arg&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x8FD9;&#x662F;&#x9996;&#x5148;&#x5728;&#x6709;&#x6548;&#x7684;Java&#x7C7B;&#x4E2D;&#x8868;&#x793A;&#x8FD9;&#x79CD;&#x6392;&#x5217;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x6CD5;&#xFF08;&#x56E0;&#x4E3A;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7279;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x548C;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#xFF09;&#x3002;</p>
+<h4 id="xml-bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">XML bean&#x5B9A;&#x4E49;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p>XML&#x5BF9;&#x5E94;&#x7269;&#x662F;&lt;beans&gt;&#x5143;&#x7D20;&#x7684;profile&#x5C5E;&#x6027;&#x3002; &#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x914D;&#x7F6E;&#x53EF;&#x4EE5;&#x5728;&#x4E24;&#x4E2A;XML&#x6587;&#x4EF6;&#x4E2D;&#x91CD;&#x5199;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>&lt;beans profile=&quot;development&quot;
+    xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:jdbc=&quot;http://www.springframework.org/schema/jdbc&quot;
+    xsi:schemaLocation=&quot;...&quot;&gt;
+
+    &lt;jdbc:embedded-database id=&quot;dataSource&quot;&gt;
+        &lt;jdbc:script location=&quot;classpath:com/bank/config/sql/schema.sql&quot;/&gt;
+        &lt;jdbc:script location=&quot;classpath:com/bank/config/sql/test-data.sql&quot;/&gt;
+    &lt;/jdbc:embedded-database&gt;
+&lt;/beans&gt;
+</code></pre><pre><code>&lt;beans profile=&quot;production&quot;
+    xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:jee=&quot;http://www.springframework.org/schema/jee&quot;
+    xsi:schemaLocation=&quot;...&quot;&gt;
+
+    &lt;jee:jndi-lookup id=&quot;dataSource&quot; jndi-name=&quot;java:comp/env/jdbc/datasource&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5728;&#x540C;&#x4E00;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;split&#x548C;nest &lt;beans /&gt;&#x5143;&#x7D20;&#xFF1A;</p>
+<pre><code>&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:jdbc=&quot;http://www.springframework.org/schema/jdbc&quot;
+    xmlns:jee=&quot;http://www.springframework.org/schema/jee&quot;
+    xsi:schemaLocation=&quot;...&quot;&gt;
+
+    &lt;!-- other bean definitions --&gt;
+
+    &lt;beans profile=&quot;development&quot;&gt;
+        &lt;jdbc:embedded-database id=&quot;dataSource&quot;&gt;
+            &lt;jdbc:script location=&quot;classpath:com/bank/config/sql/schema.sql&quot;/&gt;
+            &lt;jdbc:script location=&quot;classpath:com/bank/config/sql/test-data.sql&quot;/&gt;
+        &lt;/jdbc:embedded-database&gt;
+    &lt;/beans&gt;
+
+    &lt;beans profile=&quot;production&quot;&gt;
+        &lt;jee:jndi-lookup id=&quot;dataSource&quot; jndi-name=&quot;java:comp/env/jdbc/datasource&quot;/&gt;
+    &lt;/beans&gt;
+&lt;/beans&gt;
+</code></pre><p>spring-bean.xsd&#x5DF2;&#x88AB;&#x7EA6;&#x675F;&#x4E3A;&#x4EC5;&#x5141;&#x8BB8;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002; &#x8FD9;&#x5E94;&#x8BE5;&#x6709;&#x52A9;&#x4E8E;&#x63D0;&#x4F9B;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5728;XML&#x6587;&#x4EF6;&#x4E2D;&#x5F15;&#x8D77;&#x6DF7;&#x4E71;&#x3002;</p>
+<h4 id="&#x6FC0;&#x6D3B;profile">&#x6FC0;&#x6D3B;profile</h4>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x4E86;&#x914D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x6307;&#x793A;Spring&#x54EA;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5904;&#x4E8E;&#x6D3B;&#x52A8;&#x72B6;&#x6001;&#x3002; &#x5982;&#x679C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;&#x629B;&#x51FA;NoSuchBeanDefinitionException&#xFF0C;&#x56E0;&#x4E3A;&#x5BB9;&#x5668;&#x627E;&#x4E0D;&#x5230;&#x540D;&#x4E3A;dataSource&#x7684;Spring bean&#x3002;</p>
+<p>&#x6FC0;&#x6D3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#xFF0C;&#x4F46;&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;ApplicationContext&#x4EE5;&#x73AF;&#x5883;API&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+ctx.getEnvironment().setActiveProfiles(&quot;development&quot;);
+ctx.register(SomeConfig.class, StandaloneDataConfig.class, JndiDataConfig.class);
+ctx.refresh();
+</code></pre><p>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;spring.profiles.active&#x5C5E;&#x6027;&#x4EE5;&#x58F0;&#x660E;&#x65B9;&#x5F0F;&#x6FC0;&#x6D3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;JVM&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#xFF0C;web.xml&#x4E2D;&#x7684;servlet&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#x6216;&#x751A;&#x81F3;&#x4F5C;&#x4E3A;JNDI&#x4E2D;&#x7684;&#x6761;&#x76EE;&#x6765;&#x6307;&#x5B9A;&#xFF08;&#x8BF7;&#x53C2;&#x9605;&#x7B2C;7.13&#x8282;&#x3002; 2&#xFF0C;&#x201C;PropertySource&#x62BD;&#x8C61;&#x201D;&#xFF09;&#x3002; &#x5728;&#x96C6;&#x6210;&#x6D4B;&#x8BD5;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;spring-test&#x6A21;&#x5757;&#x4E2D;&#x7684;@ActiveProfiles&#x6CE8;&#x91CA;&#x58F0;&#x660E;&#x6D3B;&#x52A8;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF08;&#x8BF7;&#x53C2;&#x9605;&#x201C;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x4E0A;&#x4E0B;&#x6587;&#x201D;&#x4E00;&#x8282;&#xFF09;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E0D;&#x662F;&#x201C;&#x4EFB;&#x4F55; - &#x6216;&#x201D;&#x547D;&#x9898;; &#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6FC0;&#x6D3B;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002; &#x4EE5;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#xFF0C;&#x53EA;&#x9700;&#x4E3A;setActiveProfiles&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;String ... varargs&#xFF1A;</p>
+<pre><code>ctx.getEnvironment().setActiveProfiles(&quot;profile1&quot;, &quot;profile2&quot;);
+</code></pre><p>&#x58F0;&#x660E;&#x6027;&#x5730;&#xFF0C;spring.profiles.active&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x5217;&#x8868;&#xFF1A;</p>
+<pre><code>-Dspring.profiles.active=&quot;profile1,profile2&quot;
+</code></pre><h4 id="&#x9ED8;&#x8BA4;profile">&#x9ED8;&#x8BA4;profile</h4>
+<p>&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8868;&#x793A;&#x9ED8;&#x8BA4;&#x542F;&#x7528;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002; &#x8003;&#x8651;&#x4EE5;&#x4E0B;&#xFF1A;</p>
+<pre><code>@Configuration
+@Profile(&quot;default&quot;)
+public class DefaultDataConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript(&quot;classpath:com/bank/config/sql/schema.sql&quot;)
+            .build();
+    }
+}
+</code></pre><p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6FC0;&#x6D3B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x4E0A;&#x9762;&#x7684;dataSource; &#x8FD9;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x4E3A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;bean&#x63D0;&#x4F9B;&#x9ED8;&#x8BA4;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002; &#x5982;&#x679C;&#x542F;&#x7528;&#x4E86;&#x4EFB;&#x4F55;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5C06;&#x4E0D;&#x9002;&#x7528;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x4E0A;&#x7684;setDefaultProfiles&#xFF08;&#xFF09;&#x6216;&#x58F0;&#x660E;&#x6027;&#x5730;&#x4F7F;&#x7528;spring.profiles.default&#x5C5E;&#x6027;&#x66F4;&#x6539;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<h3 id="7132--propertysource&#x62BD;&#x8C61;">7.13.2  PropertySource&#x62BD;&#x8C61;</h3>
+<p>Spring&#x7684;Environment&#x62BD;&#x8C61;&#x901A;&#x8FC7;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#x5C5E;&#x6027;&#x6E90;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x63D0;&#x4F9B;&#x641C;&#x7D22;&#x64CD;&#x4F5C;&#x3002; &#x8981;&#x5B8C;&#x6574;&#x89E3;&#x91CA;&#xFF0C;&#x8BF7;&#x8003;&#x8651;&#x4EE5;&#x4E0B;&#x4E8B;&#x9879;&#xFF1A;</p>
+<pre><code>ApplicationContext ctx = new GenericApplicationContext();
+Environment env = ctx.getEnvironment();
+boolean containsFoo = env.containsProperty(&quot;foo&quot;);
+System.out.println(&quot;Does my environment contain the &apos;foo&apos; property? &quot; + containsFoo);
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;&#x4E00;&#x79CD;&#x5411;Spring&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x4E3A;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x5B9A;&#x4E49;foo&#x5C5E;&#x6027;&#x7684;&#x9AD8;&#x7EA7;&#x65B9;&#x6CD5;&#x3002; &#x8981;&#x56DE;&#x7B54;&#x6B64;&#x95EE;&#x9898;&#xFF0C;Environment&#x5BF9;&#x8C61;&#x5C06;&#x5BF9;&#x4E00;&#x7EC4;PropertySource&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x641C;&#x7D22;&#x3002; PropertySource&#x662F;&#x5BF9;&#x4EFB;&#x4F55;&#x952E;&#x503C;&#x5BF9;&#x6E90;&#x7684;&#x7B80;&#x5355;&#x62BD;&#x8C61;&#xFF0C;Spring&#x7684;StandardEnvironment&#x914D;&#x7F6E;&#x6709;&#x4E24;&#x4E2A;PropertySource&#x5BF9;&#x8C61; - &#x4E00;&#x4E2A;&#x8868;&#x793A;JVM&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x96C6;&#xFF08;&#x4E00;&#x4E2A;&#x662F;System.getProperties&#xFF08;&#xFF09;&#xFF09;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x96C6;&#x3002; &#x53D8;&#x91CF;&#xFF08;a System.getenv&#xFF08;&#xFF09;&#xFF09;&#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x6E90;&#x5B58;&#x5728;&#x4E8E;StandardEnvironment&#x4E2D;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x72EC;&#x7ACB;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;&#x3002; StandardServletEnvironment&#x586B;&#x5145;&#x4E86;&#x5176;&#x4ED6;&#x9ED8;&#x8BA4;&#x5C5E;&#x6027;&#x6E90;&#xFF0C;&#x5305;&#x62EC;servlet&#x914D;&#x7F6E;&#x548C;servlet&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#x3002; StandardPortletEnvironment&#x7C7B;&#x4F3C;&#x5730;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;portlet&#x914D;&#x7F6E;&#x548C;portlet&#x4E0A;&#x4E0B;&#x6587;&#x53C2;&#x6570;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x6E90;&#x3002; &#x4E24;&#x8005;&#x90FD;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x542F;&#x7528;JndiPropertySource&#x3002; &#x6709;&#x5173;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;javadocs&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x5730;&#x8BF4;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;StandardEnvironment&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8FD0;&#x884C;&#x65F6;&#x5B58;&#x5728;foo&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x6216;foo&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5219;&#x5BF9;env.containsProperty&#xFF08;&#x201C;foo&#x201D;&#xFF09;&#x7684;&#x8C03;&#x7528;&#x5C06;&#x8FD4;&#x56DE;true&#x3002;</p>
+<p>&#x6267;&#x884C;&#x7684;&#x641C;&#x7D22;&#x662F;&#x5206;&#x5C42;&#x7684;&#x3002; &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x4F18;&#x5148;&#x4E8E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x5728;&#x8C03;&#x7528;env.getProperty&#xFF08;&#x201C;foo&#x201D;&#xFF09;&#x671F;&#x95F4;&#x6070;&#x597D;&#x5728;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;&#x90FD;&#x8BBE;&#x7F6E;&#x4E86;foo&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x503C;&#x5C06;&#x4E3A;&#x201C;win&#x201D;&#x5E76;&#x4F18;&#x5148;&#x8FD4;&#x56DE; &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x3002; &#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5C5E;&#x6027;&#x503C;&#x4E0D;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#xFF0C;&#x800C;&#x662F;&#x88AB;&#x524D;&#x9762;&#x7684;&#x6761;&#x76EE;&#x5B8C;&#x5168;&#x8986;&#x76D6;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x5E38;&#x89C1;&#x7684;StandardServletEnvironment&#xFF0C;&#x5B8C;&#x6574;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x9876;&#x90E8;&#x7684;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x6761;&#x76EE;&#xFF1A;</p>
+<ul>
+<li>ServletConfig&#x53C2;&#x6570;&#xFF08;&#x5982;&#x679C;&#x9002;&#x7528;&#xFF0C;&#x4F8B;&#x5982;&#x5728;DispatcherServlet&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF09;</li>
+<li>ServletContext&#x53C2;&#x6570;&#xFF08;web.xml context-param&#x6761;&#x76EE;&#xFF09;</li>
+<li>JNDI&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF08;&#x201C;java&#xFF1A;comp / env /&#x201D;&#x6761;&#x76EE;&#xFF09;</li>
+<li>JVM&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#xFF08;&#x201C;-D&#x201D;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF09;</li>
+<li>JVM&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#xFF08;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF09;</li>
+</ul>
+<p>&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x6574;&#x4E2A;&#x673A;&#x5236;&#x662F;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#x3002; &#x4E5F;&#x8BB8;&#x60A8;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x6E90;&#xFF0C;&#x60A8;&#x5E0C;&#x671B;&#x5C06;&#x5176;&#x96C6;&#x6210;&#x5230;&#x6B64;&#x641C;&#x7D22;&#x4E2D;&#x3002; &#x6CA1;&#x95EE;&#x9898; - &#x53EA;&#x9700;&#x5B9E;&#x73B0;&#x5E76;&#x5B9E;&#x4F8B;&#x5316;&#x60A8;&#x81EA;&#x5DF1;&#x7684;PropertySource&#x5E76;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;Environment&#x7684;PropertySources&#x96C6;&#x5408;&#x4E2D;&#xFF1A;</p>
+<pre><code>ConfigurableApplicationContext ctx = new GenericApplicationContext();
+MutablePropertySources sources = ctx.getEnvironment().getPropertySources();
+sources.addFirst(new MyPropertySource());
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;MyPropertySource&#x5728;&#x641C;&#x7D22;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x3002; &#x5982;&#x679C;&#x5B83;&#x5305;&#x542B;foo&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x5C06;&#x88AB;&#x68C0;&#x6D4B;&#x5E76;&#x5728;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;PropertySource&#x4E2D;&#x7684;&#x4EFB;&#x4F55;foo&#x5C5E;&#x6027;&#x4E4B;&#x524D;&#x8FD4;&#x56DE;&#x3002; MutablePropertySources API&#x516C;&#x5F00;&#x4E86;&#x8BB8;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x5141;&#x8BB8;&#x7CBE;&#x786E;&#x64CD;&#x4F5C;&#x5C5E;&#x6027;&#x6E90;&#x96C6;&#x3002;</p>
+<h3 id="7133--propertysource">7.13.3  @PropertySource</h3>
+<p>@PropertySource&#x6CE8;&#x91CA;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x4FBF;&#x7684;&#x58F0;&#x660E;&#x5F0F;&#x673A;&#x5236;&#xFF0C;&#x7528;&#x4E8E;&#x5411;Spring&#x7684;&#x73AF;&#x5883;&#x6DFB;&#x52A0;PropertySource&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;&#x5305;&#x542B;&#x952E;/&#x503C;&#x5BF9;testbean.name = myTestBean&#x7684;&#x6587;&#x4EF6;&#x201C;app.properties&#x201D;&#xFF0C;&#x4EE5;&#x4E0B;@Configuration&#x7C7B;&#x4F7F;&#x7528;@PropertySource&#xFF0C;&#x4EE5;&#x4FBF;&#x8C03;&#x7528;testBean.getName&#xFF08;&#xFF09;&#x5C06;&#x8FD4;&#x56DE;&#x201C;myTestBean&#x201D;&#x3002;</p>
+<pre><code>@Configuration
+@PropertySource(&quot;classpath:/com/myco/app.properties&quot;)
+public class AppConfig {
+
+    @Autowired
+    Environment env;
+
+    @Bean
+    public TestBean testBean() {
+        TestBean testBean = new TestBean();
+        testBean.setName(env.getProperty(&quot;testbean.name&quot;));
+        return testBean;
+    }
+}
+</code></pre><p>@PropertySource&#x8D44;&#x6E90;&#x4F4D;&#x7F6E;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x4EFB;&#x4F55;$ {...}&#x5360;&#x4F4D;&#x7B26;&#x5C06;&#x6839;&#x636E;&#x5DF2;&#x9488;&#x5BF9;&#x73AF;&#x5883;&#x6CE8;&#x518C;&#x7684;&#x5C5E;&#x6027;&#x6E90;&#x96C6;&#x5408;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>@Configuration
+@PropertySource(&quot;classpath:/com/${my.placeholder:default/path}/app.properties&quot;)
+public class AppConfig {
+
+    @Autowired
+    Environment env;
+
+    @Bean
+    public TestBean testBean() {
+        TestBean testBean = new TestBean();
+        testBean.setName(env.getProperty(&quot;testbean.name&quot;));
+        return testBean;
+    }
+}
+</code></pre><p>&#x5047;&#x8BBE;&#x201C;my.placeholder&#x201D;&#x5B58;&#x5728;&#x4E8E;&#x5DF2;&#x7ECF;&#x6CE8;&#x518C;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x6E90;&#x4E2D;&#xFF0C;&#x4F8B;&#x5982; &#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x6216;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5360;&#x4F4D;&#x7B26;&#x5C06;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x76F8;&#x5E94;&#x7684;&#x503C;&#x3002; &#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x5219;&#x201C;default / path&#x201D;&#x5C06;&#x7528;&#x4F5C;&#x9ED8;&#x8BA4;&#x503C;&#x3002; &#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x7F3A;&#x7701;&#x503C;&#x4E14;&#x65E0;&#x6CD5;&#x89E3;&#x6790;&#x5C5E;&#x6027;&#xFF0C;&#x5219;&#x5C06;&#x629B;&#x51FA;IllegalArgumentException&#x3002;</p>
+<p>@PropertySource&#x6CE8;&#x91CA;&#x53EF;&#x6839;&#x636E;Java 8&#x7EA6;&#x5B9A;&#x91CD;&#x590D;&#x3002; &#x4F46;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x8FD9;&#x4E9B;@PropertySource&#x6CE8;&#x91CA;&#x90FD;&#x9700;&#x8981;&#x5728;&#x540C;&#x4E00;&#x7EA7;&#x522B;&#x58F0;&#x660E;&#xFF1A;&#x76F4;&#x63A5;&#x5728;&#x914D;&#x7F6E;&#x7C7B;&#x4E0A;&#x6216;&#x5728;&#x540C;&#x4E00;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x91CA;&#x4E2D;&#x7684;&#x5143;&#x6CE8;&#x91CA;&#x3002; &#x4E0D;&#x5EFA;&#x8BAE;&#x6DF7;&#x5408;&#x76F4;&#x63A5;&#x6CE8;&#x91CA;&#x548C;&#x5143;&#x6CE8;&#x91CA;&#xFF0C;&#x56E0;&#x4E3A;&#x76F4;&#x63A5;&#x6CE8;&#x91CA;&#x5C06;&#x6709;&#x6548;&#x5730;&#x8986;&#x76D6;&#x5143;&#x6CE8;&#x91CA;&#x3002;</p>
+<h3 id="7134-&#x5360;&#x4F4D;&#x7B26;&#x51B3;&#x8BAE;&#x5728;statements-placeholder-resolution-in-statements">7.13.4 &#x5360;&#x4F4D;&#x7B26;&#x51B3;&#x8BAE;&#x5728;statements (Placeholder resolution in statements)</h3>
+<p>&#x4ECE;&#x5386;&#x53F2;&#x4E0A;&#x770B;&#xFF0C;&#x5143;&#x7D20;&#x4E2D;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x503C;&#x53EA;&#x80FD;&#x9488;&#x5BF9;JVM&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x6216;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002; &#x60C5;&#x51B5;&#x4E0D;&#x518D;&#x5982;&#x6B64;&#x3002; &#x56E0;&#x4E3A;&#x73AF;&#x5883;&#x62BD;&#x8C61;&#x96C6;&#x6210;&#x5728;&#x6574;&#x4E2A;&#x5BB9;&#x5668;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x901A;&#x8FC7;&#x5B83;&#x6765;&#x89E3;&#x51B3;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x5206;&#x8FA8;&#x7387;&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x60A8;&#x53EF;&#x4EE5;&#x4EE5;&#x4EFB;&#x4F55;&#x60A8;&#x559C;&#x6B22;&#x7684;&#x65B9;&#x5F0F;&#x914D;&#x7F6E;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#xFF1A;&#x66F4;&#x6539;&#x641C;&#x7D22;&#x7CFB;&#x7EDF;&#x5C5E;&#x6027;&#x548C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x6216;&#x8005;&#x5B8C;&#x5168;&#x5220;&#x9664;&#x5B83;&#x4EEC;; &#x6839;&#x636E;&#x9700;&#x8981;&#x5C06;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x5C5E;&#x6027;&#x6E90;&#x6DFB;&#x52A0;&#x5230;&#x6DF7;&#x5408;&#x4E2D;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x800C;&#x8A00;&#xFF0C;&#x53EA;&#x8981;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x53EF;&#x7528;&#xFF0C;&#x65E0;&#x8BBA;&#x5BA2;&#x6237;&#x5C5E;&#x6027;&#x5728;&#x4F55;&#x5904;&#x5B9A;&#x4E49;&#xFF0C;&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x90FD;&#x53EF;&#x4EE5;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<pre><code>&lt;beans&gt;
+    &lt;import resource=&quot;com/bank/service/${customer}-config.xml&quot;/&gt;
+&lt;/beans&gt;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="712-ji-yu-java-de-rong-qi-pei-zhi.html" class="navigation navigation-prev " aria-label="Previous page: 7.12 基于Java的容器配置">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="714-zhu-ce-loadtimeweaver.html" class="navigation navigation-next " aria-label="Next page: 7.14 注册LoadTimeWeaver">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.13 环境抽象","level":"1.4.1.12","depth":3,"next":{"title":"7.14 注册LoadTimeWeaver","level":"1.4.1.13","depth":3,"path":"iii-he-xin-ji-zhu/714-zhu-ce-loadtimeweaver.md","ref":"iii-he-xin-ji-zhu/714-zhu-ce-loadtimeweaver.md","articles":[]},"previous":{"title":"7.12 基于Java的容器配置","level":"1.4.1.11","depth":3,"path":"iii-he-xin-ji-zhu/712-ji-yu-java-de-rong-qi-pei-zhi.md","ref":"iii-he-xin-ji-zhu/712-ji-yu-java-de-rong-qi-pei-zhi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"iii-he-xin-ji-zhu/713-huan-jing-chou-xiang.md","mtime":"2019-01-14T14:35:19.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T14:05:01.507Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
