@@ -610,15 +610,99 @@ private List<Store<Integer>> s;
 
 ### 7.9.6  CustomAutowireConfigurer上
 
+CustomAutowireConfigurer是一个BeanFactoryPostProcessor，它允许您注册自己的自定义限定符注释类型，即使它们没有使用Spring的@Qualifier注释进行注释。
 
+```
+<bean id="customAutowireConfigurer"
+        class="org.springframework.beans.factory.annotation.CustomAutowireConfigurer">
+    <property name="customQualifierTypes">
+        <set>
+            <value>example.CustomQualifier</value>
+        </set>
+    </property>
+</bean>
+```
+
+AutowireCandidateResolver通过以下方式确定autowire候选者：
+
+* 每个bean定义的autowire-candidate值
+* &lt;beans /&gt;元素上可用的任何default-autowire-candidates模式
+* @Qualifier注释的存在以及使用CustomAutowireConfigurer注册的任何自定义注释
+
+当多个bean有资格作为autowire候选者时，“primary”的确定如下：如果候选者中只有一个bean定义的主要属性设置为true，则将选择它。
 
 ### 7.9.7  @Resource
 
+Spring还支持在字段或bean属性setter方法上使用JSR-250 @Resource注释进行注入。 这是Java EE 5和6中的常见模式，例如在JSF 1.2托管bean或JAX-WS 2.0端点中。 Spring也支持Spring管理对象的这种模式。
 
+@Resource采用name属性，默认情况下Spring将该值解释为要注入的bean名称。 换句话说，它遵循按名称语义，如本例所示：
+
+```
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Resource(name="myMovieFinder")
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+```
+
+如果未明确指定名称，则默认名称是从字段名称或setter方法派生的。 如果是字段，则采用字段名称; 在setter方法的情况下，它采用bean属性名称。 所以下面的例子将把名为“movieFinder”的bean注入其setter方法：
+
+```
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Resource
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+```
+
+_随注释提供的名称由ApplicationContext解析为bean名称，CommonAnnotationBeanPostProcessor可以识别该名称。 如果您显式配置Spring的SimpleJndiBeanFactory，则可以通过JNDI解析名称。 但是，建议您依赖于默认行为，只需使用Spring的JNDI查找功能来保持间接级别。_
+
+在没有指定显式名称且类似于@Autowired的@Resource用法的独家情况下，@ Resource找到主要类型匹配而不是特定的命名bean，并解析众所周知的可解析依赖项：BeanFactory，ApplicationContext，ResourceLoader，ApplicationEventPublisher， 和MessageSource接口。
+
+因此，在以下示例中，customerPreferenceDao字段首先查找名为customerPreferenceDao的bean，然后返回CustomerPreferenceDao类型的主类型匹配。 基于已知的可解析依赖类型ApplicationContext注入“context”字段。
+
+```
+public class MovieRecommender {
+
+    @Resource
+    private CustomerPreferenceDao customerPreferenceDao;
+
+    @Resource
+    private ApplicationContext context;
+
+    public MovieRecommender() {
+    }
+
+    // ...
+}
+```
 
 ### 7.9.8  @PostConstruct和@PreDestroy
 
+CommonAnnotationBeanPostProcessor不仅识别@Resource注释，还识别JSR-250生命周期注释。 在Spring 2.5中引入，对这些注释的支持提供了初始化回调和销毁回调中描述的另一种替代方法。 如果CommonAnnotationBeanPostProcessor在Spring ApplicationContext中注册，则在生命周期的同一点调用带有这些注释之一的方法，作为相应的Spring生命周期接口方法或显式声明的回调方法。 在下面的示例中，缓存将在初始化时预先填充，并在销毁时清除。
 
+```
+public class CachingMovieLister {
+
+    @PostConstruct
+    public void populateMovieCache() {
+        // populates the movie cache upon initialization...
+    }
+
+    @PreDestroy
+    public void clearMovieCache() {
+        // clears the movie cache upon destruction...
+    }
+}
+```
 
 
 
