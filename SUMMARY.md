@@ -50,8 +50,16 @@
   * 25 Portlet MVC框架
   * 26 WebSocket支持
   * 27 CORS支持
-
-
+* VII 集成
+  * 28 使用Spring进行远程处理和Web服务
+  * 29 Enterprise JavaBeans（EJB）集成
+  * 30 JMS \(Java Message Service\)
+  * 31 JMX
+  * 32 JCA CCI
+  * 33 Email
+  * 34 任务执行和调度
+  * 35 动态语言支持
+  * 36 缓存抽象
 
 
 
