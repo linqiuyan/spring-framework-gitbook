@@ -36,11 +36,11 @@
 
 #### 有关基于Java的配置如何在内部工作的更多信息
 
-7.12.5 编写基于Java的配置
+### 7.12.5 编写基于Java的配置
 
-使用@Import注释
+#### 使用@Import注释
 
-有条件地包括@Configuration类或@Bean方法
+#### 有条件地包括@Configuration类或@Bean方法
 
-结合Java和XML配置
+#### 结合Java和XML配置
 
