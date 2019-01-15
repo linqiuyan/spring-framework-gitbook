@@ -335,13 +335,90 @@ public void processBlackListEvent(BlackListEvent event) {
 
 #### Ordering listeners
 
+如果需要在另一个之前调用侦听器，只需将@Order注释添加到方法声明中：
+
+```
+@EventListener
+@Order(42)
+public void processBlackListEvent(BlackListEvent event) {
+    // notify appropriate parties via notificationAddress...
+}
+```
+
 #### 通用事件\(Generic events\)
 
-### 7.15.3 方便地访问低级资源
+您还可以使用泛型来进一步定义事件的结构。 考虑一个EntityCreatedEvent &lt;T&gt;，其中T是创建的实际实体的类型。 您可以创建以下侦听器定义以仅接收Person的EntityCreatedEvent：
+
+```
+@EventListener
+public void onPersonCreated(EntityCreatedEvent<Person> event) {
+    ...
+}
+```
+
+由于类型擦除，这只有在被触发的事件解析事件侦听器在其上过滤的泛型参数时才会起作用（类似于
+
+class PersonCreatedEvent extends EntityCreatedEvent&lt;Person&gt; { …​ }）
+
+在某些情况下，如果所有事件都遵循相同的结构（这应该是上述事件的情况），这可能会变得相当繁琐。 在这种情况下，您可以实现ResolvableTypeProvider来指导框架超出运行时环境提供的范围：
+
+```
+public class EntityCreatedEvent<T> extends ApplicationEvent implements ResolvableTypeProvider {
+
+    public EntityCreatedEvent(T entity) {
+        super(entity);
+    }
+
+    @Override
+    public ResolvableType getResolvableType() {
+        return ResolvableType.forClassWithGenerics(getClass(),
+                ResolvableType.forInstance(getSource()));
+    }
+}
+```
+
+这不仅适用于ApplicationEvent，也适用于您作为事件发送的任意对象。
+
+### 7.15.3 方便地访问low-level资源
+
+为了最佳地使用和理解应用程序上下文，用户通常应该熟悉Spring的资源抽象，如第8章“资源”一章所述。
+
+应用程序上下文是ResourceLoader，可用于加载资源。 Resource本质上是JDK类java.net.URL的功能更丰富的版本，实际上，Resource的实现包装了适当的java.net.URL实例。 资源可以透明的方式从几乎任何位置获取低级资源，包括从类路径，文件系统位置，任何可用标准URL描述的位置，以及一些其他变体。 如果资源位置字符串是没有任何特殊前缀的简单路径，那么这些资源来自特定且适合于实际应用程序上下文类型。
+
+您可以配置部署到应用程序上下文中的bean，以实现特殊的回调接口ResourceLoaderAware，在初始化时自动回调，应用程序上下文本身作为ResourceLoader传入。 您还可以公开Resource类型的属性，以用于访问静态资源; 它们将像任何其他属性一样注入其中。 您可以将这些Resource属性指定为简单的String路径，并依赖于上下文自动注册的特殊JavaBean PropertyEditor，以便在部署Bean时将这些文本字符串转换为实际的Resource对象。
+
+提供给ApplicationContext构造函数的位置路径实际上是资源字符串，并且以简单的形式适当地处理特定的上下文实现。 ClassPathXmlApplicationContext将简单的位置路径视为类路径位置。 您还可以使用具有特殊前缀的位置路径（资源字符串）来强制从类路径或URL加载定义，而不管实际的上下文类型如何。
 
 ### 7.15.4 方便的Web应用程序的ApplicationContext实例化
 
+您可以使用例如ContextLoader以声明方式创建ApplicationContext实例。 当然，您也可以使用其中一个ApplicationContext实现以编程方式创建ApplicationContext实例。
+
+您可以使用ContextLoaderListener注册ApplicationContext，如下所示：
+
+```
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/daoContext.xml /WEB-INF/applicationContext.xml</param-value>
+</context-param>
+
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+```
+
+listener检查contextConfigLocation参数。 如果参数不存在，则侦听器将/WEB-INF/applicationContext.xml用作默认值。 当参数确实存在时，侦听器使用预定义的分隔符（逗号，分号和空格）分隔String，并将值用作将搜索应用程序上下文的位置。 还支持Ant样式的路径模式。 名称以“Context.xml”结尾的所有文件的/WEB-INF/\*Context.xml，驻留在“WEB-INF”目录中，/ WEB-INF/\*\*/\*Context.xml表示所有文件 这些文件位于“WEB-INF”的任何子目录中。
+
 ### 7.15.5 将Spring ApplicationContext部署为Java EE RAR文件
+
+可以将Spring ApplicationContext部署为RAR文件，将上下文及其所有必需的bean类和库JAR封装在Java EE RAR部署单元中。 这相当于引导一个独立的ApplicationContext，它只是托管在Java EE环境中，能够访问Java EE服务器设施。 RAR部署是部署无头WAR文件的场景的更自然的替代方案，实际上是没有任何HTTP入口点的WAR文件，仅用于在Java EE环境中引导Spring ApplicationContext。
+
+RAR部署非常适用于不需要HTTP入口点但仅包含消息端点和预定作业的应用程序上下文。 在这样的上下文中的Bean可以使用应用程序服务器资源，例如JTA事务管理器和JNDI绑定的JDBC DataSources和JMS ConnectionFactory实例，也可以通过Spring的标准事务管理以及JNDI和JMX支持工具向平台的JMX服务器注册。 应用程序组件还可以通过Spring的TaskExecutor抽象与应用程序服务器的JCA WorkManager进行交互。
+
+查看SpringContextResourceAdapter类的javadoc，了解RAR部署中涉及的配置详细信息。
+
+对于将Spring ApplicationContext简单部署为Java EE RAR文件：将所有应用程序类打包到RAR文件中，该文件是具有不同文件扩展名的标准JAR文件。 将所有必需的库JAR添加到RAR存档的根目录中。 添加“META-INF / ra.xml”部署描述符（如SpringContextResourceAdapters javadoc中所示）和相应的Spring XML bean定义文件（通常为“META-INF / applicationContext.xml”），并删除生成的RAR文件 进入应用程序服务器的部署目录。
+
+_**这种RAR部署单元通常是独立的; 它们不会将组件暴露给外部世界，甚至不会暴露给同一应用程序的其他模块。 与基于RAR的ApplicationContext的交互通常通过与其他模块共享的JMS目标进行。 例如，基于RAR的ApplicationContext还可以调度一些作业，对文件系统中的新文件（或类似物）作出反应。 如果它需要允许来自外部的同步访问，它可以例如导出RMI端点，当然可以由同一机器上的其他应用程序模块使用。**_
 
 
 
