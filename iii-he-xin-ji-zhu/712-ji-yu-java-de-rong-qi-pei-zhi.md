@@ -839,7 +839,6 @@ public static void main(String[] args) {
         <property name="password" value="${jdbc.password}"/>
     </bean>
 </beans>
-
 ```
 
 #### @Configuration以类为中心使用带@ImportResource的XML
@@ -888,10 +887,6 @@ public static void main(String[] args) {
     // ...
 }
 ```
-
-
-
-
 
 
 
