@@ -198,9 +198,7 @@ public interface FormatterRegistry extends ConverterRegistry {
 
 FormatterRegistry SPI允许您集中配置格式规则，而不是在控制器之间复制此类配置。 例如，您可能希望强制所有Date字段以某种方式格式化，或者具有特定注释的字段以某种方式格式化。 使用共享的FormatterRegistry，您可以定义一次这些规则，并在需要格式化时应用它们。
 
-#### 9.6.4 FormatterRegistrar SPI
-
-### 9.6.5 在Spring MVC中配置格式化
+### 9.6.4 FormatterRegistrar SPI
 
 FormatterRegistrar是一个SPI，用于通过FormatterRegistry注册格式化程序和转换器：
 
@@ -214,8 +212,6 @@ public interface FormatterRegistrar {
 ```
 
 在为给定格式类别注册多个相关转换器和格式化程序时，FormatterRegistrar非常有用，例如日期格式。 在声明性注册不充分的情况下，它也很有用。 例如，格式化程序需要在与其自己的&lt;T&gt;不同的特定字段类型下或在注册打印机/分析程序对时编制索引。 下一节提供有关转换器和格式化程序注册的更多信息。
-
-
 
 ### 9.6.5 在Spring MVC中配置格式化
 
