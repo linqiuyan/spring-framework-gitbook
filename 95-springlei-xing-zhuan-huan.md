@@ -147,9 +147,60 @@ ConversionService是一个无状态对象，旨在在应用程序启动时实例
     class="org.springframework.context.support.ConversionServiceFactoryBean"/>
 ```
 
+默认的ConversionService可以在字符串，数字，枚举，集合，映射和其他常见类型之间进行转换。 要使用您自己的自定义转换器补充或覆盖默认转换器，请设置converter属性。 属性值可以实现Converter，ConverterFactory或GenericConverter接口。
 
+```
+<bean id="conversionService"
+        class="org.springframework.context.support.ConversionServiceFactoryBean">
+    <property name="converters">
+        <set>
+            <bean class="example.MyCustomConverter"/>
+        </set>
+    </property>
+</bean>
+```
+
+在Spring MVC应用程序中使用ConversionService也很常见。 请参见Spring MVC章节中的第22.16.3节“转换和格式化”。
+
+在某些情况下，您可能希望在转换期间应用格式。 有关使用FormattingConversionServiceFactoryBean的详细信息，请参见第9.6.3节“FormatterRegistry SPI”。
 
 ### 9.5.6 以编程方式使用ConversionService
+
+要以编程方式使用ConversionService实例，只需像对任何其他bean一样注入对它的引用：
+
+```java
+@Service
+public class MyService {
+
+    @Autowired
+    public MyService(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
+    public void doIt() {
+        this.conversionService.convert(...)
+    }
+}
+```
+
+对于大多数用例，可以使用指定targetType的convert方法，但它不适用于更复杂的类型，例如参数化元素的集合。 例如，如果要以编程方式将List of Integer转换为String列表，则需要提供源和目标类型的正式定义。
+
+幸运的是，TypeDescriptor提供了各种选项来简化：
+
+```
+DefaultConversionService cs = new DefaultConversionService();
+
+List<Integer> input = ....
+cs.convert(input,
+    TypeDescriptor.forObject(input), // List<Integer> type descriptor
+    TypeDescriptor.collection(List.class, TypeDescriptor.valueOf(String.class)));
+```
+
+请注意，DefaultConversionService会自动注册适合大多数环境的转换器。 这包括集合转换器，标量转换器以及基本的Object to String转换器。 可以使用DefaultConversionService类上的静态addDefaultConverters方法向任何ConverterRegistry注册相同的转换器。
+
+值类型的转换器将重用于数组和集合，因此无需创建特定的转换器即可将S的Collection转换为T的Collection，前提是标准集合处理是合适的。
+
+
 
 
 
