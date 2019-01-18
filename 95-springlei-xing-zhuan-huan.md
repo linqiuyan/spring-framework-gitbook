@@ -136,6 +136,19 @@ core.convert.support包中提供了一个强大的ConversionService实现。 Gen
 
 ### 9.5.5 配置ConversionService
 
+ConversionService是一个无状态对象，旨在在应用程序启动时实例化，然后在多个线程之间共享。 在Spring应用程序中，通常为每个Spring容器（或ApplicationContext）配置一个ConversionService实例。 那个ConversionService将被Spring选中，然后在框架需要执行类型转换时使用。 您也可以将此ConversionService注入任何bean并直接调用它。
+
+如果没有向Spring注册ConversionService，则使用基于PropertyEditor的原始系统。
+
+要使用Spring注册默认的ConversionService，请使用id conversionService添加以下bean定义：
+
+```
+<bean id="conversionService"
+    class="org.springframework.context.support.ConversionServiceFactoryBean"/>
+```
+
+
+
 ### 9.5.6 以编程方式使用ConversionService
 
 
