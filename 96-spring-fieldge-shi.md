@@ -93,13 +93,129 @@ public interface AnnotationFormatterFactory<A extends Annotation> {
 }
 ```
 
+### 格式注释API
 
+如您所见，字段格式可以通过字段类型或注释进行配置。 要将Annotation绑定到格式化程序，请实现AnnotationFormatterFactory：
+
+```java
+package org.springframework.format;
+
+public interface AnnotationFormatterFactory<A extends Annotation> {
+
+    Set<Class<?>> getFieldTypes();
+
+    Printer<?> getPrinter(A annotation, Class<?> fieldType);
+
+    Parser<?> getParser(A annotation, Class<?> fieldType);
+}
+```
+
+参数化A是要与格式化逻辑关联的字段annotationType，例如org.springframework.format.annotation.DateTimeFormat。 getFieldTypes\(\)返回可以使用注释的字段类型。 让getPrinter\(\)返回一个打印机来打印带注释字段的值。 让getParser\(\)返回一个Parser来解析带注释字段的clientValue。
+
+下面的示例AnnotationFormatterFactory实现将@NumberFormat Annotation绑定到格式化程序。 此注释允许指定数字样式或模式：
+
+```
+public final class NumberFormatAnnotationFormatterFactory
+        implements AnnotationFormatterFactory<NumberFormat> {
+
+    public Set<Class<?>> getFieldTypes() {
+        return new HashSet<Class<?>>(asList(new Class<?>[] {
+            Short.class, Integer.class, Long.class, Float.class,
+            Double.class, BigDecimal.class, BigInteger.class }));
+    }
+
+    public Printer<Number> getPrinter(NumberFormat annotation, Class<?> fieldType) {
+        return configureFormatterFrom(annotation, fieldType);
+    }
+
+    public Parser<Number> getParser(NumberFormat annotation, Class<?> fieldType) {
+        return configureFormatterFrom(annotation, fieldType);
+    }
+
+    private Formatter<Number> configureFormatterFrom(NumberFormat annotation, Class<?> fieldType) {
+        if (!annotation.pattern().isEmpty()) {
+            return new NumberStyleFormatter(annotation.pattern());
+        } else {
+            Style style = annotation.style();
+            if (style == Style.PERCENT) {
+                return new PercentStyleFormatter();
+            } else if (style == Style.CURRENCY) {
+                return new CurrencyStyleFormatter();
+            } else {
+                return new NumberStyleFormatter();
+            }
+        }
+    }
+}
+```
+
+要触发格式化，只需使用@NumberFormat注释字段：
+
+```java
+public class MyModel {
+
+    @NumberFormat(style=Style.CURRENCY)
+    private BigDecimal decimal;
+}
+```
 
 ### 格式注释API
 
+org.springframework.format.annotation包中存在可移植格式注释API。 使用@NumberFormat格式化java.lang.Number字段。 使用@DateTimeFormat格式化java.util.Date，java.util.Calendar，java.util.Long或Joda-Time字段。
+
+下面的示例使用@DateTimeFormat将java.util.Date格式化为ISO Date（yyyy-MM-dd）：
+
+```
+public class MyModel {
+
+    @DateTimeFormat(iso=ISO.DATE)
+    private Date date;
+}
+```
+
 ### 9.6.3 FormatterRegistry SPI
 
-### 9.6.4 FormatterRegistrar SPI
+FormatterRegistry是一个用于注册格式化程序和转换器的SPI。 FormattingConversionService是FormatterRegistry的一个实现，适用于大多数环境。 可以使用FormattingConversionServiceFactoryBean以编程方式或声明方式将此实现配置为Spring bean。 因为此实现还实现了ConversionService，所以可以直接配置它以与Spring的DataBinder和Spring Expression Language（SpEL）一起使用。
+
+查看下面的FormatterRegistry SPI：
+
+```
+package org.springframework.format;
+
+public interface FormatterRegistry extends ConverterRegistry {
+
+    void addFormatterForFieldType(Class<?> fieldType, Printer<?> printer, Parser<?> parser);
+
+    void addFormatterForFieldType(Class<?> fieldType, Formatter<?> formatter);
+
+    void addFormatterForFieldType(Formatter<?> formatter);
+
+    void addFormatterForAnnotation(AnnotationFormatterFactory<?, ?> factory);
+}
+```
+
+如上所示，可以通过fieldType或注释注册Formatters。
+
+FormatterRegistry SPI允许您集中配置格式规则，而不是在控制器之间复制此类配置。 例如，您可能希望强制所有Date字段以某种方式格式化，或者具有特定注释的字段以某种方式格式化。 使用共享的FormatterRegistry，您可以定义一次这些规则，并在需要格式化时应用它们。
+
+#### 9.6.4 FormatterRegistrar SPI
+
+### 9.6.5 在Spring MVC中配置格式化
+
+FormatterRegistrar是一个SPI，用于通过FormatterRegistry注册格式化程序和转换器：
+
+```
+package org.springframework.format;
+
+public interface FormatterRegistrar {
+
+    void registerFormatters(FormatterRegistry registry);
+}
+```
+
+在为给定格式类别注册多个相关转换器和格式化程序时，FormatterRegistrar非常有用，例如日期格式。 在声明性注册不充分的情况下，它也很有用。 例如，格式化程序需要在与其自己的&lt;T&gt;不同的特定字段类型下或在注册打印机/分析程序对时编制索引。 下一节提供有关转换器和格式化程序注册的更多信息。
+
+
 
 ### 9.6.5 在Spring MVC中配置格式化
 
