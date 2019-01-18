@@ -1,6 +1,6 @@
 ## 9.3 解决错误消息的代码
 
+我们已经讨论了数据绑定和验证。输出与验证错误相对应的消息是我们需要讨论的最后一件事。在我们上面显示的示例中，我们拒绝了名称和年龄字段。如果我们要使用MessageSource输出错误消息，我们将使用我们在拒绝字段时给出的错误代码（在这种情况下为'name'和'age'）。当您从Errors接口调用（直接或间接使用ValidationUtils类）rejectValue或其他拒绝方法之一时，底层实现不仅会注册您传入的代码，还会注册一些其他错误代码。它注册的错误代码由使用的MessageCodesResolver决定。默认情况下，使用DefaultMessageCodesResolver，例如，它不仅使用您提供的代码注册消息，还包含传递给reject方法的字段名称的消息。因此，如果您使用rejectValue（“age”，“too.darn.old”）拒绝某个字段，除了too.darn.old代码之外，Spring还会注册too.darn.old.age和too.darn.old .age.int（所以第一个将包含字段名称，第二个将包括字段的类型）;这样做是为了方便开发人员定位错误消息等。
 
-
-
+有关MessageCodesResolver和默认策略的更多信息可以分别在MessageCodesResolver和DefaultMessageCodesResolver的javadoc中在线找到。
 
