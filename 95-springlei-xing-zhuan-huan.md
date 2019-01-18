@@ -32,9 +32,18 @@ final class StringToInteger implements Converter<String, Integer> {
 }
 ```
 
-
-
 ### 9.5.2 ConverterFactory
+
+当您需要集中整个类层次结构的转换逻辑时，例如，从String转换为java.lang.Enum对象时，实现ConverterFactory：
+
+```java
+package org.springframework.core.convert.converter;
+
+public interface ConverterFactory<S, R> {
+
+    <T extends R> Converter<S, T> getConverter(Class<T> targetType);
+}
+```
 
 
 
