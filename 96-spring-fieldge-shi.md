@@ -74,9 +74,26 @@ public final class DateFormatter implements Formatter<Date> {
 }
 ```
 
-
+Spring团队欢迎社区驱动的Formatter贡献; 请参阅jira.spring.io进行投稿。
 
 ### 9.6.2 注释驱动的格式
+
+如您所见，字段格式可以通过字段类型或注释进行配置。 要将Annotation绑定到格式化程序，请实现AnnotationFormatterFactory：
+
+```
+package org.springframework.format;
+
+public interface AnnotationFormatterFactory<A extends Annotation> {
+
+    Set<Class<?>> getFieldTypes();
+
+    Printer<?> getPrinter(A annotation, Class<?> fieldType);
+
+    Parser<?> getParser(A annotation, Class<?> fieldType);
+}
+```
+
+
 
 ### 格式注释API
 
