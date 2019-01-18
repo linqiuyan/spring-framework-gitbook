@@ -228,5 +228,65 @@ public class ExoticTypeEditor extends PropertyEditorSupport {
 </bean>
 ```
 
+#### 使用PropertyEditorRegistrars
+
+使用Spring容器注册属性编辑器的另一种机制是创建和使用PropertyEditorRegistrar。当您需要在几种不同的情况下使用同一组属性编辑器时，此接口特别有用：编写相应的注册器并在每种情况下重用它。 PropertyEditorRegistrars与名为PropertyEditorRegistry的接口一起工作，该接口由Spring BeanWrapper（和DataBinder）实现。 PropertyEditorRegistrars与CustomEditorConfigurer（此处介绍）结合使用时特别方便，它公开了一个名为setPropertyEditorRegistrars（..）的属性：以这种方式添加到CustomEditorConfigurer的PropertyEditorRegistrars可以很容易地与DataBinder和Spring MVC控制器共享。此外，它避免了在自定义编辑器上进行同步的需要：PropertyEditorRegistrar需要为每个bean创建尝试创建新的PropertyEditor实例。
+
+使用PropertyEditorRegistrar可能最好用一个例子来说明。首先，您需要创建自己的PropertyEditorRegistrar实现：
+
+```
+package com.foo.editors.spring;
+
+public final class CustomPropertyEditorRegistrar implements PropertyEditorRegistrar {
+
+    public void registerCustomEditors(PropertyEditorRegistry registry) {
+
+        // it is expected that new PropertyEditor instances are created
+        registry.registerCustomEditor(ExoticType.class, new ExoticTypeEditor());
+
+        // you could register as many custom property editors as are required here...
+    }
+}
+```
+
+有关PropertyEditorRegistrar实现的示例，另请参见org.springframework.beans.support.ResourceEditorRegistrar。 注意它在registerCustomEditors（..）方法的实现中如何创建每个属性编辑器的新实例。
+
+接下来，我们配置CustomEditorConfigurer并将CustomPropertyEditorRegistrar的实例注入其中：
+
+```
+<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+    <property name="propertyEditorRegistrars">
+        <list>
+            <ref bean="customPropertyEditorRegistrar"/>
+        </list>
+    </property>
+</bean>
+
+<bean id="customPropertyEditorRegistrar"
+    class="com.foo.editors.spring.CustomPropertyEditorRegistrar"/>
+```
+
+最后，与本章的重点有所不同，对于那些使用Spring的MVC Web框架的人来说，使用PropertyEditorRegistrars和数据绑定控制器（如SimpleFormController）可以非常方便。 下面是在initBinder（..）方法的实现中使用PropertyEditorRegistrar的示例：
+
+```
+public final class RegisterUserController extends SimpleFormController {
+
+    private final PropertyEditorRegistrar customPropertyEditorRegistrar;
+
+    public RegisterUserController(PropertyEditorRegistrar propertyEditorRegistrar) {
+        this.customPropertyEditorRegistrar = propertyEditorRegistrar;
+    }
+
+    protected void initBinder(HttpServletRequest request,
+            ServletRequestDataBinder binder) throws Exception {
+        this.customPropertyEditorRegistrar.registerCustomEditors(binder);
+    }
+
+    // other methods to do with registering a User
+}
+```
+
+这种StyleEditor注册方式可以导致简洁的代码（initBinder（..）的实现只有一行！），并允许将公共PropertyEditor注册代码封装在一个类中，然后根据需要在尽可能多的控制器之间共享。
+
 
 
