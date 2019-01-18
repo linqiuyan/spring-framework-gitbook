@@ -41,6 +41,39 @@ public interface Parser<T> {
 
 将DateFormatter视为Formatter实现的示例：
 
+```java
+package org.springframework.format.datetime;
+
+public final class DateFormatter implements Formatter<Date> {
+
+    private String pattern;
+
+    public DateFormatter(String pattern) {
+        this.pattern = pattern;
+    }
+
+    public String print(Date date, Locale locale) {
+        if (date == null) {
+            return "";
+        }
+        return getDateFormat(locale).format(date);
+    }
+
+    public Date parse(String formatted, Locale locale) throws ParseException {
+        if (formatted.length() == 0) {
+            return null;
+        }
+        return getDateFormat(locale).parse(formatted);
+    }
+
+    protected DateFormat getDateFormat(Locale locale) {
+        DateFormat dateFormat = new SimpleDateFormat(this.pattern, locale);
+        dateFormat.setLenient(false);
+        return dateFormat;
+    }
+}
+```
+
 
 
 ### 9.6.2 注释驱动的格式
