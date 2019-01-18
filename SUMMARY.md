@@ -30,6 +30,8 @@
     * [8.6 资源作为依赖项](86-zi-yuan-zuo-wei-yi-lai-xiang.md)
     * [8.7 应用程序上下文和资源路径](87-ying-yong-cheng-xu-shang-xia-wen-he-zi-yuan-lu-jing.md)
   * [9 验证，数据绑定和类型转换](9-yan-zheng-ff0c-shu-ju-bang-ding-he-lei-xing-zhuan-huan.md)
+    * [9.1 简介](91-jian-jie.md)
+    * [9.2 使用Spring的Validator接口进行验证](92-shi-yongspring-de-validator-jie-kou-jin-xing-yan-zheng.md)
   * [10 Spring表达式语言](10-springbiao-da-shi-yu-yan.md)
   * [11 使用Spring进行面向切面编程](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md)
   * [12 Spring AOP API](12-spring-aop-api.md)
@@ -70,12 +72,12 @@
   * [42 可扩展的XML](42-ke-kuo-zhan-de-xml.md)
   * [43 spring JSP Tag Library](43-spring-jsp-tag-library.md)
   * [44 spring-form JSP Tag Library](44-spring-form-jsp-tag-library.md)
-* [9.1 简介](91-jian-jie.md)
-* [9.2 使用Spring的Validator接口进行验证](92-shi-yongspring-de-validator-jie-kou-jin-xing-yan-zheng.md)
 * [9.3 解决错误消息的代码](93-jie-jue-cuo-wu-xiao-xi-de-dai-ma.md)
 * [9.4 Bean操作和BeanWrapper](94-beancao-zuo-he-beanwrapper.md)
 * [9.5 Spring类型转换](95-springlei-xing-zhuan-huan.md)
 * [9.6 Spring Field格式](96-spring-fieldge-shi.md)
 * [9.7 配置全局日期和时间格式](97-pei-zhi-quan-ju-ri-qi-he-shi-jian-ge-shi.md)
 * [9.8 Spring验证](98-springyan-zheng.md)
+
+
 
