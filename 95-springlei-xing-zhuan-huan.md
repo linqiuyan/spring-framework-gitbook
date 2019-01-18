@@ -45,9 +45,54 @@ public interface ConverterFactory<S, R> {
 }
 ```
 
+参数化S为要转换的类型，R为定义可转换为的类范围的基本类型。 然后实现getConverter（Class &lt;T&gt;），其中T是R的子类。
+
+以StringToEnum ConverterFactory为例：
+
+```java
+package org.springframework.core.convert.support;
+
+final class StringToEnumConverterFactory implements ConverterFactory<String, Enum> {
+
+    public <T extends Enum> Converter<String, T> getConverter(Class<T> targetType) {
+        return new StringToEnumConverter(targetType);
+    }
+
+    private final class StringToEnumConverter<T extends Enum> implements Converter<String, T> {
+
+        private Class<T> enumType;
+
+        public StringToEnumConverter(Class<T> enumType) {
+            this.enumType = enumType;
+        }
+
+        public T convert(String source) {
+            return (T) Enum.valueOf(this.enumType, source.trim());
+        }
+    }
+}
+```
+
 
 
 ### 9.5.3 GenericConverter
+
+当您需要复杂的Converter实现时，请考虑GenericConverter接口。 通过更灵活但不太强类型的签名，GenericConverter支持在多个源类型和目标类型之间进行转换。 此外，GenericConverter提供了在实现转换逻辑时可以使用的源和目标字段上下文。 这样的上下文允许类型转换由字段注释或在字段签名上声明的通用信息驱动。
+
+```java
+package org.springframework.core.convert.converter;
+
+public interface GenericConverter {
+
+    public Set<ConvertiblePair> getConvertibleTypes();
+
+    Object convert(Object source, TypeDescriptor sourceType, TypeDescriptor targetType);
+}
+```
+
+要实现GenericConverter，请让getConvertibleTypes\(\)返回支持的源→目标类型对。 然后实现convert（Object，TypeDescriptor，TypeDescriptor）来实现转换逻辑。 源TypeDescriptor提供对包含要转换的值的源字段的访问。 目标TypeDescriptor提供对将设置转换值的目标字段的访问。
+
+
 
 ### ConditionalGenericConverter
 
