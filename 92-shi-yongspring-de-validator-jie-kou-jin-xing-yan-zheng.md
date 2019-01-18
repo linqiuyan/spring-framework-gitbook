@@ -85,7 +85,5 @@ public class CustomerValidator implements Validator {
 }
 ```
 
-
-
-
+验证错误将报告给传递给验证程序的Errors对象。 对于Spring Web MVC，您可以使用&lt;spring：bind /&gt;标签来检查错误消息，当然您也可以自己检查错误对象。 有关它提供的方法的更多信息可以在javadocs中找到。
 
