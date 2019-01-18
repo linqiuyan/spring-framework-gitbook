@@ -15,9 +15,28 @@ public interface Converter<S, T> {
 }
 ```
 
+要创建自己的转换器，只需实现上面的接口即可。 将S作为要转换的类型参数化，将T作为要转换的类型。 如果S的集合或数组需要转换为T的数组或集合，也可以透明地应用这样的转换器，前提是已经注册了委托数组/集合转换器（DefaultConversionService默认情况下也是如此）。
+
+对于每次转换（S）的调用，源参数保证为非null。 如果转换失败，您的Converter可能会抛出任何未经检查的异常; 具体而言，应抛出IllegalArgumentException以报告无效的源值。 请注意确保您的Converter实现是线程安全的。
+
+为方便起见，core.convert.support包中提供了几个转换器实现。 这些包括从字符串到数字的转换器和其他常见类型。 将StringToInteger视为典型Converter实现的示例：
+
+```java
+package org.springframework.core.convert.support;
+
+final class StringToInteger implements Converter<String, Integer> {
+
+    public Integer convert(String source) {
+        return Integer.valueOf(source);
+    }
+}
+```
+
 
 
 ### 9.5.2 ConverterFactory
+
+
 
 ### 9.5.3 GenericConverter
 
