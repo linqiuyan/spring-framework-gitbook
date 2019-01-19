@@ -6,7 +6,7 @@ SpEL表达式可以与XML或基于注释的配置元数据一起使用，以定�
 
 可以使用表达式设置属性或构造函数-arg值，如下所示。
 
-```bash
+```css
 <bean id="numberGuess" class="org.spring.samples.NumberGuess">
     <property name="randomNumber" value="#{ T(java.lang.Math).random() * 100.0 }"/>
 
