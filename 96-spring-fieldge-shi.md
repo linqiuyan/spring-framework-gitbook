@@ -215,5 +215,7 @@ public interface FormatterRegistrar {
 
 ### 9.6.5 在Spring MVC中配置格式化
 
+请参见Spring MVC章节中的第22.16.3节“转换和格式化”。
+
 
 
