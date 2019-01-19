@@ -39,6 +39,7 @@
     * [9.7 配置全局日期和时间格式](97-pei-zhi-quan-ju-ri-qi-he-shi-jian-ge-shi.md)
     * [9.8 Spring验证](98-springyan-zheng.md)
   * [10 Spring表达式语言](10-springbiao-da-shi-yu-yan.md)
+    * 10.1 介绍
   * [11 使用Spring进行面向切面编程](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng.md)
   * [12 Spring AOP API](12-spring-aop-api.md)
 * [IV 测试](iv-ce-shi.md)
@@ -78,4 +79,10 @@
   * [42 可扩展的XML](42-ke-kuo-zhan-de-xml.md)
   * [43 spring JSP Tag Library](43-spring-jsp-tag-library.md)
   * [44 spring-form JSP Tag Library](44-spring-form-jsp-tag-library.md)
+* 10.2 评估
+* 10.3 bean定义中的表达式
+* 10.4 语言参考
+* 10.5 示例中使用的类
+
+
 
