@@ -84,7 +84,7 @@ public static class PropertyValueTestBean
 
 自动化方法和构造函数也可以使用@Value注释。
 
-```
+```java
 public class SimpleMovieLister {
 
     private MovieFinder movieFinder;
@@ -101,7 +101,7 @@ public class SimpleMovieLister {
 }
 ```
 
-```
+```java
 public class MovieRecommender {
 
     private String defaultLocale;
@@ -118,8 +118,6 @@ public class MovieRecommender {
     // ...
 }
 ```
-
-
 
 
 
