@@ -427,7 +427,6 @@ public class AfterReturningExample {
 }
 ```
 
-  
 returns属性中使用的名称必须与advice方法中的参数名称相对应。 当方法执行返回时，返回值将作为相应的参数值传递给advice方法。 返回子句还将匹配仅限于那些返回指定类型值的方法执行（在这种情况下为Object，它将匹配任何返回值）。
 
 请注意，在使用返回后的建议时，无法返回完全不同的参考。
@@ -493,8 +492,6 @@ public class AfterFinallyExample {
 
 #### Around advice
 
-
-
 #### Advice parameters
 
 #### Access to the current JoinPoint
@@ -505,18 +502,142 @@ public class AfterFinallyExample {
 
 #### Determining argument names 确定参数名称
 
-#### Proceeding with arguments 
+#### Proceeding with arguments
 
 #### Advice ordering
 
-  
-
-
 ### 11.2.5 简介
+
+简介（在AspectJ中称为类型间声明）使方面能够声明建议对象实现给定接口，并代表这些对象提供该接口的实现。
+
+使用@DeclareParents注释进行了介绍。 此批注用于声明匹配类型具有新父级（因此名称）。 例如，给定一个接口UsageTracked，以及该接口DefaultUsageTracked的实现，以下方面声明服务接口的所有实现者也实现UsageTracked接口。 （例如，为了通过JMX公开统计信息。）
+
+```
+@Aspect
+public class UsageTracking {
+
+    @DeclareParents(value="com.xzy.myapp.service.*+", defaultImpl=DefaultUsageTracked.class)
+    public static UsageTracked mixin;
+
+    @Before("com.xyz.myapp.SystemArchitecture.businessService() && this(usageTracked)")
+    public void recordUsage(UsageTracked usageTracked) {
+        usageTracked.incrementUseCount();
+    }
+
+}
+```
+
+要实现的接口由注释字段的类型确定。 @DeclareParents注释的value属性是一个AspectJ类型模式： - 任何匹配类型的bean都将实现UsageTracked接口。 请注意，在上面示例的before建议中，服务bean可以直接用作UsageTracked接口的实现。 如果以编程方式访问bean，您将编写以下内容：
+
+```
+UsageTracked usageTracked = (UsageTracked) context.getBean("myService");
+```
 
 ### 11.2.6  Aspect实例化模型
 
+（这是一个高级主题，所以如果你刚刚开始使用AOP，你可以安全地跳过它直到以后。）
+
+默认情况下，应用程序上下文中的每个方面都有一个实例。 AspectJ将其称为单例实例化模型。 可以使用备用生命周期定义方面： -  Spring支持AspectJ的perthis和pertarget实例化模型（目前不支持percflow，percflowbelow和pertypewithin）。
+
+通过在@Aspect注释中指定perthis子句来声明“perthis”方面。 让我们看一个例子，然后我们将解释它是如何工作的。
+
+```
+@Aspect("perthis(com.xyz.myapp.SystemArchitecture.businessService())")
+public class MyAspect {
+
+    private int someState;
+
+    @Before(com.xyz.myapp.SystemArchitecture.businessService())
+    public void recordServiceUsage() {
+        // ...
+    }
+
+}
+```
+
+'perthis'子句的作用是将为执行业务服务的每个唯一服务对象创建一个方面实例（每个唯一对象在由切入点表达式匹配的连接点处绑定到'this'）。 方法实例是在第一次在服务对象上调用方法时创建的。 当服务对象超出范围时，该方面超出范围。 在创建方面实例之前，其中没有任何建议执行。 一旦创建了方面实例，在其中声明的建议将在匹配的连接点处执行，但仅在服务对象是与此方面相关联的服务对象时执行。 有关per子句的更多信息，请参阅AspectJ编程指南。
+
+'pertarget'实例化模型的工作方式与perthis完全相同，但在匹配的连接点为每个唯一目标对象创建一个方面实例。
+
 ### 11.2.7 例
+
+既然你已经看到了所有组成部分的工作方式，那就让我们把它们放在一起做一些有用的事情吧！
+
+由于并发问题（例如，死锁失败者），业务服务的执行有时可能会失败。 如果重试该操作，下次很可能成功。 对于适合在这种情况下重试的业务服务（不需要返回给用户进行冲突解决的幂等操作），我们希望透明地重试操作以避免客户端看到PessimisticLockingFailureException。 这是明确跨越服务层中的多个服务的要求，因此是通过方面实现的理想选择。
+
+因为我们想要重试操作，所以我们需要使用around建议，以便我们可以多次调用proceed。 以下是基本方面实现的外观：
+
+```
+@Aspect
+public class ConcurrentOperationExecutor implements Ordered {
+
+    private static final int DEFAULT_MAX_RETRIES = 2;
+
+    private int maxRetries = DEFAULT_MAX_RETRIES;
+    private int order = 1;
+
+    public void setMaxRetries(int maxRetries) {
+        this.maxRetries = maxRetries;
+    }
+
+    public int getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
+    }
+
+    @Around("com.xyz.myapp.SystemArchitecture.businessService()")
+    public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
+        int numAttempts = 0;
+        PessimisticLockingFailureException lockFailureException;
+        do {
+            numAttempts++;
+            try {
+                return pjp.proceed();
+            }
+            catch(PessimisticLockingFailureException ex) {
+                lockFailureException = ex;
+            }
+        } while(numAttempts <= this.maxRetries);
+        throw lockFailureException;
+    }
+
+}
+```
+
+请注意，该方面实现了Ordered接口，因此我们可以将方面的优先级设置为高于事务通知（我们每次重试时都需要一个新的事务）。 maxRetries和order属性都将由Spring配置。 主要操作发生在doConcurrentOperation周围的建议中。 请注意，目前我们正在将重试逻辑应用于所有businessService（）。 我们尝试继续，如果我们失败了PessimisticLockingFailureException，我们只需再试一次，除非我们已经用尽所有的重试尝试。
+
+相应的Spring配置是：
+
+```
+<aop:aspectj-autoproxy/>
+
+<bean id="concurrentOperationExecutor" class="com.xyz.myapp.service.impl.ConcurrentOperationExecutor">
+    <property name="maxRetries" value="3"/>
+    <property name="order" value="100"/>
+</bean>
+```
+
+为了优化方面以便它只重试幂等操作，我们可以定义一个Idempotent注释：
+
+```
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Idempotent {
+    // marker annotation
+}
+```
+
+并使用注释来注释服务操作的实现。 对方面的更改仅重试幂等操作只涉及改进切入点表达式，以便只有@Idempotent操作匹配：
+
+```
+@Around("com.xyz.myapp.SystemArchitecture.businessService() && " +
+        "@annotation(com.xyz.myapp.service.Idempotent)")
+public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
+    ...
+}
+```
 
 
 
