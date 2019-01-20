@@ -92,4 +92,6 @@
   * [42 可扩展的XML](42-ke-kuo-zhan-de-xml.md)
   * [43 spring JSP Tag Library](43-spring-jsp-tag-library.md)
   * [44 spring-form JSP Tag Library](44-spring-form-jsp-tag-library.md)
+* [12.5 使用ProxyFactoryBean创建AOP代理](125-shi-yong-proxyfactorybean-chuang-jian-aop-dai-li.md)
+* [12.6 ](126.md)
 

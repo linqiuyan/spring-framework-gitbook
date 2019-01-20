@@ -466,35 +466,7 @@ public class LockMixinAdvisor extends DefaultIntroductionAdvisor {
 
 ### 12.5.6 使用“全球”顾问
 
-## 12.6 简明的代理定义
+## 
 
-## 12.7 使用ProxyFactory以编程方式创建AOP代理
 
-## 12.8 操纵建议的对象
-
-## 12.9 使用“自动代理”工具
-
-### 12.9.1  Autoproxy bean定义
-
-#### 的BeanNameAutoProxyCreator
-
-#### DefaultAdvisorAutoProxyCreator的
-
-#### AbstractAdvisorAutoProxyCreator
-
-### 12.9.2 使用元数据驱动的自动代理
-
-## 12.10 使用TargetSources
-
-### 12.10.1 热插拔目标源
-
-### 12.10.2 汇集目标来源
-
-### 12.10.3 原型目标来源
-
-### 12.10.4  ThreadLocal目标源
-
-12.11 定义新的建议类型
-
-12.12 更多资源
 
