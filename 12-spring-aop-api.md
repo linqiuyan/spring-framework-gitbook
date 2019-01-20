@@ -446,6 +446,12 @@ public class LockMixinAdvisor extends DefaultIntroductionAdvisor {
 
 ## 12.4  Spring中的Advisor API
 
+在Spring中，Advisor是一个只包含与切入点表达式关联的建议对象的方面。
+
+除了介绍的特殊情况，任何顾问都可以使用任何建议。 org.springframework.aop.support.DefaultPointcutAdvisor是最常用的顾问类。 例如，它可以与MethodInterceptor，BeforeAdvice或ThrowsAdvice一起使用。
+
+可以在同一个AOP代理中混合Spring中的顾问程序和通知类型。 例如，您可以在一个代理配置中使用拦截建议，抛出建议和建议之前：Spring将自动创建必要的拦截器链。
+
 ## 12.5 使用ProxyFactoryBean创建AOP代理
 
 ### 12.5.1 基本
