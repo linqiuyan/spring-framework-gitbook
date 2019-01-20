@@ -55,6 +55,8 @@
     * [11.8 在Spring应用程序中使用AspectJ](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng/118-zai-spring-ying-yong-cheng-xu-zhong-shi-yong-aspectj.md)
     * [11.9 更多资源](11-shi-yongspring-jin-xing-mian-xiang-qie-mian-bian-cheng/119-geng-duo-zi-yuan.md)
   * [12 Spring AOP API](12-spring-aop-api.md)
+    * [12.5 使用ProxyFactoryBean创建AOP代理](125-shi-yong-proxyfactorybean-chuang-jian-aop-dai-li.md)
+    * [12.6 ](126.md)
 * [IV 测试](iv-ce-shi.md)
   * [13 Spring测试简介](13-springce-shi-jian-jie.md)
   * [14 单元测试](14-dan-yuan-ce-shi.md)
@@ -92,6 +94,6 @@
   * [42 可扩展的XML](42-ke-kuo-zhan-de-xml.md)
   * [43 spring JSP Tag Library](43-spring-jsp-tag-library.md)
   * [44 spring-form JSP Tag Library](44-spring-form-jsp-tag-library.md)
-* [12.5 使用ProxyFactoryBean创建AOP代理](125-shi-yong-proxyfactorybean-chuang-jian-aop-dai-li.md)
-* [12.6 ](126.md)
+
+
 
