@@ -57,8 +57,8 @@
   * [12 Spring AOP API](12-spring-aop-api.md)
     * [12.5 使用ProxyFactoryBean创建AOP代理](125-shi-yong-proxyfactorybean-chuang-jian-aop-dai-li.md)
     * [12.6 简明的代理定义](126.md)
-    * 12.7 使用ProxyFactory以编程方式创建AOP代理
-    * 12.8 操纵建议的对象
+    * [12.7 使用ProxyFactory以编程方式创建AOP代理](127-shi-yong-proxyfactory-yi-bian-cheng-fang-shi-chuang-jian-aop-dai-li.md)
+    * [12.8 操纵建议的对象](128-cao-zong-jian-yi-de-dui-xiang.md)
     * [12.9 使用“自动代理”工具](129-shi-yong-201c-zi-dong-dai-li-201d-gong-ju.md)
     * [12.10 使用TargetSources](1210-shi-yong-targetsources.md)
     * [12.11 定义新的建议类型](1211-ding-yi-xin-de-jian-yi-lei-xing.md)
