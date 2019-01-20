@@ -88,29 +88,74 @@ public class AppConfig {
 
 不要通过bean配置器方面激活@Configurable处理，除非你真的想在运行时依赖它的语义。 特别是，确保不对使用容器注册为常规Spring bean的bean类使用@Configurable：否则将进行双初始化，一次通过容器，一次通过方面。
 
-
-
 #### 单元测试@Configurable对象
 
 @Configurable支持的目标之一是启用域对象的独立单元测试，而不会遇到与硬编码查找相关的困难。 如果AspectJ没有编译@Configurable类型，那么注释在单元测试期间没有任何影响，您可以简单地在被测对象中设置模拟或存根属性引用并继续正常进行。 如果AspectJ编译了@Configurable类型，那么您仍然可以正常地在容器外部进行单元测试，但每次构造一个@Configurable对象时，您将看到一条警告消息，表明它尚未由Spring配置。
-
-
 
 #### 使用多个应用程序上下文
 
 用于实现@Configurable支持的AnnotationBeanConfigurerAspect是AspectJ单例方面。单例方面的范围与静态成员的范围相同，也就是说每个类加载器有一个方面实例来定义类型。这意味着如果在同一个类加载器层次结构中定义多个应用程序上下文，则需要考虑在哪里定义@EnableSpringConfigured bean以及将spring-aspects.jar放在类路径上的位置。
 
-
-
 考虑一个典型的Spring Web应用程序配置，其中包含共享父应用程序上下文，用于定义公共业务服务和支持它们所需的一切，以及每个servlet包含一个子应用程序上下文，其中包含特定于该servlet所有这些上下文将共存于同一个类加载器层次结构中，因此AnnotationBeanConfigurerAspect只能保存对其中一个的引用。在这种情况下，我们建议在共享（父）应用程序上下文中定义@EnableSpringConfigured bean：这将定义您可能要注入域对象的服务。结果是您无法使用@Configurable机制（可能不是您想要做的事情！）来配置域对象，并引用在子（特定于servlet）的上下文中定义的bean。
-
-
 
 在同一容器中部署多个Web应用程序时，请确保每个Web应用程序使用自己的类加载器加载spring-aspects.jar中的类型（例如，将spring-aspects.jar放在“WEB-INF / lib”中） 。如果spring-aspects.jar仅添加到容器范围的类路径中（因此由共享父类加载器加载），则所有Web应用程序将共享相同的方面实例，这可能不是您想要的。
 
 ### 11.8.2  AspectJ的其他Spring方面
 
-### 11.8.3 使用Spring IoC配置AspectJ方面
+除了@Configurable方面，spring-aspects.jar还包含一个AspectJ方面，可用于为使用@Transactional注释注释的类型和方法驱动Spring的事务管理。这主要适用于希望在Spring容器之外使用Spring Framework的事务支持的用户。
+
+解释@Transactional注释的方面是AnnotationTransactionAspect。使用此方面时，必须注释实现类（和/或该类中的方法），而不是该类实现的接口（如果有）。 AspectJ遵循Java的规则，即接口上的注释不会被继承。
+
+类上的@Transactional注释指定了在类中执行任何公共操作的默认事务语义。
+
+类中方法的@Transactional注释会覆盖类注释（如果存在）给出的默认事务语义。可以注释任何可见性的方法，包括私有方法。直接注释非公共方法是获得执行此类方法的事务划分的唯一方法。
+
+从Spring Framework 4.2开始，spring-aspects提供了类似的方面，为标准的javax.transaction.Transactional注释提供了完全相同的功能。 检查JtaAnnotationTransactionAspect以获取更多详细信息。
+
+对于想要使用Spring配置和事务管理支持但不想（或不能）使用注释的AspectJ程序员，spring-aspects.jar还包含可以扩展以提供自己的切入点定义的抽象方面。 有关更多信息，请参阅AbstractBeanConfigurerAspect和AbstractTransactionAspect方面的源代码。 作为示例，以下摘录显示了如何使用与完全限定类名匹配的原型bean定义编写方面来配置域模型中定义的所有对象实例：
+
+```
+public aspect DomainObjectConfiguration extends AbstractBeanConfigurerAspect {
+
+    public DomainObjectConfiguration() {
+        setBeanWiringInfoResolver(new ClassNameBeanWiringInfoResolver());
+    }
+
+    // the creation of a new bean (any object in the domain model)
+    protected pointcut beanCreation(Object beanInstance) :
+        initialization(new(..)) &&
+        SystemArchitecture.inDomainModel() &&
+        this(beanInstance);
+
+}
+```
+
+### 11.8.3 使用Spring IoC配置AspectJ aspects
+
+在Spring应用程序中使用AspectJ方面时，很自然希望能够使用Spring配置这些方面。 AspectJ运行时本身负责方面创建，并且通过Spring配置AspectJ创建方面的方法取决于方面使用的AspectJ实例化模型（per-xxx子句）。
+
+AspectJ的大多数方面都是单例方面。 这些方面的配置非常简单：只需创建一个正常引用方面类型的bean定义，并包含bean属性'factory-method =“aspectOf”'。 这可以确保Spring通过向AspectJ请求它来获取方面实例，而不是尝试创建实例本身。 例如：
+
+```
+<bean id="profiler" class="com.xyz.profiler.Profiler"
+        factory-method="aspectOf">
+
+    <property name="profilingStrategy" ref="jamonProfilingStrategy"/>
+</bean>
+```
+
+非单例方面更难配置：但是可以通过创建原型bean定义并使用spring-aspects.jar中的@Configurable支持来配置方面实例（一旦它们具有由AspectJ运行时创建的bean）。
+
+如果您想要使用AspectJ编写一些@AspectJ方面（例如，使用域模型类型的加载时编织）和其他要与Spring AOP一起使用的@AspectJ方面，并且这些方面都是使用Spring配置的 ，那么你需要告诉Spring AOP @AspectJ autoproxying支持配置中定义的@AspectJ方面的确切子集应该用于自动代理。 您可以通过在&lt;aop：aspectj-autoproxy /&gt;声明中使用一个或多个&lt;include /&gt;元素来完成此操作。 每个&lt;include /&gt;元素指定一个名称模式，只有名称与至少一个模式匹配的bean才会用于Spring AOP autoproxy配置：
+
+```
+<aop:aspectj-autoproxy>
+    <aop:include name="thisBean"/>
+    <aop:include name="thatBean"/>
+</aop:aspectj-autoproxy>
+```
+
+不要被&lt;aop：aspectj-autoproxy /&gt;元素的名称误导：使用它将导致创建Spring AOP代理。 这里只使用@AspectJ样式的方面声明，但不涉及AspectJ运行时。
 
 ### 11.8.4 在Spring框架中使用AspectJ进行加载时编织
 
